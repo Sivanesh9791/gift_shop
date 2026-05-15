@@ -24,7 +24,7 @@ const generateMockOrders = () => {
     const total = subtotal + giftWrapTotal + 4.99 - discount;
     
     orders.push({
-      id: `GH-${Math.floor(Math.random() * 90000000) + 10000000}`,
+      id: `GT-${Math.floor(Math.random() * 90000000) + 10000000}`,
       customerName: `Customer ${i + 1}`,
       customerEmail: `customer${i + 1}@example.com`,
       customerPhone: `555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
@@ -105,9 +105,11 @@ const generateMockCoupons = () => [
 ];
 
 const defaultStoreSettings = {
-  storeName: 'GiftHaven',
-  storeEmail: 'hello@gifthaven.com',
-  currency: 'USD',
+  storeName: 'GIFTINY',
+  storeEmail: 'hello@giftiny.com',
+  storePhone: '+91 7904952709',
+  storeAddress: 'Shop 5, 137, 2nd Floor, Grand Mall, Velachery, Chennai',
+  currency: 'INR',
   freeShippingThreshold: 40,
   standardDeliveryCharge: 4.99,
   expressDeliveryCharge: 9.99,
@@ -142,7 +144,7 @@ export const AdminProvider = ({ children }) => {
     setDarkMode(isDark);
 
     // Load orders
-    const savedOrders = localStorage.getItem('gifthaven_orders');
+    const savedOrders = localStorage.getItem('giftiny_orders');
     if (savedOrders) {
       try {
         setOrders(JSON.parse(savedOrders));
@@ -152,11 +154,11 @@ export const AdminProvider = ({ children }) => {
     } else {
       const mockOrders = generateMockOrders();
       setOrders(mockOrders);
-      localStorage.setItem('gifthaven_orders', JSON.stringify(mockOrders));
+      localStorage.setItem('giftiny_orders', JSON.stringify(mockOrders));
     }
 
     // Load coupons
-    const savedCoupons = localStorage.getItem('gifthaven_coupons');
+    const savedCoupons = localStorage.getItem('giftiny_coupons');
     if (savedCoupons) {
       try {
         setCoupons(JSON.parse(savedCoupons));
@@ -167,11 +169,11 @@ export const AdminProvider = ({ children }) => {
     } else {
       const mockCoupons = generateMockCoupons();
       setCoupons(mockCoupons);
-      localStorage.setItem('gifthaven_coupons', JSON.stringify(mockCoupons));
+      localStorage.setItem('giftiny_coupons', JSON.stringify(mockCoupons));
     }
 
     // Load store settings
-    const savedSettings = localStorage.getItem('gifthaven_settings');
+    const savedSettings = localStorage.getItem('giftiny_settings');
     if (savedSettings) {
       try {
         setStoreSettings(JSON.parse(savedSettings));
@@ -179,11 +181,11 @@ export const AdminProvider = ({ children }) => {
         setStoreSettings(defaultStoreSettings);
       }
     } else {
-      localStorage.setItem('gifthaven_settings', JSON.stringify(defaultStoreSettings));
+      localStorage.setItem('giftiny_settings', JSON.stringify(defaultStoreSettings));
     }
 
     // Load products
-    const savedProducts = localStorage.getItem('gifthaven_products');
+    const savedProducts = localStorage.getItem('giftiny_products');
     if (savedProducts) {
       try {
         const parsed = JSON.parse(savedProducts);
@@ -191,15 +193,15 @@ export const AdminProvider = ({ children }) => {
           setProducts(parsed);
         } else {
           setProducts(productsData);
-          localStorage.setItem('gifthaven_products', JSON.stringify(productsData));
+          localStorage.setItem('giftiny_products', JSON.stringify(productsData));
         }
       } catch {
         setProducts(productsData);
-        localStorage.setItem('gifthaven_products', JSON.stringify(productsData));
+        localStorage.setItem('giftiny_products', JSON.stringify(productsData));
       }
     } else {
       setProducts(productsData);
-      localStorage.setItem('gifthaven_products', JSON.stringify(productsData));
+      localStorage.setItem('giftiny_products', JSON.stringify(productsData));
     }
   }, []);
 
@@ -252,18 +254,18 @@ export const AdminProvider = ({ children }) => {
   const addOrder = (order) => {
     const newOrder = {
       ...order,
-      id: `GH-${Math.floor(Math.random() * 90000000) + 10000000}`
+      id: `GT-${Math.floor(Math.random() * 90000000) + 10000000}`
     };
     const updatedOrders = [...orders, newOrder];
     setOrders(updatedOrders);
-    localStorage.setItem('gifthaven_orders', JSON.stringify(updatedOrders));
+    localStorage.setItem('giftiny_orders', JSON.stringify(updatedOrders));
     return newOrder;
   };
 
   const deleteOrder = (orderId) => {
     const updatedOrders = orders.filter(order => order.id !== orderId);
     setOrders(updatedOrders);
-    localStorage.setItem('gifthaven_orders', JSON.stringify(updatedOrders));
+    localStorage.setItem('giftiny_orders', JSON.stringify(updatedOrders));
   };
 
   const updateOrderStatus = (orderId, status) => {
@@ -271,7 +273,7 @@ export const AdminProvider = ({ children }) => {
       order.id === orderId ? { ...order, status } : order
     );
     setOrders(updatedOrders);
-    localStorage.setItem('gifthaven_orders', JSON.stringify(updatedOrders));
+    localStorage.setItem('giftiny_orders', JSON.stringify(updatedOrders));
   };
 
   // Coupon management
@@ -282,7 +284,7 @@ export const AdminProvider = ({ children }) => {
     };
     const updatedCoupons = [...coupons, newCoupon];
     setCoupons(updatedCoupons);
-    localStorage.setItem('gifthaven_coupons', JSON.stringify(updatedCoupons));
+    localStorage.setItem('giftiny_coupons', JSON.stringify(updatedCoupons));
     return newCoupon;
   };
 
@@ -291,20 +293,20 @@ export const AdminProvider = ({ children }) => {
       coupon.id === couponId ? { ...coupon, ...updates } : coupon
     );
     setCoupons(updatedCoupons);
-    localStorage.setItem('gifthaven_coupons', JSON.stringify(updatedCoupons));
+    localStorage.setItem('giftiny_coupons', JSON.stringify(updatedCoupons));
   };
 
   const deleteCoupon = (couponId) => {
     const updatedCoupons = coupons.filter(coupon => coupon.id !== couponId);
     setCoupons(updatedCoupons);
-    localStorage.setItem('gifthaven_coupons', JSON.stringify(updatedCoupons));
+    localStorage.setItem('giftiny_coupons', JSON.stringify(updatedCoupons));
   };
 
   // Settings management
   const updateSettings = (newSettings) => {
     const updatedSettings = { ...storeSettings, ...newSettings };
     setStoreSettings(updatedSettings);
-    localStorage.setItem('gifthaven_settings', JSON.stringify(updatedSettings));
+    localStorage.setItem('giftiny_settings', JSON.stringify(updatedSettings));
   };
 
   // Products management
@@ -315,7 +317,7 @@ export const AdminProvider = ({ children }) => {
     };
     const updatedProducts = [...products, newProduct];
     setProducts(updatedProducts);
-    localStorage.setItem('gifthaven_products', JSON.stringify(updatedProducts));
+    localStorage.setItem('giftiny_products', JSON.stringify(updatedProducts));
     return newProduct;
   };
 
@@ -324,29 +326,29 @@ export const AdminProvider = ({ children }) => {
       product.id === productId ? { ...product, ...updates } : product
     );
     setProducts(updatedProducts);
-    localStorage.setItem('gifthaven_products', JSON.stringify(updatedProducts));
+    localStorage.setItem('giftiny_products', JSON.stringify(updatedProducts));
   };
 
   const deleteProduct = (productId) => {
     const updatedProducts = products.filter(product => product.id !== productId);
     setProducts(updatedProducts);
-    localStorage.setItem('gifthaven_products', JSON.stringify(updatedProducts));
+    localStorage.setItem('giftiny_products', JSON.stringify(updatedProducts));
   };
 
   const bulkDeleteProducts = (productIds) => {
     const updatedProducts = products.filter(product => !productIds.includes(product.id));
     setProducts(updatedProducts);
-    localStorage.setItem('gifthaven_products', JSON.stringify(updatedProducts));
+    localStorage.setItem('giftiny_products', JSON.stringify(updatedProducts));
   };
 
   const clearOrders = () => {
     setOrders([]);
-    localStorage.setItem('gifthaven_orders', JSON.stringify([]));
+    localStorage.setItem('giftiny_orders', JSON.stringify([]));
   };
 
   const resetProducts = () => {
     setProducts(productsData);
-    localStorage.setItem('gifthaven_products', JSON.stringify(productsData));
+    localStorage.setItem('giftiny_products', JSON.stringify(productsData));
   };
 
   const value = {

@@ -42,7 +42,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    document.title = "GiftHaven — Thoughtful Gifts for Every Occasion";
+    document.title = "GIFTINY — Gifts for Every Occasion";
     
     // Set target time to 24 hours from now on mount
     const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;

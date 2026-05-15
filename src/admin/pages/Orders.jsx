@@ -388,7 +388,7 @@ export default function Orders() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'gifthaven-orders-' + new Date().toISOString().split('T')[0] + '.csv';
+    a.download = 'giftiny-orders-' + new Date().toISOString().split('T')[0] + '.csv';
     a.click();
     URL.revokeObjectURL(url);
     toast.success('CSV exported!');

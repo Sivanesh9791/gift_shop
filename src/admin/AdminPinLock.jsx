@@ -115,7 +115,9 @@ const AdminPinLock = () => {
         {/* Logo & Header */}
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🎁</div>
-          <h1 className="text-3xl font-bold text-gray-800">GiftHaven</h1>
+          <span className="text-3xl font-black tracking-widest bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent uppercase">
+            GIFTINY
+          </span>
           <h2 className="text-xl font-semibold text-gray-700 mt-2">Admin Panel</h2>
           <p className="text-gray-500 text-sm mt-1">Enter your PIN to continue</p>
         </div>

@@ -106,7 +106,7 @@ export default function ProductDetail() {
   const product = productsData.find(p => p.slug === slug);
 
   useEffect(() => {
-    if (product) document.title = `${product.name} | GiftHaven`;
+    if (product) document.title = `${product.name} | GIFTINY`;
   }, [product]);
 
   /* ── State ── */

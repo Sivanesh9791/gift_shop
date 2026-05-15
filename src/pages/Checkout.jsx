@@ -100,7 +100,7 @@ export default function Checkout() {
   const handlePlaceOrder = () => {
     // Generate mock order data
     const orderData = {
-      orderId: 'GH' + Math.floor(100000 + Math.random() * 900000),
+      orderId: 'GT' + Math.floor(100000 + Math.random() * 900000),
       items: items,
       total: grandTotal,
       deliveryData,
@@ -158,7 +158,7 @@ export default function Checkout() {
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-500">
-            GiftHaven 🎁
+            GIFTINY 🎁
           </Link>
           <div className="flex items-center gap-2 text-sm font-medium">
             {steps.map((s, idx) => (

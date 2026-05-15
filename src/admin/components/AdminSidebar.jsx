@@ -36,8 +36,9 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         {/* Logo Section */}
         <div className="p-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-3xl">🎁</span>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">GiftHaven</span>
+            <span className="text-xl font-black tracking-widest text-rose-500 uppercase">
+              GIFTINY
+            </span>
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400">Admin Panel</p>
         </div>
@@ -100,8 +101,9 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         {/* Logo Section */}
         <div className="p-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-3xl">🎁</span>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">GiftHaven</span>
+            <span className="text-xl font-black tracking-widest text-rose-500 uppercase">
+              GIFTINY
+            </span>
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400">Admin Panel</p>
         </div>

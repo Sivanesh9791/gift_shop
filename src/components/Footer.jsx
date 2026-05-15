@@ -11,12 +11,9 @@ export default function Footer() {
           
           {/* Col 1: Logo */}
           <div className="lg:col-span-3 space-y-6">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform">
-                <Gift size={24} className="text-[#1a1a2e]" />
-              </div>
-              <span className="font-serif text-2xl font-bold tracking-tight">GiftHaven</span>
-            </Link>
+              <span className="text-2xl font-black tracking-widest text-rose-400 uppercase">
+                GIFTINY
+              </span>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Curating thoughtful, personalized gifts that create unforgettable moments for the special people in your life.
             </p>
@@ -68,26 +65,50 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 5: NEWSLETTER */}
-          <div className="lg:col-span-3">
-            <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><Send size={16} className="text-rose-500"/> Newsletter</h4>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Get gift ideas, exclusive offers, and 15% off your first order when you subscribe.
-            </p>
-            <form className="flex flex-col gap-3" onSubmit={e => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="bg-white/5 border border-gray-700 text-white placeholder-gray-500 px-4 py-3 rounded-lg w-full focus:outline-none focus:border-rose-500 transition-colors text-sm"
-                required
-              />
-              <button 
-                type="submit" 
-                className="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-sm"
-              >
-                Subscribe
-              </button>
-            </form>
+          {/* Col 5: CONTACT + NEWSLETTER */}
+          <div className="lg:col-span-3 space-y-8">
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><MapPin size={16} className="text-rose-500"/> Contact Us</h4>
+              <ul className="space-y-3 text-gray-400 text-sm">
+                <li className="flex items-start gap-2">
+                  <MapPin size={14} className="text-rose-400 mt-0.5 flex-shrink-0" />
+                  <span>Shop 5, 137, 2nd Floor, Grand Mall<br />Velachery, Chennai, Tamil Nadu<br />India</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-rose-400 flex-shrink-0">📞</span>
+                  <a href="tel:+917904952709" className="hover:text-rose-400 transition-colors">+91 7904952709</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-rose-400 flex-shrink-0">✉️</span>
+                  <a href="mailto:hello@giftiny.com" className="hover:text-rose-400 transition-colors">hello@giftiny.com</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <h4 className="font-bold uppercase tracking-widest text-sm mb-4 flex items-center gap-2"><Send size={16} className="text-rose-500"/> Newsletter</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Get gift ideas &amp; 15% off your first order.
+              </p>
+              <form className="flex flex-col gap-3" onSubmit={e => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="bg-white/5 border border-gray-700 text-white placeholder-gray-500 px-4 py-3 rounded-lg w-full focus:outline-none focus:border-rose-500 transition-colors text-sm"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-lg transition-colors text-sm"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
           </div>
 
         </div>
@@ -101,7 +122,7 @@ export default function Footer() {
             <div className="px-3 py-1 bg-black text-white rounded font-bold">Pay</div>
           </div>
           
-          <p>© {new Date().getFullYear()} GiftHaven. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} GIFTINY. All rights reserved.</p>
           
           <div className="flex gap-6 font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -431,7 +431,7 @@ export default function Customers() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'gifthaven-customers-' + new Date().toISOString().split('T')[0] + '.csv';
+    a.download = 'giftiny-customers-' + new Date().toISOString().split('T')[0] + '.csv';
     a.click();
     URL.revokeObjectURL(url);
     toast.success('CSV exported!');

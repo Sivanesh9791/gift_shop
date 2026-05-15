@@ -31,7 +31,7 @@ export default function GiftCards() {
 
     const giftCardProduct = {
       id: `gift-card-${Date.now()}`,
-      name: `GiftHaven ${deliveryType === 'physical' ? 'Physical' : 'eGift'} Card`,
+      name: `GIFTINY ${deliveryType === 'physical' ? 'Physical' : 'eGift'} Card`,
       price: activeAmount + (deliveryType === 'physical' ? 3.99 : 0),
       images: ['https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop'],
       isGiftCard: true,
@@ -58,7 +58,7 @@ export default function GiftCards() {
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=1600&fit=crop')] bg-cover bg-center blend-overlay" />
         <div className="max-w-6xl mx-auto relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Give the Gift of Choice</h1>
-          <p className="text-slate-300 text-lg max-w-xl mx-auto">They know what they want. Let them choose from hundreds of personalized gifts with a GiftHaven gift card.</p>
+          <p className="text-slate-300 text-lg max-w-xl mx-auto">They know what they want. Let them choose from hundreds of personalized gifts with a GIFTINY gift card.</p>
         </div>
       </div>
 
@@ -189,7 +189,7 @@ export default function GiftCards() {
             <div className="absolute -bottom-20 -left-10 w-60 h-60 bg-amber-300 opacity-20 rounded-full blur-3xl"></div>
             
             <div className="flex justify-between items-start relative z-10">
-              <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight">GiftHaven</span>
+              <span className="font-serif text-2xl md:text-3xl font-bold tracking-tight">GIFTINY</span>
               <span className="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md">Gift Card</span>
             </div>
 

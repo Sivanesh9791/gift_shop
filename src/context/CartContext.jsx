@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer, useEffect, useCallback } from 'r
 
 const CartContext = createContext();
 
-const CART_STORAGE_KEY = 'gifthaven_cart';
+const CART_STORAGE_KEY = 'giftiny_cart';
 
 const initialState = {
   items: [],

@@ -332,7 +332,7 @@ export default function Settings() {
           <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
             <div className="w-8 h-8 rounded-full bg-rose-500 flex-shrink-0 ring-2 ring-rose-200 dark:ring-rose-800" />
             <div>
-              <p className="text-sm font-medium text-gray-900 dark:text-white">GiftHaven Rose</p>
+              <p className="text-sm font-medium text-gray-900 dark:text-white">GIFTINY Rose</p>
               <p className="text-xs font-mono text-gray-500 dark:text-gray-400">#f43f5e</p>
               <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Contact developer to change brand colors</p>
             </div>

@@ -57,9 +57,14 @@ export default function Navbar() {
                 <Menu size={24} />
               </button>
               
-              <Link to="/" className="flex items-center gap-2 group">
-                <span className="font-serif text-2xl lg:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-500 transition-transform group-hover:scale-105">
-                  GiftHaven 🎁
+              <Link to="/" className="flex items-center gap-2">
+                <span className="text-3xl">🎁</span>
+                <span style={{fontFamily: 'Playfair Display, serif'}}
+                  className="text-2xl font-black tracking-widest
+                             bg-gradient-to-r from-rose-500 to-pink-600 
+                             bg-clip-text text-transparent
+                             uppercase">
+                  GIFTINY
                 </span>
               </Link>
             </div>
@@ -168,8 +173,12 @@ export default function Navbar() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-xl flex flex-col items-start overflow-y-auto animate-in slide-in-from-left duration-300">
             {/* Drawer Header */}
             <div className="flex items-center justify-between w-full p-4 border-b border-gray-100">
-              <span className="font-serif text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-500">
-                GiftHaven
+              <span style={{fontFamily: 'Playfair Display, serif'}}
+                className="text-xl font-black tracking-widest
+                           bg-gradient-to-r from-rose-500 to-pink-600 
+                           bg-clip-text text-transparent
+                           uppercase">
+                GIFTINY 🎁
               </span>
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -245,7 +254,7 @@ export default function Navbar() {
             {/* Footer / Contact (Optional) */}
             <div className="mt-auto w-full p-6 bg-gray-50 border-t border-gray-100 pb-10">
               <p className="text-sm text-gray-500 font-medium mb-2">Need help?</p>
-              <a href="mailto:support@gifthaven.com" className="text-rose-600 font-medium hover:underline block">support@gifthaven.com</a>
+              <a href="mailto:support@giftiny.com" className="text-rose-600 font-medium hover:underline block">support@giftiny.com</a>
             </div>
           </div>
         </div>

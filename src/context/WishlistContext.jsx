@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 
 const WishlistContext = createContext();
 
-const WISHLIST_STORAGE_KEY = 'gifthaven_wishlist';
+const WISHLIST_STORAGE_KEY = 'giftiny_wishlist';
 
 export function WishlistProvider({ children }) {
   const [wishlistItems, setWishlistItems] = useState([]);

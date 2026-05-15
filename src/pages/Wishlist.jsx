@@ -14,7 +14,7 @@ export default function Wishlist() {
   const handleShare = () => {
     // Generate mock UUID link
     const mockId = Math.random().toString(36).substring(2, 10);
-    navigator.clipboard.writeText(`https://gifthaven.shop/wishlist?id=${mockId}`);
+    navigator.clipboard.writeText(`https://giftiny.shop/wishlist?id=${mockId}`);
     toast.success('Wishlist link copied!');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);

@@ -90,7 +90,7 @@ export default function CartDrawer({ open, onClose }) {
 
           <div className="fixed inset-0 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-              <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
+              <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
                 <Transition.Child
                   enter="transform transition ease-in-out duration-400 sm:duration-500"
                   enterFrom="translate-x-full"
@@ -99,10 +99,10 @@ export default function CartDrawer({ open, onClose }) {
                   leaveFrom="translate-x-0"
                   leaveTo="translate-x-full"
                 >
-                  <Dialog.Panel className="pointer-events-auto w-screen max-w-md h-full flex flex-col bg-slate-50 shadow-2xl border-l border-slate-200">
+                  <Dialog.Panel className="pointer-events-auto w-full sm:w-96 max-w-full h-full flex flex-col bg-slate-50 shadow-2xl sm:rounded-l-2xl border-l border-slate-200 overflow-hidden">
                     
                     {/* Header */}
-                    <div className="bg-white px-5 py-4 border-b border-slate-100 flex items-center justify-between flex-shrink-0 z-10">
+                    <div className="bg-white px-5 py-4 border-b border-slate-100 flex items-center justify-between flex-shrink-0 sticky top-0 z-10">
                       <Dialog.Title className="text-xl font-bold text-slate-900 flex items-center gap-2">
                         <ShoppingBag size={22} className="text-rose-500" /> 
                         Your Cart 
@@ -110,7 +110,7 @@ export default function CartDrawer({ open, onClose }) {
                           {items.reduce((s,i)=>s+i.qty, 0)}
                         </span>
                       </Dialog.Title>
-                      <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-full transition-all">
+                      <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-full transition-all flex-shrink-0 ml-2">
                         <X size={20} />
                       </button>
                     </div>
@@ -133,7 +133,7 @@ export default function CartDrawer({ open, onClose }) {
                     </div>
 
                     {/* Scrollable Content */}
-                    <div className="flex-1 overflow-y-auto">
+                    <div className="flex-1 overflow-y-auto overscroll-contain">
                       {items.length === 0 ? (
                         <div className="flex flex-col items-center justify-center h-full px-5 text-center pb-20">
                           <div className="w-24 h-24 bg-rose-50 text-rose-300 rounded-full flex items-center justify-center mb-4">
@@ -248,7 +248,7 @@ export default function CartDrawer({ open, onClose }) {
 
                     {/* Footer - Summary & Actions */}
                     {items.length > 0 && (
-                      <div className="bg-white border-t border-slate-100 p-5 flex-shrink-0 z-10 shadow-[0_-4px_10px_rgba(0,0,0,0.02)]">
+                      <div className="bg-white border-t border-slate-100 p-5 flex-shrink-0 sticky bottom-0 z-10 shadow-[0_-4px_10px_rgba(0,0,0,0.02)]">
                         <div className="space-y-2 mb-4 text-sm">
                           <div className="flex justify-between text-slate-600">
                             <span>Subtotal</span>
