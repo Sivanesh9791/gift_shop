@@ -102,12 +102,12 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
 
                     {/* Price */}
                     <div className="flex items-baseline gap-3">
-                      <span className="text-2xl font-bold text-slate-900">${product.price}</span>
+                      <span className="text-2xl font-bold text-slate-900">₹{product.price}</span>
                       {product.compareAtPrice && (
                         <>
-                          <span className="text-slate-400 line-through text-lg">${product.compareAtPrice}</span>
+                          <span className="text-slate-400 line-through text-lg">₹{product.compareAtPrice}</span>
                           <span className="bg-rose-100 text-rose-700 text-sm font-bold px-2 py-0.5 rounded-full">
-                            Save ${savings}
+                            Save ₹{savings}
                           </span>
                         </>
                       )}

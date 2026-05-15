@@ -258,12 +258,12 @@ export default function ProductDetail() {
             {/* S2 — Price */}
             <div className="border-b border-slate-100 pb-6 mb-6">
               <div className="flex items-center flex-wrap gap-3">
-                <span className="text-3xl font-bold text-rose-600">${product.price}</span>
+                <span className="text-3xl font-bold text-rose-600">₹{product.price}</span>
                 {product.compareAtPrice && (
                   <>
-                    <span className="text-xl text-slate-400 line-through">${product.compareAtPrice}</span>
+                    <span className="text-xl text-slate-400 line-through">₹{product.compareAtPrice}</span>
                     <span className="bg-green-100 text-green-700 text-sm font-bold px-3 py-1 rounded-full">
-                      Save ${savings}
+                      Save ₹{savings}
                     </span>
                   </>
                 )}
@@ -304,7 +304,7 @@ export default function ProductDetail() {
                   value={giftWrap}
                   onChange={setGiftWrap}
                   label="Add gift wrapping"
-                  sub="+$3.99 — beautifully wrapped & ready to give"
+                  sub="+₹3.99 — beautifully wrapped & ready to give"
                 />
                 {giftWrap && (
                   <div className="mt-4 space-y-3">
@@ -357,7 +357,7 @@ export default function ProductDetail() {
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-600">
                 <Gift size={16} className="text-amber-400 flex-shrink-0" />
-                <span>Free delivery on orders over <strong className="text-slate-800">$40</strong></span>
+                <span>Free delivery on orders over <strong className="text-slate-800">₹40</strong></span>
               </div>
             </div>
 
@@ -415,7 +415,7 @@ export default function ProductDetail() {
 
               <AccordionPanel title="Delivery & Returns">
                 <ul className="space-y-1.5 list-disc list-inside text-slate-600">
-                  <li>Free standard delivery on all orders over $40</li>
+                  <li>Free standard delivery on all orders over ₹40</li>
                   <li>Express delivery available at checkout</li>
                   <li>30-day hassle-free returns — no questions asked</li>
                   <li>Return shipping is free for all UK orders</li>
@@ -514,7 +514,7 @@ export default function ProductDetail() {
                         <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
                       </div>
                       <p className="text-xs text-slate-600 font-medium text-center w-24 line-clamp-2">{p.name}</p>
-                      <p className="text-xs font-bold text-slate-900">${p.price}</p>
+                      <p className="text-xs font-bold text-slate-900">₹{p.price}</p>
                     </div>
                   </div>
                 ))}
@@ -522,7 +522,7 @@ export default function ProductDetail() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-4 border-t border-slate-100">
                 <div>
                   <p className="text-slate-500 text-sm">Total for all 3 items</p>
-                  <p className="text-2xl font-bold text-slate-900">${bundleTotal}</p>
+                  <p className="text-2xl font-bold text-slate-900">₹{bundleTotal}</p>
                 </div>
                 <button onClick={handleAddAll}
                   className="flex items-center justify-center gap-2 bg-rose-500 text-white

@@ -141,7 +141,7 @@ export default function Cart() {
                       <Link to={`/product/${item.product.slug}`} className="text-lg font-bold text-slate-900 hover:text-rose-600 transition-colors line-clamp-2 pr-4">
                         {item.product.name}
                       </Link>
-                      <p className="font-bold text-slate-900 text-lg">${(item.product.price * item.qty).toFixed(2)}</p>
+                      <p className="font-bold text-slate-900 text-lg">₹{(item.product.price * item.qty).toFixed(2)}</p>
                     </div>
 
                     <p className="text-sm text-slate-500 mb-4">{item.product.category}</p>
@@ -250,7 +250,7 @@ export default function Cart() {
               <div className="space-y-4 mb-6 text-[15px]">
                 <div className="flex justify-between text-slate-600">
                   <span>Subtotal</span>
-                  <span className="font-medium text-slate-900">${cartTotal.toFixed(2)}</span>
+                  <span className="font-medium text-slate-900">₹{cartTotal.toFixed(2)}</span>
                 </div>
                 {giftWrapTotal > 0 && (
                   <div className="flex justify-between text-slate-600">
@@ -269,7 +269,7 @@ export default function Cart() {
                   {deliveryAmount === 0 ? (
                     <span className="font-bold text-emerald-600">FREE</span>
                   ) : (
-                    <span className="font-medium text-slate-900">${deliveryAmount.toFixed(2)}</span>
+                    <span className="font-medium text-slate-900">₹{deliveryAmount.toFixed(2)}</span>
                   )}
                 </div>
               </div>
@@ -302,7 +302,7 @@ export default function Cart() {
               <div className="border-t border-slate-100 pt-6">
                 <div className="flex justify-between items-end mb-8">
                   <span className="text-lg font-bold text-slate-900">Total</span>
-                  <span className="text-3xl font-bold text-slate-900">${grandTotal.toFixed(2)}</span>
+                  <span className="text-3xl font-bold text-slate-900">₹{grandTotal.toFixed(2)}</span>
                 </div>
 
                 <div className="space-y-3">

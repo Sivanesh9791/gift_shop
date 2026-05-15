@@ -402,7 +402,7 @@ export default function Products() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="font-bold text-gray-900 dark:text-white text-sm">
-                        ${product.price.toFixed(2)}
+                        ₹{product.price.toFixed(2)}
                       </div>
                       {product.compareAtPrice > 0 && (
                         <div className="text-xs text-gray-500 line-through">

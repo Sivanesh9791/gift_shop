@@ -121,7 +121,7 @@ export default function CartDrawer({ open, onClose }) {
                         <p className="text-sm font-semibold text-slate-700">
                           {amountToFreeShipping === 0 
                             ? <span className="text-emerald-600 flex items-center gap-1.5 font-bold"><Gift size={16}/> 🎉 You've unlocked free shipping!</span> 
-                            : `You're $${amountToFreeShipping.toFixed(2)} away from free shipping!`}
+                            : `You're ₹${amountToFreeShipping.toFixed(2)} away from free shipping!`}
                         </p>
                       </div>
                       <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
@@ -188,7 +188,7 @@ export default function CartDrawer({ open, onClose }) {
                                       <Plus size={12} />
                                     </button>
                                   </div>
-                                  <p className="font-bold text-slate-900 text-sm">${(item.product.price * item.qty).toFixed(2)}</p>
+                                  <p className="font-bold text-slate-900 text-sm">₹{(item.product.price * item.qty).toFixed(2)}</p>
                                 </div>
 
                                 <button onClick={() => setEditingItem(item)} className="text-[11px] font-semibold text-rose-500 hover:text-rose-700 mt-2 underline underline-offset-2">
@@ -210,7 +210,7 @@ export default function CartDrawer({ open, onClose }) {
                                     </div>
                                     <h5 className="font-medium text-slate-800 text-xs line-clamp-1 mb-1">{prod.name}</h5>
                                     <div className="flex items-center justify-between">
-                                      <span className="font-bold text-slate-900 text-sm">${prod.price}</span>
+                                      <span className="font-bold text-slate-900 text-sm">₹{prod.price}</span>
                                       <button onClick={() => handleAddSuggested(prod)} className="bg-slate-100 text-slate-700 hover:bg-rose-500 hover:text-white p-1.5 rounded-md transition-colors">
                                         <Plus size={14} />
                                       </button>
@@ -252,18 +252,18 @@ export default function CartDrawer({ open, onClose }) {
                         <div className="space-y-2 mb-4 text-sm">
                           <div className="flex justify-between text-slate-600">
                             <span>Subtotal</span>
-                            <span className="font-medium text-slate-900">${cartTotal.toFixed(2)}</span>
+                            <span className="font-medium text-slate-900">₹{cartTotal.toFixed(2)}</span>
                           </div>
                           {giftWrapTotal > 0 && (
                             <div className="flex justify-between text-slate-600">
                               <span>Gift Wrapping</span>
-                              <span className="font-medium text-slate-900">${giftWrapTotal.toFixed(2)}</span>
+                              <span className="font-medium text-slate-900">₹{giftWrapTotal.toFixed(2)}</span>
                             </div>
                           )}
                           {orderDiscount > 0 && (
                             <div className="flex justify-between text-emerald-600 font-medium">
                               <span>Discount {coupon ? `(${coupon})` : ''}</span>
-                              <span>-${orderDiscount.toFixed(2)}</span>
+                              <span>-₹{orderDiscount.toFixed(2)}</span>
                             </div>
                           )}
                           <div className="flex justify-between text-slate-600">
@@ -271,12 +271,12 @@ export default function CartDrawer({ open, onClose }) {
                             {deliveryAmount === 0 ? (
                               <span className="font-bold text-emerald-600">FREE</span>
                             ) : (
-                              <span className="font-medium text-slate-900">${deliveryAmount.toFixed(2)}</span>
+                              <span className="font-medium text-slate-900">₹{deliveryAmount.toFixed(2)}</span>
                             )}
                           </div>
                           <div className="border-t border-slate-100 pt-3 mt-3 flex justify-between items-end">
                             <span className="font-bold text-slate-900">Total</span>
-                            <span className="text-2xl font-bold text-slate-900">${grandTotal.toFixed(2)}</span>
+                            <span className="text-2xl font-bold text-slate-900">₹{grandTotal.toFixed(2)}</span>
                           </div>
                         </div>
 

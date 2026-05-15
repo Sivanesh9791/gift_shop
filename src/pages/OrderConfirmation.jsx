@@ -188,7 +188,7 @@ export default function OrderConfirmation() {
                 </div>
                 <div className="flex justify-between items-end mt-4 pt-4 border-t border-slate-200/60">
                   <span className="font-bold text-slate-700">Total Paid</span>
-                  <span className="text-2xl font-bold text-slate-900">${total.toFixed(2)}</span>
+                  <span className="text-2xl font-bold text-slate-900">₹{total.toFixed(2)}</span>
                 </div>
               </div>
             </div>

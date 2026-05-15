@@ -219,7 +219,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-slate-300">
           <div className="flex flex-col items-center gap-3">
             <Truck className="text-rose-400" size={32} />
-            <span className="font-medium text-sm">Free Delivery<br/>over $40</span>
+            <span className="font-medium text-sm">Free Delivery<br/>over ₹40</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Gift className="text-amber-400" size={32} />

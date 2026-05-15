@@ -134,12 +134,12 @@ function GridCard({ product }) {
 
           {/* Price row */}
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-xl font-bold text-slate-900">${product.price}</span>
+            <span className="text-xl font-bold text-slate-900">₹{product.price}</span>
             {product.isSale && product.compareAtPrice && (
               <>
-                <span className="text-sm text-slate-400 line-through">${product.compareAtPrice}</span>
+                <span className="text-sm text-slate-400 line-through">₹{product.compareAtPrice}</span>
                 <span className="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-0.5 rounded-full">
-                  Save ${savings}
+                  Save ₹{savings}
                 </span>
               </>
             )}
@@ -242,11 +242,11 @@ function ListCard({ product }) {
           <ReviewStars rating={product.rating} count={product.reviewCount} size={12} />
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-bold text-lg text-slate-900">${product.price}</span>
+            <span className="font-bold text-lg text-slate-900">₹{product.price}</span>
             {product.isSale && product.compareAtPrice && (
               <>
-                <span className="text-sm text-slate-400 line-through">${product.compareAtPrice}</span>
-                <span className="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-0.5 rounded-full">Save ${savings}</span>
+                <span className="text-sm text-slate-400 line-through">₹{product.compareAtPrice}</span>
+                <span className="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-0.5 rounded-full">Save ₹{savings}</span>
               </>
             )}
             {product.freeDelivery && (

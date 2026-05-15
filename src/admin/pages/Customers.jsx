@@ -223,7 +223,7 @@ function CustomerDetailModal({ customer, onClose }) {
                         <tr key={order.id} className="border-t border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-150">
                           <td className="px-4 py-3 font-mono text-xs text-rose-500 font-medium">{order.id}</td>
                           <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{(order.items || []).length} items</td>
-                          <td className="px-4 py-3 font-bold text-gray-900 dark:text-white">${(order.total || 0).toFixed(2)}</td>
+                          <td className="px-4 py-3 font-bold text-gray-900 dark:text-white">₹{(order.total || 0).toFixed(2)}</td>
                           <td className="px-4 py-3">
                             <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_BADGE[order.status] || ''}`}>
                               {STATUS_LABEL[order.status] || order.status}
@@ -474,9 +474,9 @@ export default function Customers() {
             <DollarSign size={22} className="text-green-600 dark:text-green-400" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">${totalRevenue.toFixed(2)}</p>
+            <p className="text-2xl font-bold text-gray-900 dark:text-white">₹{totalRevenue.toFixed(2)}</p>
             <p className="text-xs text-gray-500 dark:text-gray-400">Total Revenue</p>
-            <p className="text-xs text-green-500 font-medium mt-0.5">Avg ${avgPerCustomer.toFixed(2)} per customer</p>
+            <p className="text-xs text-green-500 font-medium mt-0.5">Avg ₹{avgPerCustomer.toFixed(2)} per customer</p>
           </div>
         </div>
 
@@ -614,12 +614,12 @@ export default function Customers() {
 
                       {/* Total spent */}
                       <td className="px-5 py-4">
-                        <p className="text-sm font-bold text-gray-900 dark:text-white">${customer.totalSpent.toFixed(2)}</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">₹{customer.totalSpent.toFixed(2)}</p>
                       </td>
 
                       {/* Avg order */}
                       <td className="px-5 py-4">
-                        <p className="text-sm text-gray-600 dark:text-gray-300">${customer.avgOrderValue.toFixed(2)}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">₹{customer.avgOrderValue.toFixed(2)}</p>
                       </td>
 
                       {/* Tier */}

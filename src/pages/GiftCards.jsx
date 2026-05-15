@@ -21,7 +21,7 @@ export default function GiftCards() {
 
   const handleAddToCart = () => {
     if (isCustom && (activeAmount < 5 || activeAmount > 500)) {
-      toast.error('Custom amount must be between $5 and $500');
+      toast.error('Custom amount must be between ₹5 and ₹500');
       return;
     }
     if (deliveryType === 'email' && (!recipientName || !recipientEmail)) {

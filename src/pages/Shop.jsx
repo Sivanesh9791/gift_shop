@@ -117,8 +117,8 @@ function DualRangeSlider({ min, max, value, onChange }) {
         />
       </div>
       <div className="flex justify-between mt-2 text-sm font-medium text-slate-600">
-        <span>${lo}</span>
-        <span>${hi === MAX_PRICE ? `${hi}+` : hi}</span>
+        <span>₹{lo}</span>
+        <span>₹{hi === MAX_PRICE ? `${hi}+` : hi}</span>
       </div>
     </div>
   );
@@ -350,7 +350,7 @@ export default function Shop() {
     ...selectedOccasions.map(v  => ({ key: `occ-${v}`, label: OCCASIONS.find(o=>o.value===v)?.label?.replace(/\s\S+$/, '') || v, rm: () => toggleArr(setSelectedOccasions, v) })),
     ...selectedCategories.map(v => ({ key: `cat-${v}`, label: CATEGORIES.find(c=>c.value===v)?.label || v, rm: () => toggleArr(setSelectedCategories, v) })),
     ...(recipient    ? [{ key:'rec',   label: RECIPIENTS.find(r=>r.value===recipient)?.label || recipient, rm: () => setRecipient('') }] : []),
-    ...(priceRange[0]>0||priceRange[1]<MAX_PRICE ? [{ key:'price', label:`$${priceRange[0]}–$${priceRange[1]}`, rm:()=>setPriceRange([0,MAX_PRICE]) }] : []),
+    ...(priceRange[0]>0||priceRange[1]<MAX_PRICE ? [{ key:'price', label:`₹${priceRange[0]}–₹${priceRange[1]}`, rm:()=>setPriceRange([0,MAX_PRICE]) }] : []),
     ...(onlySale         ? [{ key:'sale',  label:'On Sale',       rm:()=>setOnlySale(false)        }] : []),
     ...(onlyFreeDelivery ? [{ key:'free',  label:'Free Delivery', rm:()=>setOnlyFreeDelivery(false) }] : []),
     ...(onlyPersonalised ? [{ key:'pers',  label:'Personalised',  rm:()=>setOnlyPersonalised(false) }] : []),

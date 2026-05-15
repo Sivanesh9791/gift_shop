@@ -491,12 +491,12 @@ export default function Checkout() {
                         <div className="flex-1 min-w-0">
                           <p className="font-bold text-slate-900 text-sm line-clamp-1">{item.product.name}</p>
                           <div className="text-slate-500 text-xs mt-1 space-y-1">
-                            <p>Qty: {item.qty} × ${(item.product.price).toFixed(2)}</p>
+                            <p>Qty: {item.qty} × ₹{(item.product.price).toFixed(2)}</p>
                             {item.giftWrap && <p className="text-amber-600 font-medium">🎁 Wrap: {item.selectedWrapStyle} (+$3.99)</p>}
                             {item.personalisationText && <p>✍️ Custom: "{item.personalisationText}"</p>}
                           </div>
                         </div>
-                        <p className="font-bold text-slate-900 text-sm">${(item.product.price * item.qty).toFixed(2)}</p>
+                        <p className="font-bold text-slate-900 text-sm">₹{(item.product.price * item.qty).toFixed(2)}</p>
                       </div>
                     ))}
                   </div>
@@ -561,7 +561,7 @@ export default function Checkout() {
             <div className="space-y-4 mb-6 text-sm">
               <div className="flex justify-between text-slate-600">
                 <span>Items Subtotal</span>
-                <span className="font-medium text-slate-900">${cartTotal.toFixed(2)}</span>
+                <span className="font-medium text-slate-900">₹{cartTotal.toFixed(2)}</span>
               </div>
               {giftWrapTotal > 0 && (
                 <div className="flex justify-between text-slate-600">
@@ -581,7 +581,7 @@ export default function Checkout() {
               </div>
               <div className="flex justify-between items-end pt-2">
                 <span className="text-lg font-bold text-slate-900">Total</span>
-                <span className="text-3xl font-bold text-slate-900">${grandTotal.toFixed(2)}</span>
+                <span className="text-3xl font-bold text-slate-900">₹{grandTotal.toFixed(2)}</span>
               </div>
             </div>
 

@@ -106,7 +106,7 @@ export default function Dashboard() {
   // Top selling products
   const topProducts = products.filter((p) => p.isBestseller).slice(0, 5);
 
-  const formatPrice = (price) => `$${price.toFixed(2)}`;
+  const formatPrice = (price) => `₹${price.toFixed(2)}`;
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {

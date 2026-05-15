@@ -155,7 +155,7 @@ function OrderDetailModal({ order, onClose, updateOrderStatus }) {
                     <tr key={idx} className="border-t border-gray-100 dark:border-gray-700">
                       <td className="px-4 py-3 text-gray-900 dark:text-white font-medium">{item.productName}</td>
                       <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{item.qty}</td>
-                      <td className="px-4 py-3 text-gray-900 dark:text-white">${(item.price * item.qty).toFixed(2)}</td>
+                      <td className="px-4 py-3 text-gray-900 dark:text-white">₹{(item.price * item.qty).toFixed(2)}</td>
                       <td className="px-4 py-3">
                         {item.giftWrap ? <span className="text-xs bg-rose-100 text-rose-600 px-2 py-0.5 rounded-full">🎁 Yes</span> : <span className="text-gray-400 text-xs">—</span>}
                       </td>
@@ -175,24 +175,24 @@ function OrderDetailModal({ order, onClose, updateOrderStatus }) {
           <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 space-y-2">
             <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-3 tracking-wider">Order Summary</p>
             <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-              <span>Subtotal</span><span>${(order.subtotal || 0).toFixed(2)}</span>
+              <span>Subtotal</span><span>₹{(order.subtotal || 0).toFixed(2)}</span>
             </div>
             {(order.giftWrapTotal || 0) > 0 && (
               <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-                <span>Gift Wrapping</span><span>${order.giftWrapTotal.toFixed(2)}</span>
+                <span>Gift Wrapping</span><span>₹{order.giftWrapTotal.toFixed(2)}</span>
               </div>
             )}
             {(order.discount || 0) > 0 && (
               <div className="flex justify-between text-sm text-green-600">
-                <span>Discount</span><span>-${order.discount.toFixed(2)}</span>
+                <span>Discount</span><span>-₹{order.discount.toFixed(2)}</span>
               </div>
             )}
             <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
               <span>Delivery</span>
-              <span>{(order.deliveryCharge || 0) === 0 ? <span className="text-green-600">Free</span> : `$${order.deliveryCharge.toFixed(2)}`}</span>
+              <span>{(order.deliveryCharge || 0) === 0 ? <span className="text-green-600">Free</span> : `₹${order.deliveryCharge.toFixed(2)}`}</span>
             </div>
             <div className="border-t border-gray-200 dark:border-gray-600 pt-2 flex justify-between font-bold text-gray-900 dark:text-white text-base">
-              <span>Total</span><span>${(order.total || 0).toFixed(2)}</span>
+              <span>Total</span><span>₹{(order.total || 0).toFixed(2)}</span>
             </div>
           </div>
 
@@ -567,7 +567,7 @@ export default function Orders() {
 
                         {/* Total */}
                         <td className="px-5 py-4">
-                          <p className="text-sm font-bold text-gray-900 dark:text-white">${(order.total || 0).toFixed(2)}</p>
+                          <p className="text-sm font-bold text-gray-900 dark:text-white">₹{(order.total || 0).toFixed(2)}</p>
                           {(order.giftWrapTotal || 0) > 0 && (
                             <p className="text-xs text-gray-400 dark:text-gray-500">Incl. gift wrap</p>
                           )}

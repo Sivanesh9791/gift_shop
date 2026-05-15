@@ -87,9 +87,9 @@ export default function Wishlist() {
                   </Link>
                   
                   <div className="mt-3 flex items-baseline gap-2">
-                    <span className="font-bold text-slate-900">${product.price.toFixed(2)}</span>
+                    <span className="font-bold text-slate-900">₹{product.price.toFixed(2)}</span>
                     {product.isSale && product.compareAtPrice && (
-                      <span className="text-sm text-slate-400 line-through">${product.compareAtPrice.toFixed(2)}</span>
+                      <span className="text-sm text-slate-400 line-through">₹{product.compareAtPrice.toFixed(2)}</span>
                     )}
                   </div>
 
@@ -131,7 +131,7 @@ export default function Wishlist() {
                   <Link to={`/product/${product.slug}`} className="block font-bold text-slate-900 text-sm line-clamp-1 hover:text-rose-500 mb-1">
                     {product.name}
                   </Link>
-                  <p className="font-bold text-slate-600 text-sm">${product.price.toFixed(2)}</p>
+                  <p className="font-bold text-slate-600 text-sm">₹{product.price.toFixed(2)}</p>
                 </div>
               </div>
             ))}
