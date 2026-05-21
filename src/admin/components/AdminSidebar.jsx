@@ -35,16 +35,13 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
       <aside className="hidden lg:flex w-64 h-screen flex-col bg-white dark:bg-gray-800 shadow-md">
         {/* Logo Section */}
         <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
-          <span className="text-2xl">🪔</span>
+          <span className="text-2xl">🛍️</span>
           <div className="flex flex-col leading-none">
-            <span className="text-base font-black tracking-wide
-                             bg-gradient-to-r from-orange-400 to-pink-500
-                             bg-clip-text text-transparent">
-              IndianBliss
+            <span className="text-lg font-black tracking-wide bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
+              Gugamart
             </span>
-            <span className="text-xs font-bold tracking-widest
-                             text-amber-400 uppercase">
-              Giftzz Admin
+            <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+              Admin Panel
             </span>
           </div>
         </div>
@@ -106,16 +103,13 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
       >
         {/* Logo Section */}
         <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
-          <span className="text-2xl">🪔</span>
+          <span className="text-2xl">🛍️</span>
           <div className="flex flex-col leading-none">
-            <span className="text-base font-black tracking-wide
-                             bg-gradient-to-r from-orange-400 to-pink-500
-                             bg-clip-text text-transparent">
-              IndianBliss
+            <span className="text-lg font-black tracking-wide bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
+              Gugamart
             </span>
-            <span className="text-xs font-bold tracking-widest
-                             text-amber-400 uppercase">
-              Giftzz Admin
+            <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+              Admin Panel
             </span>
           </div>
         </div>

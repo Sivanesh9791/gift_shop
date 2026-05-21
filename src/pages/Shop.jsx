@@ -204,7 +204,7 @@ export default function Shop() {
   const [isLoading,          setIsLoading]           = useState(true);
 
   useEffect(() => {
-    document.title = "Shop Gifts | IndianBliss Giftzz";
+    document.title = "Shop Gifts | Gugamart";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
@@ -421,7 +421,7 @@ export default function Shop() {
   return (
     <div className="min-h-screen bg-slate-50">
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* ── Toolbar: results count LEFT | sort + view toggle RIGHT ── */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">

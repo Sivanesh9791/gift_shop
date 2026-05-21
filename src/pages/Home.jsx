@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Truck, Gift, MessageSquare, RefreshCw, ShieldCheck, Star } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
-import productsData from '../data/products'; // Assuming products.js exports an array by default
+import productsData from '../data/products';
 
 const occasions = [
   { label: 'Birthday', emoji: '🎂', value: 'birthday' },
@@ -42,9 +42,8 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    document.title = "IndianBliss Giftzz 🪔 — Celebrate Every Occasion";
-    
-    // Set target time to 24 hours from now on mount
+    document.title = "Gugamart 🛍️ — Personalised Gifts Chennai";
+
     const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;
 
     const interval = setInterval(() => {
@@ -58,7 +57,7 @@ export default function Home() {
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        
+
         setTimeLeft(
           `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
         );
@@ -72,21 +71,21 @@ export default function Home() {
   const newArrivals = productsData.filter(p => p.isNew).slice(0, 4);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full bg-gradient-to-r from-rose-100 to-amber-100 py-20 px-4 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
+      <section className="relative w-full bg-gradient-to-r from-rose-100 to-amber-100 py-20 px-4 sm:px-6 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden">
         <div className="absolute top-10 right-10 md:right-20 bg-white/80 backdrop-blur shadow-sm rounded-full px-5 py-2 animate-bounce cursor-default select-none hidden sm:flex items-center gap-2">
           <span className="text-xl">⭐</span>
           <span className="font-semibold text-slate-800">50,000+ Happy Customers</span>
         </div>
-        
+
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 max-w-3xl leading-tight">
           Find the Perfect Gift for Every Occasion
         </h1>
         <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-xl">
-          Handpicked gifts with free wrapping & personalisation to make every moment memorable.
+          Handpicked gifts with free wrapping &amp; personalisation to make every moment memorable.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Link to="/shop" className="bg-rose-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg shadow-rose-600/30 hover:bg-rose-700 hover:scale-105 transition-all text-center">
             Shop Now
@@ -98,13 +97,13 @@ export default function Home() {
       </section>
 
       {/* 2. OCCASIONS GRID */}
-      <section className="py-16 px-4 max-w-7xl mx-auto w-full">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Shop by Occasion</h2>
         </div>
         <div className="flex overflow-x-auto pb-4 md:grid md:grid-cols-5 md:grid-rows-2 gap-4 snap-x hide-scrollbar">
           {occasions.map((occ) => (
-            <Link 
+            <Link
               key={occ.value}
               to={`/shop?occasion=${occ.value}`}
               className="flex flex-col items-center p-6 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all min-w-[140px] md:min-w-0 snap-start border border-slate-100"
@@ -118,7 +117,7 @@ export default function Home() {
 
       {/* 3. FLASH SALE COUNTDOWN */}
       <section className="w-full bg-slate-900 text-white py-6">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
           <h3 className="text-xl md:text-2xl font-bold flex items-center gap-2">
             <span className="text-rose-500">⚡</span> Flash Sale ends in:
           </h3>
@@ -132,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* 4. BESTSELLER CAROUSEL */}
-      <section className="py-20 px-4 max-w-7xl mx-auto w-full">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="flex items-end justify-between mb-10">
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-2">Our Bestsellers</h2>
@@ -142,23 +141,23 @@ export default function Home() {
             Shop Bestsellers <ChevronRight size={20} />
           </Link>
         </div>
-        
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+
+        <div className="flex overflow-x-auto gap-6 pb-8 snap-x hide-scrollbar w-full">
           {bestsellers.map((product) => (
-            <div key={product.id} className="min-w-[280px] max-w-[280px] snap-start">
+            <div key={product.id} className="min-w-[280px] max-w-[280px] snap-start flex-shrink-0">
               <ProductCard product={product} />
             </div>
           ))}
         </div>
         <div className="mt-4 text-center md:hidden">
-            <Link to="/shop?bestseller=true" className="inline-flex items-center text-rose-600 font-semibold hover:text-rose-700 transition-colors">
-              Shop All Bestsellers <ChevronRight size={20} />
-            </Link>
+          <Link to="/shop?bestseller=true" className="inline-flex items-center text-rose-600 font-semibold hover:text-rose-700 transition-colors">
+            Shop All Bestsellers <ChevronRight size={20} />
+          </Link>
         </div>
       </section>
 
       {/* 5. GIFT FINDER CTA */}
-      <section className="w-full bg-indigo-50 py-24 px-4">
+      <section className="w-full bg-indigo-50 py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-indigo-600 font-bold tracking-wider uppercase text-sm mb-4 block">Magical Assistance</span>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Not sure what to get?</h2>
@@ -172,27 +171,27 @@ export default function Home() {
       </section>
 
       {/* 6. NEW ARRIVALS */}
-      <section className="py-20 px-4 max-w-7xl mx-auto w-full bg-slate-50 rounded-3xl my-10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full bg-slate-50 rounded-3xl my-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Fresh Arrivals</h2>
           <p className="text-slate-500">Discover our latest curated gifts</p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {newArrivals.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-            <Link to="/shop?new=true" className="inline-flex bg-white border border-slate-200 text-slate-800 font-medium py-3 px-8 rounded-full hover:bg-slate-50 transition-colors shadow-sm">
-              View All New Items
-            </Link>
+          <Link to="/shop?new=true" className="inline-flex bg-white border border-slate-200 text-slate-800 font-medium py-3 px-8 rounded-full hover:bg-slate-50 transition-colors shadow-sm">
+            View All New Items
+          </Link>
         </div>
       </section>
 
       {/* 7. TESTIMONIALS */}
-      <section className="py-20 px-4 max-w-7xl mx-auto w-full">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">What Our Customers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((review) => (
@@ -215,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* 8. TRUST BADGES ROW */}
-      <section className="w-full bg-slate-900 py-12 px-4 border-t border-slate-800">
+      <section className="w-full bg-slate-900 py-12 px-4 sm:px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-slate-300">
           <div className="flex flex-col items-center gap-3">
             <Truck className="text-rose-400" size={32} />
@@ -239,15 +238,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Required style to hide scrollbar but keep functionality */}
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
         .hide-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

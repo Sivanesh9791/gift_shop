@@ -9,7 +9,7 @@ export default function GiftCards() {
   const { addItem } = useCart();
   
   useEffect(() => {
-    document.title = "Gift Cards | IndianBliss Giftzz";
+    document.title = "Gift Cards | Gugamart";
   }, []);
   
   const [amount, setAmount] = useState(50);

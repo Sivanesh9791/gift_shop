@@ -12,22 +12,19 @@ export default function Footer() {
           {/* Col 1: Logo */}
           <div className="lg:col-span-3 space-y-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-3xl">🪔</span>
+                <span className="text-3xl">🛍️</span>
                 <div className="flex flex-col leading-none">
                   <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-xl font-black tracking-wide
-                               bg-gradient-to-r from-orange-400 to-pink-500
-                               bg-clip-text text-transparent">
-                    IndianBliss
+                    className="text-2xl font-black tracking-wide bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
+                    Gugamart
                   </span>
-                  <span className="text-xs font-bold tracking-widest
-                                   text-amber-400 uppercase">
-                    Giftzz ✨
+                  <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+                    ✨ Personalised Gifts
                   </span>
                 </div>
               </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Premium Indian gifts for every celebration. Handpicked festive collections, personalised hampers and same-day delivery across Chennai.
+            <p className="text-gray-400 text-sm leading-relaxed mt-2 max-w-xs">
+              Chennai's favourite personalised gift shop. Custom photo gifts, acrylic lamps, wooden plaques and same-day delivery across Chennai.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all text-gray-400"><Heart size={18} /></a>
@@ -94,7 +91,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-rose-400 flex-shrink-0">✉️</span>
-                  <a href="mailto:hello@indianblissgiftzz.com" className="hover:text-rose-400 transition-colors">hello@indianblissgiftzz.com</a>
+                  <a href="mailto:hello@gugamart.in" className="hover:text-rose-400 transition-colors">hello@gugamart.in</a>
                 </li>
               </ul>
             </div>
@@ -134,7 +131,7 @@ export default function Footer() {
             <div className="px-3 py-1 bg-black text-white rounded font-bold">Pay</div>
           </div>
           
-          <p>© {new Date().getFullYear()} IndianBliss Giftzz. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Gugamart. All rights reserved.</p>
           
           <div className="flex gap-6 font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --text: #08060d;
   --bg: #fff;
@@ -12,6 +16,7 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 @keyframes confettiFall {

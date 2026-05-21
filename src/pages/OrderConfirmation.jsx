@@ -56,7 +56,7 @@ export default function OrderConfirmation() {
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
   useEffect(() => {
-    document.title = "Order Confirmed! | IndianBliss Giftzz";
+    document.title = "Order Confirmed! | Gugamart";
   }, []);
 
   const shareText = encodeURIComponent(`Just sent a gift from IndianBliss Giftzz 🪔 Check it out!`);

@@ -11,7 +11,7 @@ export default function TrackOrder() {
 
   useEffect(() => {
     if (!isTracking) {
-      document.title = "Track Order | IndianBliss Giftzz";
+      document.title = "Track Order | Gugamart";
       return;
     }
     const timer = setInterval(() => {

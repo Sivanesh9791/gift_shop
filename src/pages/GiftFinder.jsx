@@ -217,7 +217,7 @@ export default function GiftFinder() {
 
   /* If URL has all params, show results directly */
   useEffect(() => {
-    document.title = "Gift Finder | IndianBliss Giftzz";
+    document.title = "Gift Finder | Gugamart";
     if (searchParams.get('recipient') && searchParams.get('budget')) {
       setShowResults(true);
     }

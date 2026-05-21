@@ -114,20 +114,17 @@ const AdminPinLock = () => {
       >
         {/* Logo & Header */}
         <div className="text-center mb-6">
-          <span className="text-5xl">🪔</span>
+          <span className="text-5xl">🛍️</span>
           <div className="mt-2">
             <span style={{fontFamily: 'Playfair Display, serif'}}
-              className="block text-2xl font-black tracking-wide
-                         bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600
-                         bg-clip-text text-transparent">
-              IndianBliss
+              className="block text-3xl font-black tracking-wide bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              Gugamart
             </span>
-            <span className="block text-sm font-bold tracking-widest
-                             text-amber-500 uppercase">
-              Giftzz ✨
+            <span className="block text-xs font-bold tracking-widest text-amber-500 uppercase mt-1">
+              ✨ Personalised Gifts ✨
             </span>
           </div>
-          <p className="text-gray-500 text-sm mt-2">Admin Panel</p>
+          <p className="text-gray-500 text-sm mt-2">Admin Panel — Enter PIN</p>
         </div>
 
         {/* PIN Display */}

@@ -65,7 +65,7 @@ export default function OccasionBanner() {
     else {
       config = {
         bg: 'from-orange-500 to-rose-500',
-        text: '🪔 Free gift wrapping on all orders | Use code GIFTWRAP',
+        text: '🛍️ Free gift wrapping on all orders | Use code GUGAWRAP',
         btnText: 'Shop Now',
         link: '/shop'
       };

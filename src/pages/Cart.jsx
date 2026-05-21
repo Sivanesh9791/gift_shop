@@ -22,7 +22,7 @@ export default function Cart() {
   const [couponInput, setCouponInput] = useState('');
 
   useEffect(() => {
-    document.title = "Your Cart | IndianBliss Giftzz";
+    document.title = "Your Cart | Gugamart";
   }, []);
 
   // Free shipping progress
