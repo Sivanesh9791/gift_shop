@@ -57,15 +57,22 @@ export default function Navbar() {
                 <Menu size={24} />
               </button>
               
-              <Link to="/" className="flex items-center gap-2">
-                <span className="text-3xl">🎁</span>
-                <span style={{fontFamily: 'Playfair Display, serif'}}
-                  className="text-2xl font-black tracking-widest
-                             bg-gradient-to-r from-rose-500 to-pink-600 
-                             bg-clip-text text-transparent
-                             uppercase">
-                  GIFTINY
-                </span>
+              <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+                <span className="text-3xl">🪔</span>
+                <div className="flex flex-col leading-none">
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-xl font-black tracking-wide
+                               bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600
+                               bg-clip-text text-transparent">
+                    IndianBliss
+                  </span>
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-sm font-bold tracking-widest
+                               bg-gradient-to-r from-pink-500 to-amber-500
+                               bg-clip-text text-transparent uppercase">
+                    Giftzz ✨
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -173,13 +180,23 @@ export default function Navbar() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-xl flex flex-col items-start overflow-y-auto animate-in slide-in-from-left duration-300">
             {/* Drawer Header */}
             <div className="flex items-center justify-between w-full p-4 border-b border-gray-100">
-              <span style={{fontFamily: 'Playfair Display, serif'}}
-                className="text-xl font-black tracking-widest
-                           bg-gradient-to-r from-rose-500 to-pink-600 
-                           bg-clip-text text-transparent
-                           uppercase">
-                GIFTINY 🎁
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🪔</span>
+                <div className="flex flex-col leading-none">
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-base font-black tracking-wide
+                               bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600
+                               bg-clip-text text-transparent">
+                    IndianBliss
+                  </span>
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-xs font-bold tracking-widest
+                               bg-gradient-to-r from-pink-500 to-amber-500
+                               bg-clip-text text-transparent uppercase">
+                    Giftzz ✨
+                  </span>
+                </div>
+              </div>
               <button 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 rounded-full transition-colors"
@@ -254,7 +271,7 @@ export default function Navbar() {
             {/* Footer / Contact (Optional) */}
             <div className="mt-auto w-full p-6 bg-gray-50 border-t border-gray-100 pb-10">
               <p className="text-sm text-gray-500 font-medium mb-2">Need help?</p>
-              <a href="mailto:support@giftiny.com" className="text-rose-600 font-medium hover:underline block">support@giftiny.com</a>
+              <a href="mailto:hello@indianblissgiftzz.com" className="text-rose-600 font-medium hover:underline block">hello@indianblissgiftzz.com</a>
             </div>
           </div>
         </div>

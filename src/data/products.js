@@ -9,10 +9,10 @@ const products = [
     price: 45,
     compareAtPrice: 60,
     images: [
-      "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1523694576729-dc99e9c0f9b4?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1487530811015-780e2b9a7498?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg"
     ],
     description: "A stunning arrangement of 24 premium red roses, hand-picked and elegantly wrapped. Perfect for anniversaries, birthdays, or just to say I love you.",
     shortDesc: "Custom wooden photo frame with your special memory",
@@ -43,10 +43,10 @@ const products = [
     price: 95,
     compareAtPrice: 120,
     images: [
-      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1606312619070-d48b6b2d3e3c?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png"
     ],
     description: "An indulgent collection of premium Belgian chocolates, truffles, and confectionery beautifully presented in a luxury gift hamper basket.",
     shortDesc: "ceramic mug with personalized name",
@@ -77,10 +77,10 @@ const products = [
     price: 38,
     compareAtPrice: 50,
     images: [
-      "https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1603905374670-cba9f9f1bcd1?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1601927670789-db6b1501e09a?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1608181831718-c9ca2e58e6c6?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg"
     ],
     description: "Set of 3 hand-poured soy wax candles in calming scents: Lavender & Vanilla, Rose & Oud, and Sandalwood & Cedar. Burns for 45+ hours each.",
     shortDesc: "Premium leather journal with your initials engraved",
@@ -111,10 +111,10 @@ const products = [
     price: 55,
     compareAtPrice: 70,
     images: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1573408301185-9519f94f7d84?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg",
+      "https://gugamart.in/storage/1586-300x300.jpg",
+      "https://gugamart.in/storage/ps-1-300x300.png",
+      "https://gugamart.in/storage/ps-300x300.png"
     ],
     description: "Beautiful sterling silver name necklace, personalised with any name or word up to 10 characters. Comes in a luxury gift box.",
     shortDesc: "Custom canvas print from your favorite photo",
@@ -145,10 +145,10 @@ const products = [
     price: 75,
     compareAtPrice: 95,
     images: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg"
     ],
     description: "A luxurious spa hamper including bath bombs, essential oils, face mask, body scrub and scented candle. The ultimate relaxation gift.",
     shortDesc: "Cozy fleece blanket with your favorite photos",
@@ -180,10 +180,10 @@ const products = [
     price: 125,
     compareAtPrice: 150,
     images: [
-      "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg",
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg"
     ],
     description: "A curated selection of fine wines, aged cheeses, artisan crackers and gourmet preserves beautifully presented in a wicker hamper basket.",
     shortDesc: "Premium assorted chocolate collection in elegant gift box",
@@ -214,10 +214,10 @@ const products = [
     price: 35,
     compareAtPrice: 45,
     images: [
-      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/ps-1-300x300.png",
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg"
     ],
     description: "A beautiful print showing the exact night sky from any location on any date. Perfect for anniversaries, birthdays, or the night you met.",
     shortDesc: "Complete spa kit with bath bombs, oils & skincare",
@@ -248,10 +248,10 @@ const products = [
     price: 85,
     compareAtPrice: 110,
     images: [
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1631390164765-a5e10bb43e15?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png",
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/1586-300x300.jpg"
     ],
     description: "Premium skincare collection featuring moisturiser, serum, eye cream and cleanser from top beauty brands. Beautifully gift-wrapped.",
     shortDesc: "Premium coffee blend with gourmet biscuits & treats",
@@ -282,10 +282,10 @@ const products = [
     price: 48,
     compareAtPrice: 65,
     images: [
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-300x300.png",
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg"
     ],
     description: "Handcrafted wooden jewellery box with velvet lining, personalised with a name or initials. Multiple compartments for rings, necklaces and bracelets.",
     shortDesc: "Premium wine & cheese selection with tasting guide",
@@ -317,10 +317,10 @@ const products = [
     price: 120,
     compareAtPrice: 150,
     images: [
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg",
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png"
     ],
     description: "A full day spa experience including aromatherapy massage, facial, and access to all wellness facilities. Valid at 50+ spa locations nationwide.",
     shortDesc: "Full spa day package - massage, facial & treatments",
@@ -351,10 +351,10 @@ const products = [
     price: 65,
     compareAtPrice: 80,
     images: [
-      "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png",
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg",
+      "https://gugamart.in/storage/ps-1-300x300.png"
     ],
     description: "A beautiful new baby hamper with soft toys, organic baby clothes, bath products and a personalised keepsake. The perfect welcome gift.",
     shortDesc: "3-hour culinary class with professional chef",
@@ -385,10 +385,10 @@ const products = [
     price: 42,
     compareAtPrice: 55,
     images: [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/1586-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/ps-300x300.png"
     ],
     description: "Create a stunning hardcover photo book with your favourite memories. Upload photos and we'll print and deliver a beautiful keepsake book.",
     shortDesc: "Thrilling adventure activity pass - your choice",
@@ -420,10 +420,10 @@ const products = [
     price: 52,
     compareAtPrice: 68,
     images: [
-      "https://images.unsplash.com/photo-1608181831718-c9ca2e58e6c6?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1602028915047-37269d1a73f7?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1585232351009-aa3b7d6a9f68?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png"
     ],
     description: "Premium ultrasonic aromatherapy diffuser with 8 essential oils including lavender, eucalyptus, and peppermint. Creates a calming atmosphere.",
     shortDesc: "Beautiful bouquet of dozen premium red roses",
@@ -454,10 +454,10 @@ const products = [
     price: 68,
     compareAtPrice: 85,
     images: [
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg"
     ],
     description: "Set of 2 pure mulberry silk pillowcases in ivory white. Reduces hair breakage and skin creases. Available in standard and king sizes.",
     shortDesc: "Set of 3 luxury scented soy candles",
@@ -488,10 +488,10 @@ const products = [
     price: 32,
     compareAtPrice: 42,
     images: [
-      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1471943311424-646960669fbc?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png",
+      "https://gugamart.in/storage/ps-1-300x300.png",
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png"
     ],
     description: "A curated selection of 20 premium loose-leaf teas from around the world, presented in a beautiful wooden box with a porcelain infuser.",
     shortDesc: "Elegant gold pendant necklace with crystal",
@@ -522,10 +522,10 @@ const products = [
     price: 79,
     compareAtPrice: 99,
     images: [
-      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg",
+      "https://gugamart.in/storage/1586-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/ps-300x300.png"
     ],
     description: "Portable waterproof bluetooth speaker with 360-degree sound, 20-hour battery life and built-in microphone. Perfect for outdoor adventures.",
     shortDesc: "Cuddly plush teddy bear in premium soft fabric",
@@ -556,10 +556,10 @@ const products = [
     price: 45,
     compareAtPrice: 60,
     images: [
-      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1611010344444-5f9e4d86a6f0?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1575908539614-ff89490f4a78?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png"
     ],
     description: "Genuine leather bifold wallet with RFID blocking. Personalised with initials or a short message. Slim design fits 8 cards and cash.",
     shortDesc: "Premium fountain & ballpoint pen gift set",
@@ -590,10 +590,10 @@ const products = [
     price: 150,
     compareAtPrice: 180,
     images: [
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg",
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg"
     ],
     description: "A hands-on cooking masterclass with a professional chef. Learn to cook 3 gourmet dishes, enjoy wine pairing and take home the recipes.",
     shortDesc: "Stylish round mirror with gold frame",
@@ -624,10 +624,10 @@ const products = [
     price: 39,
     compareAtPrice: 52,
     images: [
-      "https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png",
+      "https://gugamart.in/storage/ps-1-300x300.png",
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg"
     ],
     description: "Elegant crystal glass photo frame with laser-engraved personalised message. Holds a 6x4 inch photo. A timeless keepsake gift.",
     shortDesc: "Luxurious silk pillowcase set for better sleep",
@@ -658,10 +658,10 @@ const products = [
     price: 35,
     compareAtPrice: 45,
     images: [
-      "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1445052520430-b2310f3a8688?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png",
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg",
+      "https://gugamart.in/storage/1586-300x300.jpg",
+      "https://gugamart.in/storage/ps-300x300.png"
     ],
     description: "A charming collection of 5 hand-picked succulents in a rustic wooden gift box. Low maintenance and long-lasting — a living gift they'll love.",
     shortDesc: "12 handcrafted gourmet chocolate truffles",
@@ -692,10 +692,10 @@ const products = [
     price: 42,
     compareAtPrice: 55,
     images: [
-      "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg"
     ],
     description: "Premium bamboo cutting board laser-engraved with family name, monogram or custom message. A beautiful and practical housewarming gift.",
     shortDesc: "Portable waterproof wireless speaker",
@@ -726,10 +726,10 @@ const products = [
     price: 28,
     compareAtPrice: 38,
     images: [
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg",
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg"
     ],
     description: "A comprehensive art and craft set with 120 pieces including watercolours, brushes, coloured pencils, stickers and activity book. Ages 4-12.",
     shortDesc: "Stylish marble desk organizer",
@@ -760,10 +760,10 @@ const products = [
     price: 29,
     compareAtPrice: 39,
     images: [
-      "https://images.unsplash.com/photo-1591130901921-c9c5e541a2b5?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png",
+      "https://gugamart.in/storage/ps-1-300x300.png"
     ],
     description: "Set of 12 handmade bath bombs in rainbow colours with essential oils, shea butter and flower petals. Each one a unique fizzing experience.",
     shortDesc: "Aromatherapy kit with oils & candles",
@@ -794,10 +794,10 @@ const products = [
     price: 36,
     compareAtPrice: 48,
     images: [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png",
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg",
+      "https://gugamart.in/storage/1586-300x300.jpg"
     ],
     description: "Genuine leather-bound journal with 200 pages of acid-free paper, paired with a luxury rollerball pen. Perfect for writers, journalers and planners.",
     shortDesc: "Sterling silver bracelet with polish finish",
@@ -828,10 +828,10 @@ const products = [
     price: 89,
     compareAtPrice: 110,
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/ps-300x300.png",
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png",
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg"
     ],
     description: "A delightful afternoon tea experience for two at a luxury hotel. Enjoy finger sandwiches, freshly baked scones, pastries and unlimited tea.",
     shortDesc: "Complete organic 4-piece skincare set",
@@ -862,10 +862,10 @@ const products = [
     price: 24,
     compareAtPrice: 32,
     images: [
-      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/61ob53iuhtl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/wq-1-39.jpg",
+      "https://gugamart.in/storage/product-categories/group-84-300x300.png"
     ],
     description: "A personalised ceramic mug printed with a name, photo or message, paired with 6 handmade gourmet cookies in a gift box. A sweet personal gift.",
     shortDesc: "Classic 3-in-1 wooden board game set",
@@ -896,10 +896,10 @@ const products = [
     price: 110,
     compareAtPrice: 140,
     images: [
-      "https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg",
+      "https://gugamart.in/storage/81craolwepl-sx569-1-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/6-1-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-75-300x300.png"
     ],
     description: "Pure silk dressing gown in blush pink with deep pockets and a sash belt. Incredibly soft and luxurious — a gift she will treasure forever.",
     shortDesc: "Colorful summer flower bouquet in vase",
@@ -930,10 +930,10 @@ const products = [
     price: 95,
     compareAtPrice: 120,
     images: [
-      "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1510972527921-ce03766a1cf1?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/91h9ibhamwl-sx425-300x300.jpg",
+      "https://gugamart.in/storage/product-categories/group-90-300x300.png",
+      "https://gugamart.in/storage/ps-1-300x300.png",
+      "https://gugamart.in/storage/wq-1-36-300x300.jpg"
     ],
     description: "A premium whisky tasting experience with 5 miniature single malts from Scotland's finest distilleries, tasting notes and a crystal glass.",
     shortDesc: "Luxury leather watch storage box for 6 watches",
@@ -964,10 +964,10 @@ const products = [
     price: 65,
     compareAtPrice: 85,
     images: [
-      "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/1586-300x300.jpg",
+      "https://gugamart.in/storage/ps-300x300.png",
+      "https://gugamart.in/storage/ps-5-300x300.png",
+      "https://gugamart.in/storage/product-categories/group-88-300x300.png"
     ],
     description: "A beautifully illustrated custom family portrait in watercolour style. Send us a photo and our artists will create a one-of-a-kind artwork.",
     shortDesc: "Set of 3 quality hardcover notebooks",
@@ -998,10 +998,10 @@ const products = [
     price: 58,
     compareAtPrice: 75,
     images: [
-      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&fit=crop",
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80&fit=crop"
+      "https://gugamart.in/storage/whatsapp-image-2022-07-29-at-30727-pm-300x300.jpeg",
+      "https://gugamart.in/storage/product-categories/group-89-300x300.png",
+      "https://gugamart.in/storage/wq-1-39.jpg",
+      "https://gugamart.in/storage/71v1msccm2l-sy500-300x300.jpg"
     ],
     description: "A thoughtfully curated wellness box with a mindfulness journal, herbal teas, essential oil roller, sleep mask and affirmation cards.",
     shortDesc: "Custom engraved metal keychain",

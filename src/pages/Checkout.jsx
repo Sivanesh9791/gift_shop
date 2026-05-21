@@ -33,6 +33,7 @@ export default function Checkout() {
 
   // Cart redirects if empty
   useEffect(() => {
+    document.title = "Checkout | IndianBliss Giftzz";
     if (items.length === 0 && step === 1) {
       toast('Your cart is empty', { icon: '🛒' });
       navigate('/shop');
@@ -157,8 +158,8 @@ export default function Checkout() {
     <div className="bg-slate-50 min-h-screen pb-20">
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-pink-500">
-            GIFTINY 🎁
+          <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-600">
+            IndianBliss Giftzz 🪔
           </Link>
           <div className="flex items-center gap-2 text-sm font-medium">
             {steps.map((s, idx) => (

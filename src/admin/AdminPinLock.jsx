@@ -113,13 +113,21 @@ const AdminPinLock = () => {
         }`}
       >
         {/* Logo & Header */}
-        <div className="text-center mb-8">
-          <div className="text-5xl mb-3">🎁</div>
-          <span className="text-3xl font-black tracking-widest bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent uppercase">
-            GIFTINY
-          </span>
-          <h2 className="text-xl font-semibold text-gray-700 mt-2">Admin Panel</h2>
-          <p className="text-gray-500 text-sm mt-1">Enter your PIN to continue</p>
+        <div className="text-center mb-6">
+          <span className="text-5xl">🪔</span>
+          <div className="mt-2">
+            <span style={{fontFamily: 'Playfair Display, serif'}}
+              className="block text-2xl font-black tracking-wide
+                         bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600
+                         bg-clip-text text-transparent">
+              IndianBliss
+            </span>
+            <span className="block text-sm font-bold tracking-widest
+                             text-amber-500 uppercase">
+              Giftzz ✨
+            </span>
+          </div>
+          <p className="text-gray-500 text-sm mt-2">Admin Panel</p>
         </div>
 
         {/* PIN Display */}

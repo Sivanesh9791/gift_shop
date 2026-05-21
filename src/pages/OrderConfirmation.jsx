@@ -55,11 +55,15 @@ export default function OrderConfirmation() {
   dateStr.setDate(dateStr.getDate() + (deliveryMethod === 'sameday' ? 0 : deliveryMethod === 'express' ? 2 : 5));
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
-  const shareText = encodeURIComponent(`Just sent a gift from GIFTINY 🎁 Check it out!`);
-  const shareUrl = encodeURIComponent(`https://giftiny.shop`);
+  useEffect(() => {
+    document.title = "Order Confirmed! | IndianBliss Giftzz";
+  }, []);
+
+  const shareText = encodeURIComponent(`Just sent a gift from IndianBliss Giftzz 🪔 Check it out!`);
+  const shareUrl = encodeURIComponent(`https://indianblissgiftzz.com`);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://giftiny.shop`);
+    navigator.clipboard.writeText(`https://indianblissgiftzz.com`);
     setCopied(true);
     toast.success('Link copied to clipboard!');
     setTimeout(() => setCopied(false), 2000);

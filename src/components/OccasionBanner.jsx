@@ -20,25 +20,25 @@ export default function OccasionBanner() {
     if (month === 2 && day >= 1 && day <= 14) {
       config = {
         bg: 'from-pink-500 to-rose-500',
-        text: '💝 Valentine\'s Day Gifts — Show someone you care',
+        text: '💝 Valentine\'s Day Gifts — Celebrate Love Indian Style',
         btnText: 'Shop Valentine\'s Gifts',
         link: '/shop?occasion=valentines'
       };
     } 
-    // Oct 1-31: Halloween
+    // Oct 1-31: Diwali
     else if (month === 10) {
       config = {
-        bg: 'from-orange-500 to-purple-600',
-        text: '🎃 Spooky Gifts for Halloween',
-        btnText: 'Shop Halloween',
-        link: '/shop?occasion=halloween'
+        bg: 'from-orange-500 to-amber-500',
+        text: '🪔 Diwali Special Gifts — Light Up Someone\'s Day',
+        btnText: 'Shop Diwali Gifts',
+        link: '/shop?occasion=diwali'
       };
     }
     // Dec 1-25: Christmas
     else if (month === 12 && day <= 25) {
       config = {
         bg: 'from-red-600 to-emerald-600',
-        text: '🎄 Christmas Gifts — Free wrapping on all orders',
+        text: '🎄 Christmas & New Year Gifts — Spread the Joy',
         btnText: 'Shop Christmas Gifts',
         link: '/shop?occasion=christmas'
       };
@@ -47,7 +47,7 @@ export default function OccasionBanner() {
     else if (month === 5) {
       config = {
         bg: 'from-pink-400 to-purple-500',
-        text: '💐 Mother\'s Day Gifts — Make Mum feel special',
+        text: '💐 Mother\'s Day — Celebrate Amma with Love',
         btnText: 'Shop Mother\'s Day',
         link: '/shop?occasion=mothers-day'
       };
@@ -56,7 +56,7 @@ export default function OccasionBanner() {
     else if (month === 6 && day <= 21) {
       config = {
         bg: 'from-blue-500 to-indigo-600',
-        text: '👔 Father\'s Day Gifts — For the best dad',
+        text: '👔 Father\'s Day — Gift Your Hero',
         btnText: 'Shop Father\'s Day',
         link: '/shop?occasion=fathers-day'
       };
@@ -64,8 +64,8 @@ export default function OccasionBanner() {
     // Default
     else {
       config = {
-        bg: 'from-rose-500 to-amber-500',
-        text: '🎁 Free gift wrapping on orders over $40 | Use code GIFTWRAP',
+        bg: 'from-orange-500 to-rose-500',
+        text: '🪔 Free gift wrapping on all orders | Use code GIFTWRAP',
         btnText: 'Shop Now',
         link: '/shop'
       };

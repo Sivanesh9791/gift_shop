@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, HeartOff, ShoppingCart, Share2 } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -11,10 +11,14 @@ export default function Wishlist() {
   const { addItem } = useCart();
   const [copied, setCopied] = useState(false);
 
+  useEffect(() => {
+    document.title = "My Wishlist | IndianBliss Giftzz";
+  }, []);
+
   const handleShare = () => {
     // Generate mock UUID link
     const mockId = Math.random().toString(36).substring(2, 10);
-    navigator.clipboard.writeText(`https://giftiny.shop/wishlist?id=${mockId}`);
+    navigator.clipboard.writeText(`https://indianblissgiftzz.com/wishlist?id=${mockId}`);
     toast.success('Wishlist link copied!');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);

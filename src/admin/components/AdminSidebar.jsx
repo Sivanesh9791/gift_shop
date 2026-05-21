@@ -34,13 +34,19 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex w-64 h-screen flex-col bg-white dark:bg-gray-800 shadow-md">
         {/* Logo Section */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-xl font-black tracking-widest text-rose-500 uppercase">
-              GIFTINY
+        <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
+          <span className="text-2xl">🪔</span>
+          <div className="flex flex-col leading-none">
+            <span className="text-base font-black tracking-wide
+                             bg-gradient-to-r from-orange-400 to-pink-500
+                             bg-clip-text text-transparent">
+              IndianBliss
+            </span>
+            <span className="text-xs font-bold tracking-widest
+                             text-amber-400 uppercase">
+              Giftzz Admin
             </span>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400">Admin Panel</p>
         </div>
 
         {/* Navigation */}
@@ -99,13 +105,19 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         }`}
       >
         {/* Logo Section */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-xl font-black tracking-widest text-rose-500 uppercase">
-              GIFTINY
+        <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
+          <span className="text-2xl">🪔</span>
+          <div className="flex flex-col leading-none">
+            <span className="text-base font-black tracking-wide
+                             bg-gradient-to-r from-orange-400 to-pink-500
+                             bg-clip-text text-transparent">
+              IndianBliss
+            </span>
+            <span className="text-xs font-bold tracking-widest
+                             text-amber-400 uppercase">
+              Giftzz Admin
             </span>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400">Admin Panel</p>
         </div>
 
         {/* Navigation */}

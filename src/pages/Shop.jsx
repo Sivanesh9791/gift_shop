@@ -204,7 +204,7 @@ export default function Shop() {
   const [isLoading,          setIsLoading]           = useState(true);
 
   useEffect(() => {
-    document.title = "Shop Gifts | GIFTINY";
+    document.title = "Shop Gifts | IndianBliss Giftzz";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);

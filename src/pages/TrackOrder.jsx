@@ -10,7 +10,10 @@ export default function TrackOrder() {
   const [timeLeft, setTimeLeft] = useState({ hours: 48, minutes: 12, seconds: 59 });
 
   useEffect(() => {
-    if (!isTracking) return;
+    if (!isTracking) {
+      document.title = "Track Order | IndianBliss Giftzz";
+      return;
+    }
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         let { hours, minutes, seconds } = prev;

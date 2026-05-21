@@ -21,6 +21,10 @@ export default function Cart() {
 
   const [couponInput, setCouponInput] = useState('');
 
+  useEffect(() => {
+    document.title = "Your Cart | IndianBliss Giftzz";
+  }, []);
+
   // Free shipping progress
   const amountToFreeShipping = Math.max(0, SHIPPING_THRESHOLD - cartTotal);
   const progressPct = Math.min(100, (cartTotal / SHIPPING_THRESHOLD) * 100);
