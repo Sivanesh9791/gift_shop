@@ -12,16 +12,13 @@ import productsData from '../data/products';
    STATIC CONFIG
 ────────────────────────────────────────────────────────── */
 const OCCASIONS = [
-  { value: 'birthday',     label: 'Birthday 🎂' },
-  { value: 'anniversary',  label: 'Anniversary 💕' },
-  { value: 'wedding',      label: 'Wedding 💍' },
-  { value: 'newborn',      label: 'New Baby 👶' },
-  { value: 'housewarming', label: 'Housewarming 🏠' },
-  { value: 'valentine',    label: "Valentine's 💝" },
-  { value: 'christmas',    label: 'Christmas 🎄' },
-  { value: 'graduation',   label: 'Graduation 🎓' },
-  { value: 'thankyou',     label: 'Thank You 🙏' },
   { value: 'corporate',    label: 'Corporate 💼' },
+  { value: 'onboarding',   label: 'Employee Onboarding 🎉' },
+  { value: 'diwali',       label: 'Diwali Gifting 🪔' },
+  { value: 'newyear',      label: 'Christmas & New Year 🎄' },
+  { value: 'christmas',    label: 'Christmas 🎄' },
+  { value: 'promotional',  label: 'Promotional Event 📣' },
+  { value: 'rewards',      label: 'Rewards & Recognition 🏆' },
 ];
 
 const CATEGORIES = [
@@ -184,152 +181,110 @@ function FilterChip({ label, onRemove }) {
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const initOccasions  = useMemo(() => searchParams.get('occasion')  ? [searchParams.get('occasion')]  : [], []);
-  const initCategories = useMemo(() => searchParams.get('category')  ? [searchParams.get('category')]  : [], []);
-  const initRecipient  = useMemo(() => searchParams.get('recipient') || '', []);
-  const initSearch     = useMemo(() => searchParams.get('search')    || searchParams.get('q') || '', []);
-  const initFilter     = useMemo(() => searchParams.get('filter')    || '', []);
+  // STEP 1 — Read ALL URL params correctly:
+  const urlCategory = searchParams.get('category') || '';
+  const urlFilter = searchParams.get('filter') || '';
+  const urlSearch = searchParams.get('search') || '';
+  const urlOccasion = searchParams.get('occasion') || '';
 
-  const [search,             setSearch]             = useState(initSearch);
-  const [selectedOccasions,  setSelectedOccasions]  = useState(initOccasions);
-  const [selectedCategories, setSelectedCategories] = useState(initCategories);
-  const [recipient,          setRecipient]           = useState(initRecipient);
-  const [priceRange,         setPriceRange]          = useState([0, MAX_PRICE]);
-  const [onlySale,           setOnlySale]            = useState(initFilter === 'sale');
-  const [onlyFreeDelivery,   setOnlyFreeDelivery]    = useState(false);
-  const [onlyPersonalised,   setOnlyPersonalised]    = useState(false);
-  const [onlyInStock,        setOnlyInStock]         = useState(false);
-  const [onlyNew,            setOnlyNew]             = useState(initFilter === 'new');
-  const [onlyBestseller,     setOnlyBestseller]      = useState(initFilter === 'bestseller');
-  const [categoryFilter,     setCategoryFilter]      = useState(searchParams.get('category') || 'all');
-  const [minRating,          setMinRating]           = useState('');
-  const [sort,               setSort]                = useState('recommended');
-  const [viewMode,           setViewMode]            = useState('grid');
-  const [visibleCount,       setVisibleCount]        = useState(PAGE_SIZE);
-  const [sidebarOpen,        setSidebarOpen]         = useState(false);
-  const [isLoading,          setIsLoading]           = useState(true);
+  const [search,             setSearch]             = useState(urlSearch);
+  const [selectedOccasions,  setSelectedOccasions]  = useState(urlOccasion ? [urlOccasion] : []);
+  const [categoryFilter,     setCategoryFilter]     = useState(urlCategory || 'all');
+  const [recipient,          setRecipient]          = useState('');
+  const [priceRange,         setPriceRange]         = useState([0, MAX_PRICE]);
+  const [showSaleOnly,       setShowSaleOnly]       = useState(false);
+  const [showFreeDelivery,   setShowFreeDelivery]   = useState(false);
+  const [showPersonalised,   setShowPersonalised]   = useState(false);
+  const [showInStockOnly,    setShowInStockOnly]    = useState(false);
+  const [showNewOnly,        setShowNewOnly]        = useState(false);
+  const [showBestseller,     setShowBestseller]     = useState(false);
+  const [minRating,          setMinRating]          = useState('');
+  const [sort,               setSort]               = useState('recommended');
+  const [viewMode,           setViewMode]           = useState('grid');
+  const [visibleCount,       setVisibleCount]       = useState(PAGE_SIZE);
+  const [sidebarOpen,        setSidebarOpen]        = useState(false);
+  const [isLoading,          setIsLoading]          = useState(true);
 
   useEffect(() => {
-    document.title = "Shop Gifts | Gugamart";
+    document.title = "Shop Corporate Gifts | Green Roots";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 
-  const currentSearchParam = searchParams.get('search') || searchParams.get('q');
-  const currentFilterParam = searchParams.get('filter');
-
+  // STEP 2 — Sync URL params to local state on change:
   useEffect(() => {
-    if (currentSearchParam !== null && currentSearchParam !== search) {
-      setSearch(currentSearchParam);
-    }
-  }, [currentSearchParam]);
+    if (urlCategory) setCategoryFilter(urlCategory);
+    if (urlSearch) setSearch(urlSearch);
+  }, [urlCategory, urlSearch]);
 
-  /* ── 1. Clear sidebar filters when user clicks a new navbar link ── */
+  // STEP 6 — Reset sidebar filters when navbar category changes:
   useEffect(() => {
-    if (currentFilterParam) {
-      setSelectedCategories([]);
-      setRecipient('');
-      setOnlySale(false);
-      setOnlyPersonalised(false);
-    }
-    const cat = searchParams.get('category');
-    if (cat) {
-      setCategoryFilter(cat);
-    } else {
-      setCategoryFilter('all');
-    }
-  }, [currentFilterParam, searchParams.get('category')]);
-
-  /* ── Set up URL syncing ONLY for search to avoid overriding the navbar filter ── */
-  useEffect(() => {
-    const p = new URLSearchParams(searchParams);
-    if (search) {
-      p.set('search', search);
-    } else {
-      p.delete('search');
-    }
-    setSearchParams(p, { replace: true });
-  }, [search]);
+    setShowSaleOnly(false);
+    setShowNewOnly(false);
+    setShowBestseller(false);
+    setPriceRange([0, MAX_PRICE]);
+  }, [urlCategory]);
 
   const toggleArr = (setter, val) =>
     setter(prev => prev.includes(val) ? prev.filter(v => v !== val) : [...prev, val]);
 
-  /* ── FILTER ARCHITECTURE: Nav -> Search -> Occasion -> Sidebar ── */
+  // STEP 3 — Fix the filtering logic:
   const filtered = useMemo(() => {
     let list = [...productsData];
 
-    // Step 1: Nav filter param (Base filter)
-    const navFilter = searchParams.get('filter');
-    if (navFilter) {
-      if (navFilter === 'For Her') {
-        list = list.filter(p => p.recipient === 'her');
-      } else if (navFilter === 'For Him') {
-        list = list.filter(p => p.recipient === 'him');
-      } else if (navFilter === 'For Kids') {
-        list = list.filter(p => p.recipient === 'kids');
-      } else if (navFilter === 'Personalised') {
-        list = list.filter(p => p.isPersonalisable === true);
-      } else if (navFilter === 'Experiences') {
-        list = list.filter(p => p.category === 'experiences');
-      } else if (navFilter === 'Bundles & Hampers' || navFilter === 'Bundles+%26+Hampers') {
-        list = list.filter(p => p.category === 'hampers');
-      } else if (navFilter === 'Sale') {
-        list = list.filter(p => p.isSale === true);
-      }
+    // Apply URL category FIRST (highest priority):
+    if (urlCategory) {
+      list = list.filter(p => p.category === urlCategory);
     }
 
-    // New Category Filter Logic from URL or State
-    const catParam = searchParams.get('category');
-    if (catParam && catParam !== 'all') {
-      list = list.filter(p => p.category === catParam);
-    } else if (categoryFilter && categoryFilter !== 'all') {
-      list = list.filter(p => p.category === categoryFilter);
+    // Apply URL filter (sale, new, bestseller):
+    if (urlFilter === 'Sale') {
+      list = list.filter(p => p.isSale === true);
+    } else if (urlFilter === 'New') {
+      list = list.filter(p => p.isNew === true);
     }
 
-    // Step 2: Search param
-    if (search.trim()) {
-      const q = search.toLowerCase();
+    // Apply search:
+    if (urlSearch) {
       list = list.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        p.shortDesc?.toLowerCase().includes(q) ||
-        p.category?.toLowerCase().includes(q) ||
-        p.tags?.some(t => t.toLowerCase().includes(q))
+        p.name.toLowerCase().includes(urlSearch.toLowerCase()) ||
+        p.description?.toLowerCase().includes(urlSearch.toLowerCase()) ||
+        p.shortDesc?.toLowerCase().includes(urlSearch.toLowerCase()) ||
+        p.category?.toLowerCase().includes(urlSearch.toLowerCase()) ||
+        p.tags?.some(t => t.toLowerCase().includes(urlSearch.toLowerCase()))
       );
     }
 
-    // Step 3: Occasion param
-    const occasionParam = searchParams.get('occasion');
-    if (occasionParam) {
-      list = list.filter(p => p.occasions?.some(o => o.toLowerCase() === occasionParam.toLowerCase()));
+    // Apply sidebar category filter ONLY if no URL category:
+    if (!urlCategory && categoryFilter && categoryFilter !== 'all') {
+      list = list.filter(p => p.category === categoryFilter);
     }
-    // Also apply local occasion chips if present
-    if (selectedOccasions.length) {
+
+    // Occasions (urlOccasion + selectedOccasions)
+    if (selectedOccasions.length > 0) {
       list = list.filter(p =>
         p.occasions?.some(o => selectedOccasions.includes(o)) ||
         p.tags?.some(t => selectedOccasions.includes(t))
       );
     }
 
-    // Step 4: Sidebar filters (working WITHIN the navbar restrictions above)
-    if (selectedCategories.length > 0) {
-      list = list.filter(p => selectedCategories.includes(p.category));
-    }
-    
+    // Recipient
     if (recipient && recipient !== 'anyone') {
       list = list.filter(p => p.recipient === recipient);
     }
 
-    if (priceRange) {
-      list = list.filter(p => p.price >= priceRange[0] && p.price <= priceRange[1]);
-    }
-    
-    // Sidebar checkboxes
-    if (onlySale) list = list.filter(p => p.isSale === true);
-    if (onlyFreeDelivery) list = list.filter(p => p.freeDelivery === true);
-    if (onlyPersonalised) list = list.filter(p => p.isPersonalisable === true);
-    if (onlyInStock) list = list.filter(p => p.inStock === true);
-    if (onlyNew) list = list.filter(p => p.isNew === true);
-    if (onlyBestseller) list = list.filter(p => p.isBestseller === true);
+    // Apply price range:
+    list = list.filter(p =>
+      p.price >= priceRange[0] && p.price <= priceRange[1]
+    );
+
+    // Apply special toggles:
+    if (showSaleOnly) list = list.filter(p => p.isSale);
+    if (showNewOnly) list = list.filter(p => p.isNew);
+    if (showBestseller) list = list.filter(p => p.isBestseller);
+    if (showFreeDelivery) list = list.filter(p => p.freeDelivery);
+    if (showPersonalised) list = list.filter(p => p.isPersonalisable);
+    if (showInStockOnly) list = list.filter(p => p.inStock);
     if (minRating) list = list.filter(p => p.rating >= Number(minRating));
 
     // Sort order
@@ -342,60 +297,92 @@ export default function Shop() {
     }
     
     return list;
-  }, [searchParams, search, selectedOccasions, selectedCategories, recipient, priceRange,
-      onlySale, onlyFreeDelivery, onlyPersonalised, onlyInStock, onlyNew, onlyBestseller, minRating, sort]);
+  }, [urlCategory, urlFilter, urlSearch, categoryFilter, selectedOccasions, recipient, priceRange,
+      showSaleOnly, showNewOnly, showBestseller, showFreeDelivery, showPersonalised, showInStockOnly, minRating, sort]);
 
   useEffect(() => { setVisibleCount(PAGE_SIZE); }, [filtered]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
 
+  const setUrlParam = (key, val) => {
+    const p = new URLSearchParams(searchParams);
+    if (val) p.set(key, val);
+    else p.delete(key);
+    setSearchParams(p);
+  };
+
   const clearAll = useCallback(() => {
+    setSearchParams(new URLSearchParams());
+    setCategoryFilter('all');
     setSearch('');
     setSelectedOccasions([]);
-    setSelectedCategories([]);
     setRecipient('');
     setPriceRange([0, MAX_PRICE]);
-    setOnlySale(false);
-    setOnlyFreeDelivery(false);
-    setOnlyPersonalised(false);
-    setOnlyInStock(false);
-    setOnlyNew(false);
-    setOnlyBestseller(false);
+    setShowSaleOnly(false);
+    setShowFreeDelivery(false);
+    setShowPersonalised(false);
+    setShowInStockOnly(false);
+    setShowNewOnly(false);
+    setShowBestseller(false);
     setMinRating('');
     setSort('recommended');
-  }, []);
+  }, [setSearchParams]);
 
+  // STEP 4 — Fix active filter chips
   const chips = [
-    ...selectedOccasions.map(v  => ({ key: `occ-${v}`, label: OCCASIONS.find(o=>o.value===v)?.label?.replace(/\s\S+$/, '') || v, rm: () => toggleArr(setSelectedOccasions, v) })),
-    ...selectedCategories.map(v => ({ key: `cat-${v}`, label: CATEGORIES.find(c=>c.value===v)?.label || v, rm: () => toggleArr(setSelectedCategories, v) })),
-    ...(recipient    ? [{ key:'rec',   label: RECIPIENTS.find(r=>r.value===recipient)?.label || recipient, rm: () => setRecipient('') }] : []),
-    ...(priceRange[0]>0||priceRange[1]<MAX_PRICE ? [{ key:'price', label:`₹${priceRange[0]}–₹${priceRange[1]}`, rm:()=>setPriceRange([0,MAX_PRICE]) }] : []),
-    ...(onlySale         ? [{ key:'sale',  label:'On Sale',       rm:()=>setOnlySale(false)        }] : []),
-    ...(onlyFreeDelivery ? [{ key:'free',  label:'Free Delivery', rm:()=>setOnlyFreeDelivery(false) }] : []),
-    ...(onlyPersonalised ? [{ key:'pers',  label:'Personalised',  rm:()=>setOnlyPersonalised(false) }] : []),
-    ...(onlyInStock      ? [{ key:'stock', label:'In Stock',      rm:()=>setOnlyInStock(false)     }] : []),
-    ...(onlyNew          ? [{ key:'new',   label:'New Arrivals',  rm:()=>setOnlyNew(false)         }] : []),
-    ...(onlyBestseller   ? [{ key:'best',  label:'Bestsellers',   rm:()=>setOnlyBestseller(false)  }] : []),
-    ...(minRating        ? [{ key:'rating',label:`${minRating}★ & above`, rm:()=>setMinRating('')  }] : []),
+    ...(urlCategory ? [{ key: 'url-cat', label: CATEGORIES.find(c => c.value === urlCategory)?.label || urlCategory, rm: () => setUrlParam('category', null) }] : []),
+    ...(urlFilter ? [{ key: 'url-filter', label: urlFilter, rm: () => setUrlParam('filter', null) }] : []),
+    ...(urlSearch ? [{ key: 'url-search', label: `"${urlSearch}"`, rm: () => setUrlParam('search', null) }] : []),
+    ...(!urlCategory && categoryFilter !== 'all' ? [{ key: `cat-${categoryFilter}`, label: CATEGORIES.find(c => c.value === categoryFilter)?.label || categoryFilter, rm: () => setCategoryFilter('all') }] : []),
+    ...selectedOccasions.map(v => ({ key: `occ-${v}`, label: OCCASIONS.find(o => o.value === v)?.label?.replace(/\s\S+$/, '') || v, rm: () => { toggleArr(setSelectedOccasions, v); if (v === urlOccasion) setUrlParam('occasion', null); } })),
+    ...(recipient ? [{ key:'rec', label: RECIPIENTS.find(r => r.value === recipient)?.label || recipient, rm: () => setRecipient('') }] : []),
+    ...(priceRange[0] > 0 || priceRange[1] < MAX_PRICE ? [{ key:'price', label:`₹${priceRange[0]}–₹${priceRange[1]}`, rm: () => setPriceRange([0, MAX_PRICE]) }] : []),
+    ...(showSaleOnly ? [{ key:'sale', label:'On Sale', rm: () => setShowSaleOnly(false) }] : []),
+    ...(showFreeDelivery ? [{ key:'free', label:'Free Delivery', rm: () => setShowFreeDelivery(false) }] : []),
+    ...(showPersonalised ? [{ key:'pers', label:'Personalised', rm: () => setShowPersonalised(false) }] : []),
+    ...(showInStockOnly ? [{ key:'stock', label:'In Stock', rm: () => setShowInStockOnly(false) }] : []),
+    ...(showNewOnly ? [{ key:'new', label:'New Arrivals', rm: () => setShowNewOnly(false) }] : []),
+    ...(showBestseller ? [{ key:'best', label:'Bestsellers', rm: () => setShowBestseller(false) }] : []),
+    ...(minRating ? [{ key:'rating', label:`${minRating}★ & above`, rm: () => setMinRating('') }] : []),
   ];
 
   /* ── Sidebar content (shared: desktop + mobile drawer) ── */
   const SidebarContent = (
     <div className="flex flex-col">
+      <Section title="Category" defaultOpen={!urlCategory}>
+        <div className="flex flex-col gap-2">
+          {CATEGORIES.map(c => (
+            <RadioItem 
+              key={c.value} 
+              label={c.label} 
+              value={c.value}
+              current={urlCategory || categoryFilter}
+              onChange={(val) => {
+                setCategoryFilter(val);
+                setUrlParam('category', val);
+              }}
+            />
+          ))}
+          {!urlCategory && categoryFilter !== 'all' && (
+             <button 
+                onClick={() => setCategoryFilter('all')}
+                className="text-left text-sm text-rose-500 font-medium hover:text-rose-700 mt-1"
+             >
+               Clear Category
+             </button>
+          )}
+        </div>
+      </Section>
+
       <Section title="Occasion">
         {OCCASIONS.map(o => (
           <Checkbox key={o.value} label={o.label}
-            checked={selectedOccasions.includes(o.value)}
-            onChange={() => toggleArr(setSelectedOccasions, o.value)} />
-        ))}
-      </Section>
-
-      <Section title="Category">
-        {CATEGORIES.map(c => (
-          <Checkbox key={c.value} label={c.label}
-            checked={selectedCategories.includes(c.value)}
-            onChange={() => toggleArr(setSelectedCategories, c.value)} />
+            checked={selectedOccasions.includes(o.value) || urlOccasion === o.value}
+            onChange={() => {
+              if (urlOccasion === o.value) setUrlParam('occasion', null);
+              toggleArr(setSelectedOccasions, o.value);
+            }} />
         ))}
       </Section>
 
@@ -411,12 +398,12 @@ export default function Shop() {
       </Section>
 
       <Section title="Special">
-        <Checkbox label="On Sale"        checked={onlySale}         onChange={()=>setOnlySale(v=>!v)} />
-        <Checkbox label="Free Delivery"  checked={onlyFreeDelivery} onChange={()=>setOnlyFreeDelivery(v=>!v)} />
-        <Checkbox label="Personalised"   checked={onlyPersonalised} onChange={()=>setOnlyPersonalised(v=>!v)} />
-        <Checkbox label="In Stock Only"  checked={onlyInStock}      onChange={()=>setOnlyInStock(v=>!v)} />
-        <Checkbox label="New Arrivals"   checked={onlyNew}          onChange={()=>setOnlyNew(v=>!v)} />
-        <Checkbox label="Bestsellers"    checked={onlyBestseller}   onChange={()=>setOnlyBestseller(v=>!v)} />
+        <Checkbox label="On Sale"        checked={showSaleOnly}         onChange={()=>setShowSaleOnly(v=>!v)} />
+        <Checkbox label="Free Delivery"  checked={showFreeDelivery} onChange={()=>setShowFreeDelivery(v=>!v)} />
+        <Checkbox label="Personalised"   checked={showPersonalised} onChange={()=>setShowPersonalised(v=>!v)} />
+        <Checkbox label="In Stock Only"  checked={showInStockOnly}      onChange={()=>setShowInStockOnly(v=>!v)} />
+        <Checkbox label="New Arrivals"   checked={showNewOnly}          onChange={()=>setShowNewOnly(v=>!v)} />
+        <Checkbox label="Bestsellers"    checked={showBestseller}   onChange={()=>setShowBestseller(v=>!v)} />
       </Section>
 
       <Section title="Minimum Rating" defaultOpen={false}>
@@ -476,13 +463,10 @@ export default function Shop() {
           <div className="flex items-center gap-3">
             <div className="relative">
               <select
-                value={categoryFilter}
+                value={urlCategory || categoryFilter}
                 onChange={e => {
                   setCategoryFilter(e.target.value);
-                  const p = new URLSearchParams(searchParams);
-                  if (e.target.value !== 'all') p.set('category', e.target.value);
-                  else p.delete('category');
-                  setSearchParams(p);
+                  setUrlParam('category', e.target.value === 'all' ? null : e.target.value);
                 }}
                 className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-400 font-medium text-sm min-w-[175px] cursor-pointer"
               >

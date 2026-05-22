@@ -47,9 +47,7 @@ export default function OccasionBanner() {
     else if (month === 5) {
       config = {
         bg: 'from-pink-400 to-purple-500',
-        text: '💐 Mother\'s Day — Celebrate Amma with Love',
-        btnText: 'Shop Mother\'s Day',
-        link: '/shop?occasion=mothers-day'
+        text: '💐 Mother\'s Day — Celebrate Amma with Love'
       };
     }
     // Jun 1-21: Father's Day
@@ -64,8 +62,8 @@ export default function OccasionBanner() {
     // Default
     else {
       config = {
-        bg: 'from-orange-500 to-rose-500',
-        text: '🛍️ Free gift wrapping on all orders | Use code GUGAWRAP',
+        bg: 'from-green-500 to-teal-500',
+        text: '🌿 Free premium corporate branding on bulk orders | Use code GREENBULK',
         btnText: 'Shop Now',
         link: '/shop'
       };
@@ -86,12 +84,7 @@ export default function OccasionBanner() {
     <div className={`w-full py-3 text-white text-center text-sm font-semibold relative bg-gradient-to-r ${bannerConfig.bg}`}>
       <div className="max-w-6xl mx-auto px-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
         <span>{bannerConfig.text}</span>
-        <Link 
-          to={bannerConfig.link}
-          className="bg-white/20 hover:bg-white/30 text-white rounded-full px-4 py-1 flex items-center transition-colors text-xs uppercase tracking-widest whitespace-nowrap"
-        >
-          {bannerConfig.btnText}
-        </Link>
+      
       </div>
       <button 
         onClick={handleDismiss}

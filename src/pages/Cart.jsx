@@ -22,7 +22,7 @@ export default function Cart() {
   const [couponInput, setCouponInput] = useState('');
 
   useEffect(() => {
-    document.title = "Your Cart | Gugamart";
+    document.title = "Your Cart | Green Roots";
   }, []);
 
   // Free shipping progress

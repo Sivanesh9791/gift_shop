@@ -12,7 +12,7 @@ export default function Wishlist() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "My Wishlist | Gugamart";
+    document.title = "My Wishlist | Green Roots";
   }, []);
 
   const handleShare = () => {

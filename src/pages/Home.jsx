@@ -44,7 +44,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    document.title = "Gugamart 🛍️ — Premium Corporate Gifts India";
+    document.title = "Green Roots 🌿 — Premium Corporate Gifts India";
 
     const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;
 

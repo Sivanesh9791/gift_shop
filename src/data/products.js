@@ -1000,8 +1000,8 @@ const products = [
       "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&q=80&fit=crop",
       "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&q=80&fit=crop"
     ],
-    description: "Gugamart corporate gift voucher redeemable on any product. Available in ₹500, ₹1000, ₹2000 and ₹5000 denominations. Delivered digitally or as printed card.",
-    shortDesc: "Gugamart gift voucher redeemable on any product",
+    description: "Green Roots corporate gift voucher redeemable on any product. Available in ₹500, ₹1000, ₹2000 and ₹5000 denominations. Delivered digitally or as printed card.",
+    shortDesc: "Green Roots gift voucher redeemable on any product",
     tags: ["voucher","corporate","gift","flexible"],
     occasions: ["corporate","rewards","promotional"],
     recipient: "colleague",

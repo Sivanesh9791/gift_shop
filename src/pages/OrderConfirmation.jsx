@@ -56,14 +56,14 @@ export default function OrderConfirmation() {
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
   useEffect(() => {
-    document.title = "Order Confirmed! | Gugamart";
+    document.title = "Order Confirmed! | Green Roots";
   }, []);
 
-  const shareText = encodeURIComponent(`Just sent a gift from IndianBliss Giftzz 🪔 Check it out!`);
-  const shareUrl = encodeURIComponent(`https://indianblissgiftzz.com`);
+  const shareText = encodeURIComponent(`Just sent a gift from Green Roots 🌿 Check it out!`);
+  const shareUrl = encodeURIComponent(`https://thegreenroots.in`);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://indianblissgiftzz.com`);
+    navigator.clipboard.writeText(`https://thegreenroots.in`);
     setCopied(true);
     toast.success('Link copied to clipboard!');
     setTimeout(() => setCopied(false), 2000);

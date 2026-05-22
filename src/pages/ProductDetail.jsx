@@ -106,7 +106,7 @@ export default function ProductDetail() {
   const product = productsData.find(p => p.slug === slug);
 
   useEffect(() => {
-    if (product) document.title = `${product.name} | Gugamart`;
+    if (product) document.title = `${product.name} | Green Roots`;
   }, [product]);
 
   /* ── State ── */

@@ -57,16 +57,23 @@ export default function Navbar() {
                 <Menu size={24} />
               </button>
               
-              <Link to="/" className="flex items-center gap-1 flex-shrink-0">
-                <span className="text-3xl">🛍️</span>
+              <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+                <span className="text-3xl">🌿</span>
                 <div className="flex flex-col leading-none">
-                  <span style={{fontFamily: 'Playfair Display, serif', letterSpacing: '0.05em'}}
-                    className="text-2xl font-black bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
-                    Guga
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-2xl font-black tracking-wide
+                               bg-gradient-to-r from-green-600 
+                               via-emerald-500 to-teal-500
+                               bg-clip-text text-transparent">
+                    Green
                   </span>
-                  <span style={{fontFamily: 'Playfair Display, serif', letterSpacing: '0.15em'}}
-                    className="text-lg font-black bg-gradient-to-r from-pink-500 to-amber-500 bg-clip-text text-transparent uppercase -mt-1">
-                    mart ✨
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-lg font-black tracking-widest
+                               bg-gradient-to-r from-teal-500 
+                               to-green-400
+                               bg-clip-text text-transparent
+                               uppercase -mt-1">
+                    Roots 🌱
                   </span>
                 </div>
               </Link>
@@ -178,16 +185,23 @@ export default function Navbar() {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-xl flex flex-col items-start overflow-y-auto animate-in slide-in-from-left duration-300">
             {/* Drawer Header */}
             <div className="flex items-center justify-between w-full p-4 border-b border-gray-100">
-              <div className="flex items-center gap-1">
-                <span className="text-2xl">🛍️</span>
+              <div className="flex items-center gap-2">
+                <span className="text-3xl">🌿</span>
                 <div className="flex flex-col leading-none">
-                  <span style={{fontFamily: 'Playfair Display, serif', letterSpacing: '0.05em'}}
-                    className="text-base font-black bg-gradient-to-r from-orange-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
-                    Guga
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-xl font-black tracking-wide
+                               bg-gradient-to-r from-green-600 
+                               via-emerald-500 to-teal-500
+                               bg-clip-text text-transparent">
+                    Green
                   </span>
-                  <span style={{fontFamily: 'Playfair Display, serif', letterSpacing: '0.15em'}}
-                    className="text-xs font-black bg-gradient-to-r from-pink-500 to-amber-500 bg-clip-text text-transparent uppercase -mt-0.5">
-                    mart ✨
+                  <span style={{fontFamily: 'Playfair Display, serif'}}
+                    className="text-sm font-black tracking-widest
+                               bg-gradient-to-r from-teal-500 
+                               to-green-400
+                               bg-clip-text text-transparent
+                               uppercase -mt-1">
+                    Roots 🌱
                   </span>
                 </div>
               </div>
@@ -267,7 +281,7 @@ export default function Navbar() {
             {/* Footer / Contact (Optional) */}
             <div className="mt-auto w-full p-6 bg-gray-50 border-t border-gray-100 pb-10">
               <p className="text-sm text-gray-500 font-medium mb-2">Need help?</p>
-              <a href="mailto:hello@gugamart.in" className="text-rose-600 font-medium hover:underline block">hello@gugamart.in</a>
+              <a href="mailto:hello@thegreenroots.in" className="text-rose-600 font-medium hover:underline block">hello@thegreenroots.in</a>
             </div>
           </div>
         </div>

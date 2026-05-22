@@ -105,8 +105,8 @@ const generateMockCoupons = () => [
 ];
 
 const defaultStoreSettings = {
-  storeName: 'IndianBliss Giftzz',
-  storeEmail: 'hello@indianblissgiftzz.com',
+  storeName: 'Green Roots',
+  storeEmail: 'hello@thegreenroots.in',
   storePhone: '+91 7904952709',
   storeAddress: 'Shop 5, 137, 2nd Floor, Grand Mall, Velachery, Chennai',
   currency: 'INR',
