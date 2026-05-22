@@ -150,14 +150,16 @@ export default function Navbar() {
       <div className="hidden lg:block bg-white border-b border-gray-100 shadow-sm relative z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center justify-between py-3">
-            <li><Link to="/shop?filter=All" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">All</Link></li>
-            <li><Link to="/shop?filter=Occasions" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Occasions</Link></li>
-            <li><Link to="/shop?filter=For+Her" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">For Her</Link></li>
-            <li><Link to="/shop?filter=For+Him" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">For Him</Link></li>
-            <li><Link to="/shop?filter=For+Kids" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">For Kids</Link></li>
-            <li><Link to="/shop?filter=Bundles+%26+Hampers" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Bundles & Hampers</Link></li>
-            <li><Link to="/shop?filter=Personalised" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Personalised</Link></li>
-            <li><Link to="/shop?filter=Experiences" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Experiences</Link></li>
+            <li><Link to="/shop?category=welcomeKits" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Welcome Kits</Link></li>
+            <li><Link to="/shop?category=electronics" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Electronics</Link></li>
+            <li><Link to="/shop?category=bags" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Bags</Link></li>
+            <li><Link to="/shop?category=drinkware" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Drinkware</Link></li>
+            <li><Link to="/shop?category=booksAndPens" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Books & Pens</Link></li>
+            <li><Link to="/shop?category=tshirts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">T-Shirts</Link></li>
+            <li><Link to="/shop?category=deskOrganiser" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Desk Organiser</Link></li>
+            <li><Link to="/shop?category=festiveGifts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Festive Gifts</Link></li>
+            <li><Link to="/shop?category=rewardsRecognition" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Awards</Link></li>
+            <li><Link to="/shop?category=promotionalItems" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">Promotional</Link></li>
             <li><Link to="/shop?filter=Sale" className="text-sm tracking-wide transition-colors hover:text-rose-600 text-rose-500 font-semibold">Sale</Link></li>
           </ul>
         </div>
@@ -246,17 +248,19 @@ export default function Navbar() {
 
             {/* Mobile Categories */}
             <div className="w-full py-4">
-              <h3 className="px-5 mb-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Features & Categories</h3>
+              <h3 className="px-5 mb-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Shop by Category</h3>
               <ul className="flex flex-col">
-                <li><Link to="/shop?filter=All" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">All</span></Link></li>
-                <li><Link to="/shop?filter=Occasions" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">Occasions</span></Link></li>
-                <li><Link to="/shop?filter=For+Her" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">For Her</span></Link></li>
-                <li><Link to="/shop?filter=For+Him" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">For Him</span></Link></li>
-                <li><Link to="/shop?filter=For+Kids" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">For Kids</span></Link></li>
-                <li><Link to="/shop?filter=Bundles+%26+Hampers" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">Bundles & Hampers</span></Link></li>
-                <li><Link to="/shop?filter=Personalised" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">Personalised</span></Link></li>
-                <li><Link to="/shop?filter=Experiences" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">Experiences</span></Link></li>
-                <li><Link to="/shop?filter=Sale" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base text-rose-600 font-bold">Sale</span></Link></li>
+                <li><Link to="/shop?category=welcomeKits" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎁 Welcome Kits</span></Link></li>
+                <li><Link to="/shop?category=electronics" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">💻 Electronics</span></Link></li>
+                <li><Link to="/shop?category=bags" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">👜 Bags</span></Link></li>
+                <li><Link to="/shop?category=drinkware" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🥤 Drinkware</span></Link></li>
+                <li><Link to="/shop?category=booksAndPens" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">📚 Books & Pens</span></Link></li>
+                <li><Link to="/shop?category=tshirts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">👕 T-Shirts</span></Link></li>
+                <li><Link to="/shop?category=deskOrganiser" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🗂️ Desk Organiser</span></Link></li>
+                <li><Link to="/shop?category=festiveGifts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎊 Festive Gifts</span></Link></li>
+                <li><Link to="/shop?category=rewardsRecognition" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🏆 Awards</span></Link></li>
+                <li><Link to="/shop?category=promotionalItems" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">📢 Promotional</span></Link></li>
+                <li><Link to="/shop?filter=Sale" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base text-rose-600 font-bold">🏷️ Sale</span></Link></li>
               </ul>
             </div>
             

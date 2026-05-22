@@ -9,31 +9,30 @@ import toast from 'react-hot-toast';
    QUIZ CONFIG
 ────────────────────────────────────────────────────────── */
 const RECIPIENTS = [
-  { value: 'her',       emoji: '👩', label: 'For Her' },
-  { value: 'him',       emoji: '👨', label: 'For Him' },
-  { value: 'newborn',   emoji: '👶', label: 'For Baby' },
-  { value: 'couple',    emoji: '👫', label: 'For a Couple' },
-  { value: 'friend',    emoji: '🧑‍🤝‍🧑', label: 'For a Friend' },
-  { value: 'colleague', emoji: '💼', label: 'For a Colleague' },
+  { value: 'individual', emoji: '👤', label: 'Individual Employee' },
+  { value: 'team',       emoji: '👥', label: 'Team (10-50 people)' },
+  { value: 'bulk',       emoji: '🏢', label: 'Bulk (50+ people)' },
+  { value: 'clients',    emoji: '🤝', label: 'Clients & Partners' },
+  { value: 'executive',  emoji: '👔', label: 'Senior Executives' },
 ];
 
 const OCCASIONS = [
-  { value: 'birthday',     emoji: '🎂', label: 'Birthday' },
-  { value: 'anniversary',  emoji: '💕', label: 'Anniversary' },
-  { value: 'wedding',      emoji: '💍', label: 'Wedding' },
-  { value: 'housewarming', emoji: '🏠', label: 'Housewarming' },
-  { value: 'christmas',    emoji: '🎄', label: 'Christmas' },
-  { value: 'graduation',   emoji: '🎓', label: 'Graduation' },
-  { value: 'valentine',    emoji: '💝', label: "Valentine's" },
-  { value: 'thankyou',     emoji: '🙏', label: 'Thank You' },
-  { value: 'justbecause',  emoji: '🌟', label: 'Just Because' },
+  { value: 'onboarding', emoji: '🎉', label: 'Employee Onboarding' },
+  { value: 'rewards',    emoji: '🏆', label: 'Rewards & Recognition' },
+  { value: 'diwali',     emoji: '🪔', label: 'Diwali Gifting' },
+  { value: 'newyear',    emoji: '🎄', label: 'Christmas & New Year' },
+  { value: 'promotional',emoji: '📣', label: 'Promotional Event' },
+  { value: 'conference', emoji: '💼', label: 'Corporate Conference' },
+  { value: 'appreciation', emoji: '🌟', label: 'Client Appreciation' },
+  { value: 'justbecause', emoji: '👋', label: 'Just Because' },
 ];
 
 const BUDGETS = [
-  { value: '0-25',   emoji: '💚', label: 'Under $25',  min: 0,   max: 25  },
-  { value: '25-50',  emoji: '💛', label: '$25 – $50',  min: 25,  max: 50  },
-  { value: '50-100', emoji: '🧡', label: '$50 – $100', min: 50,  max: 100 },
-  { value: '100+',   emoji: '❤️', label: '$100+',      min: 100, max: 99999 },
+  { value: 'under-500', emoji: '🪙', label: 'Under ₹500',   min: 0,    max: 500  },
+  { value: '500-1000', emoji: '💵', label: '₹500 – ₹1000', min: 500,  max: 1000 },
+  { value: '1000-2500', emoji: '💳', label: '₹1000 – ₹2500',min: 1000, max: 2500 },
+  { value: '2500-5000', emoji: '💰', label: '₹2500 – ₹5000',min: 2500, max: 5000 },
+  { value: '5000+',    emoji: '💎', label: '₹5000+',       min: 5000, max: 99999 },
 ];
 
 const TOTAL_STEPS = 3;
@@ -386,7 +385,7 @@ export default function GiftFinder() {
 
         {/* Fun footer */}
         <p className="text-center text-white/50 text-xs mt-6">
-          🎁 Trusted by 50,000+ gift givers worldwide
+          🎁 Trusted by 10,000+ Corporate Clients
         </p>
       </div>
     </div>

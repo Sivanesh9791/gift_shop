@@ -25,16 +25,21 @@ const OCCASIONS = [
 ];
 
 const CATEGORIES = [
-  { value: 'personalised', label: 'Personalised' },
-  { value: 'hampers',      label: 'Hampers & Bundles' },
-  { value: 'experiences',  label: 'Experiences' },
-  { value: 'flowers',      label: 'Flowers' },
-  { value: 'candles',      label: 'Candles & Aroma' },
-  { value: 'jewellery',    label: 'Jewellery' },
-  { value: 'homeDecor',    label: 'Home Decor' },
-  { value: 'chocolates',   label: 'Chocolates' },
-  { value: 'toys',         label: 'Toys' },
-  { value: 'stationery',   label: 'Stationery' },
+  { value: 'welcomeKits', label: 'Welcome Kits' },
+  { value: 'electronics', label: 'Electronics' },
+  { value: 'bags', label: 'Bags' },
+  { value: 'drinkware', label: 'Drinkware' },
+  { value: 'booksAndPens', label: 'Books & Pens' },
+  { value: 'tshirts', label: 'T-Shirts & Apparel' },
+  { value: 'deskOrganiser', label: 'Desk Organiser' },
+  { value: 'festiveGifts', label: 'Festive Gifts' },
+  { value: 'organicGifts', label: 'Organic Gifts' },
+  { value: 'giftVouchers', label: 'Gift Vouchers' },
+  { value: 'marketingMaterials', label: 'Marketing Materials' },
+  { value: 'promotionalItems', label: 'Promotional Items' },
+  { value: 'rewardsRecognition', label: 'Rewards & Recognition' },
+  { value: 'tableTops', label: 'Table Tops & Decor' },
+  { value: 'personalisedCorporate', label: 'Personalised Corporate' },
 ];
 
 const RECIPIENTS = [
@@ -61,7 +66,7 @@ const SORT_OPTIONS = [
 ];
 
 const PAGE_SIZE = 12;
-const MAX_PRICE = 300;
+const MAX_PRICE = 10000;
 
 /* ──────────────────────────────────────────────────────────
    DUAL RANGE SLIDER
@@ -196,6 +201,7 @@ export default function Shop() {
   const [onlyInStock,        setOnlyInStock]         = useState(false);
   const [onlyNew,            setOnlyNew]             = useState(initFilter === 'new');
   const [onlyBestseller,     setOnlyBestseller]      = useState(initFilter === 'bestseller');
+  const [categoryFilter,     setCategoryFilter]      = useState(searchParams.get('category') || 'all');
   const [minRating,          setMinRating]           = useState('');
   const [sort,               setSort]                = useState('recommended');
   const [viewMode,           setViewMode]            = useState('grid');
@@ -226,7 +232,13 @@ export default function Shop() {
       setOnlySale(false);
       setOnlyPersonalised(false);
     }
-  }, [currentFilterParam]);
+    const cat = searchParams.get('category');
+    if (cat) {
+      setCategoryFilter(cat);
+    } else {
+      setCategoryFilter('all');
+    }
+  }, [currentFilterParam, searchParams.get('category')]);
 
   /* ── Set up URL syncing ONLY for search to avoid overriding the navbar filter ── */
   useEffect(() => {
@@ -264,6 +276,14 @@ export default function Shop() {
       } else if (navFilter === 'Sale') {
         list = list.filter(p => p.isSale === true);
       }
+    }
+
+    // New Category Filter Logic from URL or State
+    const catParam = searchParams.get('category');
+    if (catParam && catParam !== 'all') {
+      list = list.filter(p => p.category === catParam);
+    } else if (categoryFilter && categoryFilter !== 'all') {
+      list = list.filter(p => p.category === categoryFilter);
     }
 
     // Step 2: Search param
