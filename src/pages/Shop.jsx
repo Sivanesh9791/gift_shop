@@ -476,6 +476,24 @@ export default function Shop() {
           <div className="flex items-center gap-3">
             <div className="relative">
               <select
+                value={categoryFilter}
+                onChange={e => {
+                  setCategoryFilter(e.target.value);
+                  const p = new URLSearchParams(searchParams);
+                  if (e.target.value !== 'all') p.set('category', e.target.value);
+                  else p.delete('category');
+                  setSearchParams(p);
+                }}
+                className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-400 font-medium text-sm min-w-[175px] cursor-pointer"
+              >
+                <option value="all">All Categories</option>
+                {CATEGORIES.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
+              </select>
+              <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+            </div>
+
+            <div className="relative">
+              <select
                 value={sort}
                 onChange={e => setSort(e.target.value)}
                 className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-400 font-medium text-sm min-w-[175px] cursor-pointer"
