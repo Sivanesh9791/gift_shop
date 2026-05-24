@@ -12,22 +12,22 @@ export default function Footer() {
           {/* Col 1: Logo */}
           <div className="lg:col-span-3 space-y-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-3xl">🌿</span>
+                <span className="text-3xl">🎁</span>
                 <div className="flex flex-col leading-none">
                   <span style={{fontFamily: 'Playfair Display, serif'}}
                     className="text-2xl font-black tracking-wide
-                               bg-gradient-to-r from-green-400 
-                               to-teal-400
+                               bg-gradient-to-r from-purple-400
+                               to-pink-500
                                bg-clip-text text-transparent">
-                    Green Roots
+                    ClassyPik Gifts
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-emerald-400 uppercase">
-                    ✨ Corporate Gifts
+                  <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+                    ✨ Make Every Gift Unique
                   </span>
                 </div>
               </div>
             <p className="text-gray-400 text-sm leading-relaxed mt-2 max-w-xs">
-              Premium corporate gifting solutions. Curated welcome kits, electronics, and sustainable gifts for your employees and clients.
+              Chennai’s best personalised gift shop. Custom ceramic mugs, laser engraved items, personalised umbrellas, photo frames and return gifts for all occasions.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all text-gray-400"><Heart size={18} /></a>
@@ -84,17 +84,21 @@ export default function Footer() {
             <div>
               <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><MapPin size={16} className="text-rose-500"/> Contact Us</h4>
               <ul className="space-y-3 text-gray-400 text-sm">
-                <li className="flex items-start gap-2">
-                  <MapPin size={14} className="text-rose-400 mt-0.5 flex-shrink-0" />
-                  <span>Shop 5, 137, 2nd Floor, Grand Mall<br />Velachery, Chennai, Tamil Nadu<br />India</span>
-                </li>
                 <li className="flex items-center gap-2">
                   <span className="text-rose-400 flex-shrink-0">📞</span>
-                  <a href="tel:+917904952709" className="hover:text-rose-400 transition-colors">+91 7904952709</a>
+                  <a href="tel:7418666806" className="hover:text-rose-400 transition-colors">7418666806</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-rose-400 flex-shrink-0">✉️</span>
-                  <a href="mailto:hello@thegreenroots.in" className="hover:text-rose-400 transition-colors">hello@thegreenroots.in</a>
+                  <a href="mailto:info@classypik.in" className="hover:text-rose-400 transition-colors">info@classypik.in</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-rose-400 flex-shrink-0">🌐</span>
+                  <a href="https://www.classypik.in" className="hover:text-rose-400 transition-colors">www.classypik.in</a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin size={14} className="text-rose-400 mt-0.5 flex-shrink-0" />
+                  <span>Chennai, Tamil Nadu, India</span>
                 </li>
               </ul>
             </div>
@@ -134,7 +138,7 @@ export default function Footer() {
             <div className="px-3 py-1 bg-black text-white rounded font-bold">Pay</div>
           </div>
           
-          <p>© {new Date().getFullYear()} Green Roots. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ClassyPik Gifts. All rights reserved.</p>
           
           <div className="flex gap-6 font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

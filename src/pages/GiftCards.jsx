@@ -9,7 +9,7 @@ export default function GiftCards() {
   const { addItem } = useCart();
   
   useEffect(() => {
-    document.title = "Gift Cards | Green Roots";
+    document.title = "Gift Cards | ClassyPik Gifts";
   }, []);
   
   const [amount, setAmount] = useState(50);

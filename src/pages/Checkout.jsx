@@ -33,7 +33,7 @@ export default function Checkout() {
 
   // Cart redirects if empty
   useEffect(() => {
-    document.title = "Checkout | Green Roots";
+    document.title = "Checkout | ClassyPik Gifts";
     if (items.length === 0 && step === 1) {
       toast('Your cart is empty', { icon: '🛒' });
       navigate('/shop');

@@ -4,7 +4,7 @@ import { X, Trash2, Minus, Plus, ShoppingBag, Gift, ArrowRight } from 'lucide-re
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useCart } from '../context/CartContext';
-import productsData from '../data/products';
+import { products as productsData } from '../data/products';
 import GiftWrapModal from './GiftWrapModal';
 
 const SHIPPING_THRESHOLD = 40;

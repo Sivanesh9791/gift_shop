@@ -4,7 +4,7 @@ import { Heart, HeartOff, ShoppingCart, Share2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useWishlist } from '../context/WishlistContext';
 import { useCart } from '../context/CartContext';
-import products from '../data/products';
+import { products } from '../data/products';
 
 export default function Wishlist() {
   const { wishlistItems, toggleWishlist, wishlistCount } = useWishlist();
@@ -12,7 +12,7 @@ export default function Wishlist() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "My Wishlist | Green Roots";
+    document.title = "My Wishlist | ClassyPik Gifts";
   }, []);
 
   const handleShare = () => {

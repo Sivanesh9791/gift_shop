@@ -62,8 +62,8 @@ export default function OccasionBanner() {
     // Default
     else {
       config = {
-        bg: 'from-green-500 to-teal-500',
-        text: '🌿 Free premium corporate branding on bulk orders | Use code GREENBULK',
+        bg: 'from-purple-500 to-pink-500',
+        text: '🎁 Free personalisation on orders over ₹500 | Use code CLASSYPIK',
         btnText: 'Shop Now',
         link: '/shop'
       };

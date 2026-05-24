@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useAdmin } from '../context/AdminContext';
-import products from '../../data/products';
+import { products } from '../../data/products';
 import {
   DollarSign,
   ShoppingCart,

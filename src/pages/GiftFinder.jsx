@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, RotateCcw, Share2, Check, Gift } from 'lucide-react';
-import productsData from '../data/products';
+import { products as productsData } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import toast from 'react-hot-toast';
 
@@ -9,30 +9,33 @@ import toast from 'react-hot-toast';
    QUIZ CONFIG
 ────────────────────────────────────────────────────────── */
 const RECIPIENTS = [
-  { value: 'individual', emoji: '👤', label: 'Individual Employee' },
-  { value: 'team',       emoji: '👥', label: 'Team (10-50 people)' },
-  { value: 'bulk',       emoji: '🏢', label: 'Bulk (50+ people)' },
-  { value: 'clients',    emoji: '🤝', label: 'Clients & Partners' },
-  { value: 'executive',  emoji: '👔', label: 'Senior Executives' },
+  { value: 'her',       emoji: '👩', label: 'For Her' },
+  { value: 'him',       emoji: '👨', label: 'For Him' },
+  { value: 'baby',      emoji: '👶', label: 'For Baby' },
+  { value: 'couple',    emoji: '👫', label: 'For a Couple' },
+  { value: 'kids',      emoji: '🧒', label: 'For Kids' },
+  { value: 'colleague', emoji: '💼', label: 'For Colleague' },
 ];
 
 const OCCASIONS = [
-  { value: 'onboarding', emoji: '🎉', label: 'Employee Onboarding' },
-  { value: 'rewards',    emoji: '🏆', label: 'Rewards & Recognition' },
-  { value: 'diwali',     emoji: '🪔', label: 'Diwali Gifting' },
-  { value: 'newyear',    emoji: '🎄', label: 'Christmas & New Year' },
-  { value: 'promotional',emoji: '📣', label: 'Promotional Event' },
-  { value: 'conference', emoji: '💼', label: 'Corporate Conference' },
-  { value: 'appreciation', emoji: '🌟', label: 'Client Appreciation' },
-  { value: 'justbecause', emoji: '👋', label: 'Just Because' },
+  { value: 'birthday',    emoji: '🎂', label: 'Birthday' },
+  { value: 'anniversary', emoji: '💕', label: 'Anniversary' },
+  { value: 'valentine',   emoji: '💝', label: "Valentine's Day" },
+  { value: 'wedding',     emoji: '💍', label: 'Wedding' },
+  { value: 'newborn',     emoji: '👶', label: 'New Born' },
+  { value: 'graduation',  emoji: '🎓', label: 'Graduation' },
+  { value: 'housewarming',emoji: '🏠', label: 'Housewarming' },
+  { value: 'diwali',      emoji: '🪔', label: 'Diwali' },
+  { value: 'corporate',   emoji: '💼', label: 'Corporate Event' },
+  { value: 'return',      emoji: '🎁', label: 'Return Gifts' },
 ];
 
 const BUDGETS = [
-  { value: 'under-500', emoji: '🪙', label: 'Under ₹500',   min: 0,    max: 500  },
-  { value: '500-1000', emoji: '💵', label: '₹500 – ₹1000', min: 500,  max: 1000 },
-  { value: '1000-2500', emoji: '💳', label: '₹1000 – ₹2500',min: 1000, max: 2500 },
-  { value: '2500-5000', emoji: '💰', label: '₹2500 – ₹5000',min: 2500, max: 5000 },
-  { value: '5000+',    emoji: '💎', label: '₹5000+',       min: 5000, max: 99999 },
+  { value: 'under-200',  emoji: '🪙', label: 'Under ₹200',      min: 0,    max: 200  },
+  { value: '200-500',    emoji: '💵', label: '₹200 – ₹500',    min: 200,  max: 500  },
+  { value: '500-1000',   emoji: '💳', label: '₹500 – ₹1000',   min: 500,  max: 1000 },
+  { value: '1000-2500',  emoji: '💰', label: '₹1000 – ₹2500',  min: 1000, max: 2500 },
+  { value: '2500+',      emoji: '💎', label: '₹2500+',          min: 2500, max: 99999 },
 ];
 
 const TOTAL_STEPS = 3;
@@ -216,7 +219,7 @@ export default function GiftFinder() {
 
   /* If URL has all params, show results directly */
   useEffect(() => {
-    document.title = "Gift Finder | Green Roots";
+    document.title = "Gift Finder | ClassyPik Gifts";
     if (searchParams.get('recipient') && searchParams.get('budget')) {
       setShowResults(true);
     }

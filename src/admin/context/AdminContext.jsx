@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import productsData from '../../data/products';
+import { products as productsData } from '../../data/products';
 
 const AdminContext = createContext();
 
@@ -105,10 +105,11 @@ const generateMockCoupons = () => [
 ];
 
 const defaultStoreSettings = {
-  storeName: 'Green Roots',
-  storeEmail: 'hello@thegreenroots.in',
-  storePhone: '+91 7904952709',
-  storeAddress: 'Shop 5, 137, 2nd Floor, Grand Mall, Velachery, Chennai',
+  storeName: 'ClassyPik Gifts',
+  storeEmail: 'info@classypik.in',
+  storePhone: '7418666806',
+  storeAddress: 'Chennai, Tamil Nadu, India',
+  storeWebsite: 'www.classypik.in',
   currency: 'INR',
   freeShippingThreshold: 40,
   standardDeliveryCharge: 4.99,

@@ -114,17 +114,19 @@ const AdminPinLock = () => {
       >
         {/* Logo & Header */}
         <div className="text-center mb-6">
-          <span className="text-5xl">🌿</span>
+          <span className="text-5xl">🎁</span>
           <div className="mt-2">
             <span style={{fontFamily: 'Playfair Display, serif'}}
               className="block text-3xl font-black tracking-wide
-                         bg-gradient-to-r from-green-600 
-                         via-emerald-500 to-teal-500
+                         bg-gradient-to-r from-purple-600
+                         via-pink-500 to-rose-500
                          bg-clip-text text-transparent">
-              Green Roots
+              ClassyPik Gifts
             </span>
-            <span className="block text-xs font-bold tracking-widest text-emerald-500 uppercase mt-1">
-              ✨ Corporate Gifts ✨
+            <span className="block text-xs font-bold
+                             tracking-widest text-amber-500
+                             uppercase mt-1">
+              ✨ Make Every Gift Unique ✨
             </span>
           </div>
           <p className="text-gray-500 text-sm mt-2">Admin Panel — Enter PIN</p>

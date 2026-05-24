@@ -6,7 +6,7 @@ import {
   ChevronRight, ChevronDown, Star, Truck, CheckCircle,
   Gift, Heart, ShoppingCart, Pencil, Minus, Plus, ArrowLeft
 } from 'lucide-react';
-import productsData from '../data/products';
+import { products as productsData } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import ProductCard from '../components/ProductCard';
@@ -106,7 +106,7 @@ export default function ProductDetail() {
   const product = productsData.find(p => p.slug === slug);
 
   useEffect(() => {
-    if (product) document.title = `${product.name} | Green Roots`;
+    if (product) document.title = `${product.name} | ClassyPik Gifts`;
   }, [product]);
 
   /* ── State ── */

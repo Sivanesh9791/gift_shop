@@ -56,7 +56,7 @@ export default function OrderConfirmation() {
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
   useEffect(() => {
-    document.title = "Order Confirmed! | Green Roots";
+    document.title = "Order Confirmed! | ClassyPik Gifts";
   }, []);
 
   const shareText = encodeURIComponent(`Just sent a gift from Green Roots 🌿 Check it out!`);

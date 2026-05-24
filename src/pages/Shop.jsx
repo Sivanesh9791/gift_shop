@@ -6,37 +6,33 @@ import {
 } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import SkeletonCard from '../components/SkeletonCard';
-import productsData from '../data/products';
+import { products as productsData } from '../data/products';
 
 /* ──────────────────────────────────────────────────────────
    STATIC CONFIG
 ────────────────────────────────────────────────────────── */
 const OCCASIONS = [
-  { value: 'corporate',    label: 'Corporate 💼' },
-  { value: 'onboarding',   label: 'Employee Onboarding 🎉' },
-  { value: 'diwali',       label: 'Diwali Gifting 🪔' },
-  { value: 'newyear',      label: 'Christmas & New Year 🎄' },
-  { value: 'christmas',    label: 'Christmas 🎄' },
-  { value: 'promotional',  label: 'Promotional Event 📣' },
-  { value: 'rewards',      label: 'Rewards & Recognition 🏆' },
+  { value: 'birthday',     label: 'Birthday' },
+  { value: 'anniversary',  label: 'Anniversary' },
+  { value: 'valentine',    label: 'Valentine' },
+  { value: 'wedding',      label: 'Wedding' },
+  { value: 'corporate',    label: 'Corporate' },
+  { value: 'return',       label: 'Return' },
+  { value: 'graduation',   label: 'Graduation' },
+  { value: 'housewarming', label: 'Housewarming' },
+  { value: 'diwali',       label: 'Diwali' },
+  { value: 'newborn',      label: 'Newborn' },
 ];
 
 const CATEGORIES = [
-  { value: 'welcomeKits', label: 'Welcome Kits' },
-  { value: 'electronics', label: 'Electronics' },
-  { value: 'bags', label: 'Bags' },
-  { value: 'drinkware', label: 'Drinkware' },
-  { value: 'booksAndPens', label: 'Books & Pens' },
-  { value: 'tshirts', label: 'T-Shirts & Apparel' },
-  { value: 'deskOrganiser', label: 'Desk Organiser' },
-  { value: 'festiveGifts', label: 'Festive Gifts' },
-  { value: 'organicGifts', label: 'Organic Gifts' },
-  { value: 'giftVouchers', label: 'Gift Vouchers' },
-  { value: 'marketingMaterials', label: 'Marketing Materials' },
-  { value: 'promotionalItems', label: 'Promotional Items' },
-  { value: 'rewardsRecognition', label: 'Rewards & Recognition' },
-  { value: 'tableTops', label: 'Table Tops & Decor' },
-  { value: 'personalisedCorporate', label: 'Personalised Corporate' },
+  { value: 'ceramicMugs', label: '🖨️ Ceramic Mugs' },
+  { value: 'umbrellas', label: '☂️ Umbrellas' },
+  { value: 'laserEngraved', label: '🪵 Laser Engraved Items' },
+  { value: 'photoFrames', label: '🖼️ Photo Frames & Plaques' },
+  { value: 'returnGifts', label: '🎁 Return Gifts' },
+  { value: 'birthdayGifts', label: '🎂 Birthday Gifts' },
+  { value: 'corporateGifts', label: '💼 Corporate Gifts' },
+  { value: 'customMerchandise', label: '🪄 Custom Merchandise' },
 ];
 
 const RECIPIENTS = [
@@ -63,7 +59,7 @@ const SORT_OPTIONS = [
 ];
 
 const PAGE_SIZE = 12;
-const MAX_PRICE = 10000;
+const MAX_PRICE = 5000;
 
 /* ──────────────────────────────────────────────────────────
    DUAL RANGE SLIDER
@@ -206,7 +202,7 @@ export default function Shop() {
   const [isLoading,          setIsLoading]          = useState(true);
 
   useEffect(() => {
-    document.title = "Shop Corporate Gifts | Green Roots";
+    document.title = "Shop Personalised Gifts | ClassyPik Gifts";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);

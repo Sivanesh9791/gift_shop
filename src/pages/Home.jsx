@@ -2,21 +2,17 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Truck, Gift, MessageSquare, RefreshCw, ShieldCheck, Star } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
-import productsData from '../data/products';
+import { products as productsData } from '../data/products';
 
 const corporateCategories = [
-  { icon: "🎁", label: "Welcome Kits", link: "/shop?category=welcomeKits" },
-  { icon: "💻", label: "Electronics", link: "/shop?category=electronics" },
-  { icon: "👜", label: "Bags", link: "/shop?category=bags" },
-  { icon: "🥤", label: "Drinkware", link: "/shop?category=drinkware" },
-  { icon: "📚", label: "Books & Pens", link: "/shop?category=booksAndPens" },
-  { icon: "👕", label: "T-Shirts", link: "/shop?category=tshirts" },
-  { icon: "🗂️", label: "Desk Organiser", link: "/shop?category=deskOrganiser" },
-  { icon: "🎊", label: "Festive Gifts", link: "/shop?category=festiveGifts" },
-  { icon: "🌿", label: "Organic Gifts", link: "/shop?category=organicGifts" },
-  { icon: "🏆", label: "Awards", link: "/shop?category=rewardsRecognition" },
-  { icon: "📢", label: "Promotional", link: "/shop?category=promotionalItems" },
-  { icon: "🎟️", label: "Vouchers", link: "/shop?category=giftVouchers" },
+  { icon: "🖨️", label: "Ceramic Mugs", link: "/shop?category=ceramicMugs" },
+  { icon: "☂️", label: "Umbrellas", link: "/shop?category=umbrellas" },
+  { icon: "🪵", label: "Laser Engraved", link: "/shop?category=laserEngraved" },
+  { icon: "🖼️", label: "Photo Frames", link: "/shop?category=photoFrames" },
+  { icon: "🎁", label: "Return Gifts", link: "/shop?category=returnGifts" },
+  { icon: "🎂", label: "Birthday Gifts", link: "/shop?category=birthdayGifts" },
+  { icon: "💼", label: "Corporate Gifts", link: "/shop?category=corporateGifts" },
+  { icon: "🪄", label: "Merchandise", link: "/shop?category=customMerchandise" },
 ];
 
 const testimonials = [
@@ -44,7 +40,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    document.title = "Green Roots 🌿 — Premium Corporate Gifts India";
+    document.title = "ClassyPik Gifts 🎁 — Personalised Gifts Chennai";
 
     const targetTime = new Date().getTime() + 24 * 60 * 60 * 1000;
 
@@ -82,15 +78,15 @@ export default function Home() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 max-w-3xl leading-tight">
-          Premium Corporate Gifts for Every Occasion
+          Make Every Gift Unique ✨
         </h1>
         <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-xl">
-          Branded gift solutions for employee onboarding, festive gifting, rewards and promotions.
+          Personalised gifts for every occasion — ceramic mugs, laser engraving, umbrellas, photo frames and more. Chennai's favourite personalised gift shop.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Link to="/shop" className="bg-rose-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg shadow-rose-600/30 hover:bg-rose-700 hover:scale-105 transition-all text-center">
-            Browse Catalogue
+            Shop Now
           </Link>
           <Link to="/contact" className="bg-transparent border-2 border-slate-900 text-slate-900 font-semibold py-4 px-8 rounded-full hover:bg-slate-900 hover:text-white hover:scale-105 transition-all text-center">
             Get Bulk Quote
@@ -103,7 +99,7 @@ export default function Home() {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Shop by Category</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {corporateCategories.map((cat) => (
             <Link
               key={cat.label}
@@ -162,12 +158,12 @@ export default function Home() {
       <section className="w-full bg-indigo-50 py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-indigo-600 font-bold tracking-wider uppercase text-sm mb-4 block">Personalised Solutions</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Need Help Choosing?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Need a Unique Gift? 🎁</h2>
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-            Tell us your budget and occasion — we'll curate the perfect corporate gift set for your team or clients.
+            Tell us the occasion and budget — we'll create the perfect personalised gift
           </p>
           <Link to="/gift-finder" className="inline-flex bg-indigo-600 text-white font-semibold py-4 px-10 rounded-full shadow-lg shadow-indigo-600/30 hover:bg-indigo-700 hover:scale-105 transition-all text-xl">
-            Get a Free Quote →
+            Start Gift Finder →
           </Link>
         </div>
       </section>
@@ -219,24 +215,24 @@ export default function Home() {
       <section className="w-full bg-slate-900 py-12 px-4 sm:px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-slate-300">
           <div className="flex flex-col items-center gap-3">
-            <Truck className="text-rose-400" size={32} />
+            <span className="text-4xl text-rose-400">🎨</span>
+            <span className="font-medium text-sm">100% Personalised</span>
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            <span className="text-4xl text-rose-400">🚚</span>
             <span className="font-medium text-sm">Pan-India Delivery</span>
           </div>
           <div className="flex flex-col items-center gap-3">
-            <Gift className="text-amber-400" size={32} />
-            <span className="font-medium text-sm">Custom Branding<br/>Available</span>
+            <span className="text-4xl text-rose-400">📦</span>
+            <span className="font-medium text-sm">Bulk Orders Welcome</span>
           </div>
           <div className="flex flex-col items-center gap-3">
-            <MessageSquare className="text-indigo-400" size={32} />
-            <span className="font-medium text-sm">Bulk Order<br/>Discounts</span>
-          </div>
-          <div className="flex flex-col items-center gap-3">
-            <RefreshCw className="text-emerald-400" size={32} />
-            <span className="font-medium text-sm">GST Invoice<br/>Provided</span>
+            <span className="text-4xl text-rose-400">🧾</span>
+            <span className="font-medium text-sm">GST Invoice Available</span>
           </div>
           <div className="flex flex-col items-center gap-3 col-span-2 md:col-span-1">
-            <ShieldCheck className="text-cyan-400" size={32} />
-            <span className="font-medium text-sm">10,000+ Corporate<br/>Clients</span>
+            <span className="text-4xl text-rose-400">⭐</span>
+            <span className="font-medium text-sm">10,000+ Happy Customers</span>
           </div>
         </div>
       </section>
