@@ -60,7 +60,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                   {/* Image column */}
                   <div className="md:w-1/2 bg-slate-50 flex flex-col">
                     <div className="aspect-square overflow-hidden">
-                      <img
+                      <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
                         src={product.images[activeImg]}
                         alt={product.name}
                         className="w-full h-full object-cover"
@@ -77,7 +77,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                               activeImg === i ? 'border-rose-500' : 'border-transparent hover:border-slate-300'
                             }`}
                           >
-                            <img src={img} alt="" className="w-full h-full object-cover" />
+                            <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={img} alt="" className="w-full h-full object-cover" />
                           </button>
                         ))}
                       </div>
@@ -188,3 +188,4 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
     </Transition>
   );
 }
+

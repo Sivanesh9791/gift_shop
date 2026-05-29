@@ -56,14 +56,14 @@ export default function OrderConfirmation() {
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
   useEffect(() => {
-    document.title = "Order Confirmed! | ClassyPik Gifts";
+    document.title = "Order Confirmed! | Lights & Gifts";
   }, []);
 
-  const shareText = encodeURIComponent(`Just sent a gift from Green Roots 🌿 Check it out!`);
-  const shareUrl = encodeURIComponent(`https://thegreenroots.in`);
+  const shareText = encodeURIComponent(`Just sent a gift from Lights & Gifts 🪔 Check it out!`);
+  const shareUrl = encodeURIComponent(`https://lightsandgifts.in`);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://thegreenroots.in`);
+    navigator.clipboard.writeText(`https://lightsandgifts.in`);
     setCopied(true);
     toast.success('Link copied to clipboard!');
     setTimeout(() => setCopied(false), 2000);
@@ -176,7 +176,7 @@ export default function OrderConfirmation() {
               <div className="space-y-4 mb-6">
                 {items.map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <img src={item.product.images[0]} alt="" className="w-16 h-16 rounded-xl object-cover bg-slate-50 border border-slate-100" />
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt="" className="w-16 h-16 rounded-xl object-cover bg-slate-50 border border-slate-100" />
                     <div className="flex-1">
                       <p className="font-bold text-slate-900 text-sm line-clamp-1">{item.product.name}</p>
                       <p className="text-slate-500 text-xs">Qty: {item.qty}</p>
@@ -228,3 +228,4 @@ export default function OrderConfirmation() {
     </div>
   );
 }
+

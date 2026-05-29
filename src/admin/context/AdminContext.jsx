@@ -105,11 +105,11 @@ const generateMockCoupons = () => [
 ];
 
 const defaultStoreSettings = {
-  storeName: 'ClassyPik Gifts',
-  storeEmail: 'info@classypik.in',
-  storePhone: '7418666806',
-  storeAddress: 'Chennai, Tamil Nadu, India',
-  storeWebsite: 'www.classypik.in',
+  storeName: 'Lights & Gifts',
+  storeEmail: 'lightsandgifts87@gmail.com',
+  storePhone: 'Contact Us',
+  storeAddress: 'No.51/A, Bricklin Road, 4th Street, Otteri, Chennai-12',
+  storeWebsite: 'www.lightsandgifts.in',
   currency: 'INR',
   freeShippingThreshold: 40,
   standardDeliveryCharge: 4.99,

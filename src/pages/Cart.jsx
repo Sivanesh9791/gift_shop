@@ -22,7 +22,7 @@ export default function Cart() {
   const [couponInput, setCouponInput] = useState('');
 
   useEffect(() => {
-    document.title = "Your Cart | ClassyPik Gifts";
+    document.title = "Your Cart | Lights & Gifts";
   }, []);
 
   // Free shipping progress
@@ -137,7 +137,7 @@ export default function Cart() {
               {items.map((item, idx) => (
                 <div key={`${item.product.id}-${idx}`} className="p-6 flex flex-col sm:flex-row gap-6 group">
                   <Link to={`/product/${item.product.slug}`} className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 bg-slate-50 rounded-xl border border-slate-100 overflow-hidden block">
-                    <img src={item.product.images[0]} alt={item.product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt={item.product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                   </Link>
 
                   <div className="flex-1 flex flex-col min-w-0">
@@ -330,3 +330,4 @@ export default function Cart() {
     </div>
   );
 }
+

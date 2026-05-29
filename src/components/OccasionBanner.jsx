@@ -63,7 +63,7 @@ export default function OccasionBanner() {
     else {
       config = {
         bg: 'from-purple-500 to-pink-500',
-        text: '🎁 Free personalisation on orders over ₹500 | Use code CLASSYPIK',
+        text: '🪔 Free gift wrapping on orders over ₹500 | Visit us at Otteri, Chennai',
         btnText: 'Shop Now',
         link: '/shop'
       };

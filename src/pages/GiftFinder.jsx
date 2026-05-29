@@ -8,34 +8,31 @@ import toast from 'react-hot-toast';
 /* ──────────────────────────────────────────────────────────
    QUIZ CONFIG
 ────────────────────────────────────────────────────────── */
-const RECIPIENTS = [
-  { value: 'her',       emoji: '👩', label: 'For Her' },
-  { value: 'him',       emoji: '👨', label: 'For Him' },
-  { value: 'baby',      emoji: '👶', label: 'For Baby' },
-  { value: 'couple',    emoji: '👫', label: 'For a Couple' },
-  { value: 'kids',      emoji: '🧒', label: 'For Kids' },
-  { value: 'colleague', emoji: '💼', label: 'For Colleague' },
+const OCCASIONS = [
+  { value: 'birthday',    emoji: '🎂', label: 'Birthday Party' },
+  { value: 'baptism',     emoji: '⛪', label: 'Baptism / Naming Ceremony' },
+  { value: 'engagement',  emoji: '💍', label: 'Engagement' },
+  { value: 'marriage',    emoji: '💒', label: 'Marriage' },
+  { value: 'babyShower',  emoji: '👶', label: 'Baby Shower' },
+  { value: 'puberty',     emoji: '🌸', label: 'Puberty Ceremony' },
+  { value: 'anniversary', emoji: '💕', label: 'Anniversary' },
+  { value: 'corporate',   emoji: '💼', label: 'Corporate Function' },
 ];
 
-const OCCASIONS = [
-  { value: 'birthday',    emoji: '🎂', label: 'Birthday' },
-  { value: 'anniversary', emoji: '💕', label: 'Anniversary' },
-  { value: 'valentine',   emoji: '💝', label: "Valentine's Day" },
-  { value: 'wedding',     emoji: '💍', label: 'Wedding' },
-  { value: 'newborn',     emoji: '👶', label: 'New Born' },
-  { value: 'graduation',  emoji: '🎓', label: 'Graduation' },
-  { value: 'housewarming',emoji: '🏠', label: 'Housewarming' },
-  { value: 'diwali',      emoji: '🪔', label: 'Diwali' },
-  { value: 'corporate',   emoji: '💼', label: 'Corporate Event' },
-  { value: 'return',      emoji: '🎁', label: 'Return Gifts' },
+const GUESTS = [
+  { value: 'under-25', emoji: '🫂', label: 'Under 25 guests' },
+  { value: '25-50',    emoji: '👥', label: '25 – 50 guests' },
+  { value: '50-100',   emoji: '🧑‍🤝‍🧑', label: '50 – 100 guests' },
+  { value: '100-250',  emoji: '🎊', label: '100 – 250 guests' },
+  { value: '250+',     emoji: '🎉', label: '250+ guests' },
 ];
 
 const BUDGETS = [
-  { value: 'under-200',  emoji: '🪙', label: 'Under ₹200',      min: 0,    max: 200  },
-  { value: '200-500',    emoji: '💵', label: '₹200 – ₹500',    min: 200,  max: 500  },
-  { value: '500-1000',   emoji: '💳', label: '₹500 – ₹1000',   min: 500,  max: 1000 },
-  { value: '1000-2500',  emoji: '💰', label: '₹1000 – ₹2500',  min: 1000, max: 2500 },
-  { value: '2500+',      emoji: '💎', label: '₹2500+',          min: 2500, max: 99999 },
+  { value: 'under-100',  emoji: '🪙', label: 'Under ₹100',   min: 0,   max: 100 },
+  { value: '100-200',    emoji: '💵', label: '₹100 – ₹200', min: 100, max: 200 },
+  { value: '200-400',    emoji: '💳', label: '₹200 – ₹400', min: 200, max: 400 },
+  { value: '400-600',    emoji: '💰', label: '₹400 – ₹600', min: 400, max: 600 },
+  { value: '600+',       emoji: '💎', label: '₹600+',       min: 600, max: 99999 },
 ];
 
 const TOTAL_STEPS = 3;
@@ -64,9 +61,9 @@ function ProgressBar({ step }) {
         {Array.from({ length: TOTAL_STEPS }, (_, i) => (
           <div key={i}
             className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300
-              ${i + 1 < step ? 'bg-white text-rose-500 scale-100'
-                : i + 1 === step ? 'bg-white/90 text-rose-500 ring-2 ring-white/50 scale-110'
-                : 'bg-white/20 text-white/50'}`}>
+              ${i + 1 < step ? 'bg-white text-[#1C1C1C] scale-100'
+                : i + 1 === step ? 'bg-[#C5E619] text-[#1C1C1C] ring-4 ring-[#C5E619]/30 scale-110 shadow-xl'
+                : 'bg-white/10 text-white/40'}`}>
             {i + 1 < step ? <Check size={12} /> : i + 1}
           </div>
         ))}
@@ -83,13 +80,13 @@ function QuizCard({ emoji, label, selected, onClick, multi }) {
       className={`relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border-2
         transition-all duration-200 cursor-pointer select-none group
         ${selected
-          ? 'border-white bg-white text-rose-600 shadow-lg scale-105'
-          : 'border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/60 hover:scale-102'
+          ? 'border-[#C5E619] bg-[#C5E619] text-[#1C1C1C] shadow-[0_0_20px_rgba(197,230,25,0.4)] scale-105'
+          : 'border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/50 hover:scale-102'
         }`}
     >
       {selected && multi && (
-        <span className="absolute top-2 right-2 w-5 h-5 bg-rose-500 text-white rounded-full flex items-center justify-center">
-          <Check size={11} />
+        <span className="absolute top-2 right-2 w-5 h-5 bg-[#1C1C1C] text-[#C5E619] rounded-full flex items-center justify-center shadow-lg border border-[#C5E619]/50">
+          <Check size={11} strokeWidth={3} />
         </span>
       )}
       <span className="text-3xl leading-none">{emoji}</span>
@@ -101,19 +98,16 @@ function QuizCard({ emoji, label, selected, onClick, multi }) {
 /* ──────────────────────────────────────────────────────────
    RESULTS
 ────────────────────────────────────────────────────────── */
-function Results({ recipient, occasions, budget, onRetake }) {
+function Results({ occasion, guests, budget, onRetake }) {
   const budgetObj = BUDGETS.find(b => b.value === budget) || BUDGETS[3];
-  const recipientLabel = RECIPIENTS.find(r => r.value === recipient)?.label || 'Someone Special';
-  const recipientEmoji = RECIPIENTS.find(r => r.value === recipient)?.emoji || '🎁';
+  const occasionLabel = OCCASIONS.find(o => o.value === occasion)?.label || 'Your Event';
+  const occasionEmoji = OCCASIONS.find(o => o.value === occasion)?.emoji || '🎁';
 
   /* Filter products */
   let matched = productsData.filter(p => {
     const priceOk = p.price >= budgetObj.min && p.price <= budgetObj.max;
-    const recipientOk = !recipient || p.recipient === recipient;
-    const occasionOk = occasions.length === 0 || occasions.some(o =>
-      p.occasions?.includes(o) || p.tags?.includes(o)
-    );
-    return priceOk && (recipientOk || occasionOk);
+    const occasionOk = !occasion || p.occasions?.includes(occasion) || p.tags?.includes(occasion);
+    return priceOk && occasionOk;
   });
 
   /* Pad to 6 if needed */
@@ -124,14 +118,14 @@ function Results({ recipient, occasions, budget, onRetake }) {
     matched = [...matched, ...extras];
   }
 
-  const occasions_label = occasions.length > 0
-    ? occasions.map(o => OCCASIONS.find(x => x.value === o)?.label).filter(Boolean).join(', ')
-    : 'any occasion';
+  const guests_label = guests.length > 0
+    ? guests.map(g => GUESTS.find(x => x.value === g)?.label).filter(Boolean).join(', ')
+    : 'any number of guests';
 
   function handleShare() {
     const params = new URLSearchParams();
-    if (recipient) params.set('recipient', recipient);
-    if (occasions.length) params.set('occasions', occasions.join(','));
+    if (occasion) params.set('occasion', occasion);
+    if (guests.length) params.set('guests', guests.join(','));
     if (budget) params.set('budget', budget);
     const url = `${window.location.origin}/gift-finder?${params}`;
     navigator.clipboard.writeText(url).then(() => {
@@ -146,12 +140,12 @@ function Results({ recipient, occasions, budget, onRetake }) {
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="text-5xl mb-4">{recipientEmoji}</div>
+          <div className="text-5xl mb-4">{occasionEmoji}</div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-            We found <span className="text-rose-600">{matched.length} perfect gifts</span> for {recipientLabel.replace('For ', '')} 🎁
+            We found <span className="text-rose-600">{matched.length} perfect gifts</span> for {occasionLabel.replace('For ', '')} 🎁
           </h1>
           <p className="text-slate-500 text-lg">
-            Great for: <span className="font-medium text-slate-700">{occasions_label}</span>
+            Great for: <span className="font-medium text-slate-700">{guests_label}</span>
             {' · '}
             <span className="font-medium text-slate-700">{budgetObj.label}</span>
           </p>
@@ -163,7 +157,7 @@ function Results({ recipient, occasions, budget, onRetake }) {
               <RotateCcw size={15} /> Refine Results
             </button>
             <button onClick={handleShare}
-              className="flex items-center gap-2 bg-rose-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-rose-700 transition-all hover:shadow-md">
+              className="flex items-center gap-2 text-[#1C1C1C] px-5 py-2.5 rounded-full font-bold transition-all hover:shadow-lg" style={{backgroundColor: '#C5E619'}}>
               <Share2 size={15} /> Share These Results
             </button>
           </div>
@@ -211,16 +205,16 @@ export default function GiftFinder() {
   const [showResults, setShowResults] = useState(false);
   const [entering, setEntering]   = useState(true);
 
-  const [recipient, setRecipient] = useState(searchParams.get('recipient') || '');
-  const [occasions, setOccasions] = useState(
-    searchParams.get('occasions') ? searchParams.get('occasions').split(',') : []
+  const [occasion, setOccasion] = useState(searchParams.get('occasion') || '');
+  const [guests, setGuests] = useState(
+    searchParams.get('guests') ? searchParams.get('guests').split(',') : []
   );
   const [budget, setBudget]       = useState(searchParams.get('budget') || '');
 
   /* If URL has all params, show results directly */
   useEffect(() => {
-    document.title = "Gift Finder | ClassyPik Gifts";
-    if (searchParams.get('recipient') && searchParams.get('budget')) {
+    document.title = "Gift Finder | Lights & Gifts";
+    if (searchParams.get('occasion') && searchParams.get('budget')) {
       setShowResults(true);
     }
   }, []);
@@ -231,13 +225,13 @@ export default function GiftFinder() {
     setTimeout(() => { fn(); setEntering(true); }, 250);
   }
 
-  function handleRecipientSelect(val) {
-    setRecipient(val);
+  function handleOccasionSelect(val) {
+    setOccasion(val);
     transition(() => setStep(2));
   }
 
-  function toggleOccasion(val) {
-    setOccasions(prev =>
+  function toggleGuest(val) {
+    setGuests(prev =>
       prev.includes(val) ? prev.filter(v => v !== val) : [...prev, val]
     );
   }
@@ -261,21 +255,21 @@ export default function GiftFinder() {
   function handleRetake() {
     setShowResults(false);
     setStep(1);
-    setRecipient('');
-    setOccasions([]);
+    setOccasion('');
+    setGuests([]);
     setBudget('');
   }
 
   /* ── Show results ── */
   if (showResults) {
-    return <Results recipient={recipient} occasions={occasions} budget={budget} onRetake={handleRetake} />;
+    return <Results occasion={occasion} guests={guests} budget={budget} onRetake={handleRetake} />;
   }
 
   /* ── Quiz header labels ── */
   const stepMeta = [
-    { question: 'Who are you shopping for?',   sub: 'Pick one — we\'ll tailor the results just for them.' },
-    { question: 'What\'s the occasion?',        sub: 'Choose as many as you like!' },
-    { question: 'What\'s your budget?',         sub: 'We\'ll find the best gifts in your price range.' },
+    { question: 'What\'s your occasion?',   sub: 'Pick the event you need gifts for.' },
+    { question: 'How many guests?',         sub: 'To help us suggest gifts for bulk ordering.' },
+    { question: 'Budget per return gift?',  sub: 'We\'ll find the best gifts in your price range.' },
   ];
 
   const currentMeta = stepMeta[step - 1];
@@ -284,7 +278,7 @@ export default function GiftFinder() {
      RENDER QUIZ SHELL
   ────────────────────────────────────────────────────── */
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-500 via-pink-500 to-amber-500">
+    <div className="min-h-screen bg-[#1C1C1C] selection:bg-[#C5E619] selection:text-[#1C1C1C]">
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Logo / back to home */}
@@ -312,14 +306,14 @@ export default function GiftFinder() {
           {/* ── STEP 1 ── */}
           {step === 1 && (
             <StepCard entering={entering}>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {RECIPIENTS.map(r => (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {OCCASIONS.map(o => (
                   <QuizCard
-                    key={r.value}
-                    emoji={r.emoji}
-                    label={r.label}
-                    selected={recipient === r.value}
-                    onClick={() => handleRecipientSelect(r.value)}
+                    key={o.value}
+                    emoji={o.emoji}
+                    label={o.label}
+                    selected={occasion === o.value}
+                    onClick={() => handleOccasionSelect(o.value)}
                   />
                 ))}
               </div>
@@ -329,14 +323,14 @@ export default function GiftFinder() {
           {/* ── STEP 2 ── */}
           {step === 2 && (
             <StepCard entering={entering}>
-              <div className="grid grid-cols-3 gap-3">
-                {OCCASIONS.map(o => (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {GUESTS.map(g => (
                   <QuizCard
-                    key={o.value}
-                    emoji={o.emoji}
-                    label={o.label}
-                    selected={occasions.includes(o.value)}
-                    onClick={() => toggleOccasion(o.value)}
+                    key={g.value}
+                    emoji={g.emoji}
+                    label={g.label}
+                    selected={guests.includes(g.value)}
+                    onClick={() => toggleGuest(g.value)}
                     multi
                   />
                 ))}
@@ -348,7 +342,7 @@ export default function GiftFinder() {
                   <ArrowLeft size={16} /> Back
                 </button>
                 <button onClick={handleNext}
-                  className="flex items-center gap-2 bg-white text-rose-600 px-6 py-3 rounded-full font-bold hover:bg-rose-50 transition-all shadow-lg hover:shadow-xl active:scale-95">
+                  className="flex items-center gap-2 text-[#1C1C1C] px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(197,230,25,0.3)] hover:scale-105 active:scale-95" style={{backgroundColor: '#C5E619'}}>
                   Next <ArrowRight size={16} />
                 </button>
               </div>
@@ -376,9 +370,9 @@ export default function GiftFinder() {
                   <ArrowLeft size={16} /> Back
                 </button>
                 <button onClick={handleNext} disabled={!budget}
-                  className="flex items-center gap-2 bg-white text-rose-600 px-7 py-3 rounded-full font-bold
-                    hover:bg-rose-50 transition-all shadow-lg hover:shadow-xl active:scale-95
-                    disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:active:scale-100">
+                  className="flex items-center gap-2 text-[#1C1C1C] px-8 py-3 rounded-full font-black tracking-wide
+                    transition-all shadow-[0_0_20px_rgba(197,230,25,0.4)] hover:scale-105 active:scale-95
+                    disabled:opacity-20 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-none" style={{backgroundColor: '#C5E619'}}>
                   Find My Gifts <ArrowRight size={16} />
                 </button>
               </div>
@@ -388,7 +382,7 @@ export default function GiftFinder() {
 
         {/* Fun footer */}
         <p className="text-center text-white/50 text-xs mt-6">
-          🎁 Trusted by 10,000+ Corporate Clients
+          🎁 Trusted by thousands of happy customers
         </p>
       </div>
     </div>

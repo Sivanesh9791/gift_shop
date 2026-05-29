@@ -71,7 +71,7 @@ function GridCard({ product }) {
         {/* ── Image container ── */}
         <Link to={`/product/${product.slug}`} className="relative block overflow-hidden bg-slate-100" style={{ aspectRatio: '4/3' }}>
           {/* Primary image */}
-          <img
+          <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
             src={product.images[0]}
             alt={product.name}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
@@ -80,7 +80,7 @@ function GridCard({ product }) {
           />
           {/* Secondary image crossfade */}
           {hasSecondImage && (
-            <img
+            <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
               src={product.images[1]}
               alt={product.name}
               className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
@@ -216,7 +216,7 @@ function ListCard({ product }) {
       <div className="flex gap-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group">
         {/* Image */}
         <Link to={`/product/${product.slug}`} className="relative w-40 h-40 flex-shrink-0 overflow-hidden bg-slate-100">
-          <img
+          <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
             src={product.images[0]}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -295,3 +295,4 @@ export default function ProductCard({ product, viewMode = 'grid' }) {
     ? <ListCard product={product} />
     : <GridCard product={product} />;
 }
+

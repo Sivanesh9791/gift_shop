@@ -33,7 +33,7 @@ export default function Checkout() {
 
   // Cart redirects if empty
   useEffect(() => {
-    document.title = "Checkout | ClassyPik Gifts";
+    document.title = "Checkout | Lights & Gifts";
     if (items.length === 0 && step === 1) {
       toast('Your cart is empty', { icon: '🛒' });
       navigate('/shop');
@@ -159,7 +159,7 @@ export default function Checkout() {
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-600">
-            Green Roots 🌿
+            Lights & Gifts 🪔
           </Link>
           <div className="flex items-center gap-2 text-sm font-medium">
             {steps.map((s, idx) => (
@@ -488,7 +488,7 @@ export default function Checkout() {
                   <div className="bg-slate-50 border border-slate-200 rounded-xl divide-y divide-slate-100">
                     {items.map(item => (
                       <div key={item.product.id} className="p-4 flex gap-4">
-                        <img src={item.product.images[0]} alt="" className="w-16 h-16 rounded-lg object-cover bg-white border border-slate-100" />
+                        <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt="" className="w-16 h-16 rounded-lg object-cover bg-white border border-slate-100" />
                         <div className="flex-1 min-w-0">
                           <p className="font-bold text-slate-900 text-sm line-clamp-1">{item.product.name}</p>
                           <div className="text-slate-500 text-xs mt-1 space-y-1">
@@ -618,3 +618,4 @@ export default function Checkout() {
     </div>
   );
 }
+

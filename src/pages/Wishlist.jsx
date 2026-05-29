@@ -12,7 +12,7 @@ export default function Wishlist() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "My Wishlist | ClassyPik Gifts";
+    document.title = "My Wishlist | Lights & Gifts";
   }, []);
 
   const handleShare = () => {
@@ -75,7 +75,7 @@ export default function Wishlist() {
             {wishlistItems.map(product => (
               <div key={product.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col">
                 <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
-                  <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   
                   {/* Badges */}
                   <div className="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
@@ -129,7 +129,7 @@ export default function Wishlist() {
             {recommended.map(product => (
               <div key={product.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden group">
                 <Link to={`/product/${product.slug}`} className="block relative aspect-square bg-slate-100 overflow-hidden">
-                  <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </Link>
                 <div className="p-4">
                   <Link to={`/product/${product.slug}`} className="block font-bold text-slate-900 text-sm line-clamp-1 hover:text-rose-500 mb-1">
@@ -146,3 +146,4 @@ export default function Wishlist() {
     </div>
   );
 }
+

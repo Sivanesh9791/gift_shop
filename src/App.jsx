@@ -9,6 +9,7 @@ import OccasionBanner from './components/OccasionBanner';
 import BackToTop from './components/BackToTop';
 import CookieConsent from './components/CookieConsent';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -26,6 +27,7 @@ import AdminApp from './admin/AdminApp';
 function AppContent() {
   return (
     <div className="min-h-screen flex flex-col font-sans relative">
+      <ScrollToTop />
       <OccasionBanner />
       <Navbar />
       <Toaster

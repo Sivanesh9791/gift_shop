@@ -34,16 +34,18 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex w-64 h-screen flex-col bg-white dark:bg-gray-800 shadow-md">
         {/* Logo Section */}
-        <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
-          <span className="text-2xl">🎁</span>
+        <div className="flex items-center gap-2 p-6 border-b border-gray-700">
+          <span
+            className="flex items-center justify-center w-9 h-9 rounded-xl font-black text-lg flex-shrink-0"
+            style={{ background: '#C5E619', color: '#1C1C1C' }}
+          >
+            B
+          </span>
           <div className="flex flex-col leading-none">
-            <span className="text-lg font-black tracking-wide
-                             bg-gradient-to-r from-purple-400
-                             to-pink-500
-                             bg-clip-text text-transparent">
-              ClassyPik Gifts
+            <span className="text-sm font-black tracking-wide" style={{ color: '#C5E619' }}>
+              Blessy Gift Shop
             </span>
-            <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
               Admin Panel
             </span>
           </div>
@@ -105,16 +107,18 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         }`}
       >
         {/* Logo Section */}
-        <div className="flex items-center gap-2 p-6 border-b border-gray-200 dark:border-gray-700">
-          <span className="text-2xl">🎁</span>
+        <div className="flex items-center gap-2 p-6 border-b border-gray-700">
+          <span
+            className="flex items-center justify-center w-9 h-9 rounded-xl font-black text-lg flex-shrink-0"
+            style={{ background: '#C5E619', color: '#1C1C1C' }}
+          >
+            B
+          </span>
           <div className="flex flex-col leading-none">
-            <span className="text-lg font-black tracking-wide
-                             bg-gradient-to-r from-purple-400
-                             to-pink-500
-                             bg-clip-text text-transparent">
-              ClassyPik Gifts
+            <span className="text-sm font-black tracking-wide" style={{ color: '#C5E619' }}>
+              Blessy Gift Shop
             </span>
-            <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
+            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
               Admin Panel
             </span>
           </div>

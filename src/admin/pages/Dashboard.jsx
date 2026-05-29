@@ -404,7 +404,7 @@ export default function Dashboard() {
                   className="flex justify-between items-center py-3 border-b border-gray-200 dark:border-gray-700 last:border-b-0"
                 >
                   <div className="flex items-center gap-3">
-                    <img
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
                       src={product.image}
                       alt={product.name}
                       className="w-10 h-10 rounded-lg object-cover"
@@ -456,7 +456,7 @@ export default function Dashboard() {
                   <div className="w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs font-bold">
                     {index + 1}
                   </div>
-                  <img
+                  <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
                     src={product.image}
                     alt={product.name}
                     className="w-10 h-10 rounded-lg object-cover"
@@ -521,3 +521,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

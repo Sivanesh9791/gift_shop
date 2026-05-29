@@ -58,22 +58,20 @@ export default function Navbar() {
               </button>
               
               <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-                <span className="text-3xl">🎁</span>
+                <span
+                  className="flex items-center justify-center w-10 h-10 rounded-xl font-black text-xl"
+                  style={{ background: '#C5E619', color: '#1C1C1C' }}
+                >
+                  B
+                </span>
                 <div className="flex flex-col leading-none">
-                  <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-2xl font-black tracking-wide
-                               bg-gradient-to-r from-purple-600
-                               via-pink-500 to-rose-500
-                               bg-clip-text text-transparent">
-                    ClassyPik
+                  <span style={{fontFamily: 'Playfair Display, serif', color: '#1C1C1C'}}
+                    className="text-xl font-black tracking-wide">
+                    Blessy
                   </span>
-                  <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-sm font-black tracking-widest
-                               bg-gradient-to-r from-rose-500
-                               to-amber-500
-                               bg-clip-text text-transparent
-                               uppercase -mt-1">
-                    Gifts ✨
+                  <span style={{fontFamily: 'Playfair Display, serif', color: '#A8CC00'}}
+                    className="text-sm font-black tracking-widest uppercase -mt-0.5">
+                    Gift Shop 🎁
                   </span>
                 </div>
               </Link>
@@ -157,14 +155,13 @@ export default function Navbar() {
       <div className="hidden lg:block bg-white border-b border-gray-100 shadow-sm relative z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center justify-between py-3">
-            <li><Link to="/shop?category=ceramicMugs" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🖨️ Ceramic Mugs</Link></li>
-            <li><Link to="/shop?category=umbrellas" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">☂️ Umbrellas</Link></li>
-            <li><Link to="/shop?category=laserEngraved" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🪵 Laser Engraved</Link></li>
-            <li><Link to="/shop?category=photoFrames" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🖼️ Photo Frames</Link></li>
-            <li><Link to="/shop?category=returnGifts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🎁 Return Gifts</Link></li>
-            <li><Link to="/shop?category=birthdayGifts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🎂 Birthday Gifts</Link></li>
-            <li><Link to="/shop?category=corporateGifts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">💼 Corporate Gifts</Link></li>
-            <li><Link to="/shop?category=customMerchandise" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🪄 Merchandise</Link></li>
+            <li><Link to="/shop?category=gifts" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🎁 Gifts</Link></li>
+            <li><Link to="/shop?category=stationery" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">✏️ Stationery</Link></li>
+            <li><Link to="/shop?category=household" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🏠 Household</Link></li>
+            <li><Link to="/shop?category=toys" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🧸 Toys</Link></li>
+            <li><Link to="/shop?category=art-supplies" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🎨 Art Supplies</Link></li>
+            <li><Link to="/shop?category=candles-globes" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">🕯️ Candles & Globes</Link></li>
+            <li><Link to="/shop?category=stickers-craft" className="text-sm font-medium tracking-wide transition-colors hover:text-rose-600 text-gray-600">✂️ Stickers & Craft</Link></li>
             <li><Link to="/shop?filter=Sale" className="text-sm tracking-wide transition-colors hover:text-rose-600 text-rose-500 font-semibold">🏷️ Sale</Link></li>
           </ul>
         </div>
@@ -184,22 +181,20 @@ export default function Navbar() {
             {/* Drawer Header */}
             <div className="flex items-center justify-between w-full p-4 border-b border-gray-100">
               <div className="flex items-center gap-2">
-                <span className="text-3xl">🎁</span>
+                <span
+                  className="flex items-center justify-center w-9 h-9 rounded-xl font-black text-lg"
+                  style={{ background: '#C5E619', color: '#1C1C1C' }}
+                >
+                  B
+                </span>
                 <div className="flex flex-col leading-none">
-                  <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-xl font-black tracking-wide
-                               bg-gradient-to-r from-purple-600
-                               via-pink-500 to-rose-500
-                               bg-clip-text text-transparent">
-                    ClassyPik
+                  <span style={{fontFamily: 'Playfair Display, serif', color: '#1C1C1C'}}
+                    className="text-lg font-black tracking-wide">
+                    Blessy
                   </span>
-                  <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-sm font-black tracking-widest
-                               bg-gradient-to-r from-rose-500
-                               to-amber-500
-                               bg-clip-text text-transparent
-                               uppercase -mt-1">
-                    Gifts ✨
+                  <span style={{fontFamily: 'Playfair Display, serif', color: '#A8CC00'}}
+                    className="text-xs font-black tracking-widest uppercase -mt-0.5">
+                    Gift Shop 🎁
                   </span>
                 </div>
               </div>
@@ -262,14 +257,13 @@ export default function Navbar() {
             <div className="w-full py-4">
               <h3 className="px-5 mb-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Shop by Category</h3>
               <ul className="flex flex-col">
-                <li><Link to="/shop?category=ceramicMugs" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🖨️ Ceramic Mugs</span></Link></li>
-                <li><Link to="/shop?category=umbrellas" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">☂️ Umbrellas</span></Link></li>
-                <li><Link to="/shop?category=laserEngraved" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🪵 Laser Engraved</span></Link></li>
-                <li><Link to="/shop?category=photoFrames" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🖼️ Photo Frames</span></Link></li>
-                <li><Link to="/shop?category=returnGifts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎁 Return Gifts</span></Link></li>
-                <li><Link to="/shop?category=birthdayGifts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎂 Birthday Gifts</span></Link></li>
-                <li><Link to="/shop?category=corporateGifts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">💼 Corporate Gifts</span></Link></li>
-                <li><Link to="/shop?category=customMerchandise" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🪄 Merchandise</span></Link></li>
+                <li><Link to="/shop?category=gifts" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎁 Gifts</span></Link></li>
+                <li><Link to="/shop?category=stationery" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">✏️ Stationery</span></Link></li>
+                <li><Link to="/shop?category=household" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🏠 Household</span></Link></li>
+                <li><Link to="/shop?category=toys" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🧸 Toys</span></Link></li>
+                <li><Link to="/shop?category=art-supplies" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🎨 Art Supplies</span></Link></li>
+                <li><Link to="/shop?category=candles-globes" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">🕯️ Candles & Globes</span></Link></li>
+                <li><Link to="/shop?category=stickers-craft" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base font-medium text-gray-700">✂️ Stickers & Craft</span></Link></li>
                 <li><Link to="/shop?filter=Sale" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center justify-between w-full px-5 py-3 hover:bg-gray-50 transition-colors"><span className="text-base text-rose-600 font-bold">🏷️ Sale</span></Link></li>
               </ul>
             </div>
@@ -277,7 +271,7 @@ export default function Navbar() {
             {/* Footer / Contact (Optional) */}
             <div className="mt-auto w-full p-6 bg-gray-50 border-t border-gray-100 pb-10">
               <p className="text-sm text-gray-500 font-medium mb-2">Need help?</p>
-              <a href="mailto:info@classypik.in" className="text-rose-600 font-medium hover:underline block">info@classypik.in</a>
+              <a href="mailto:blessygiftshop@gmail.com" className="font-medium hover:underline block" style={{color:'#A8CC00'}}>blessygiftshop@gmail.com</a>
             </div>
           </div>
         </div>

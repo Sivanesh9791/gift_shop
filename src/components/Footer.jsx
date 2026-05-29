@@ -11,23 +11,25 @@ export default function Footer() {
           
           {/* Col 1: Logo */}
           <div className="lg:col-span-3 space-y-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-3xl">🎁</span>
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className="flex items-center justify-center w-11 h-11 rounded-xl font-black text-2xl flex-shrink-0"
+                  style={{ background: '#C5E619', color: '#1C1C1C' }}
+                >
+                  B
+                </span>
                 <div className="flex flex-col leading-none">
-                  <span style={{fontFamily: 'Playfair Display, serif'}}
-                    className="text-2xl font-black tracking-wide
-                               bg-gradient-to-r from-purple-400
-                               to-pink-500
-                               bg-clip-text text-transparent">
-                    ClassyPik Gifts
+                  <span style={{fontFamily: 'Playfair Display, serif', color: '#C5E619'}}
+                    className="text-2xl font-black tracking-wide">
+                    Blessy Gift Shop
                   </span>
-                  <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
-                    ✨ Make Every Gift Unique
+                  <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
+                    🎁 Premium Return Gifts
                   </span>
                 </div>
               </div>
-            <p className="text-gray-400 text-sm leading-relaxed mt-2 max-w-xs">
-              Chennai’s best personalised gift shop. Custom ceramic mugs, laser engraved items, personalised umbrellas, photo frames and return gifts for all occasions.
+            <p className="text-gray-400 text-sm leading-relaxed mt-2">
+              Chennai's favourite return gift shop. Specialising in religious items, meenakari handicrafts, silver trays, kids kits and unique gifts for all occasions.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-rose-500 hover:text-white transition-all text-gray-400"><Heart size={18} /></a>
@@ -50,17 +52,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: OCCASIONS */}
+          {/* Col 3: CATEGORIES */}
           <div className="lg:col-span-2">
-            <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><MapPin size={16} className="text-rose-500"/> Occasions</h4>
+            <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><Package size={16} className="text-rose-500"/> Categories</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><Link to="/shop?occasion=birthday" className="hover:text-rose-400 transition-colors">Birthday</Link></li>
-              <li><Link to="/shop?occasion=anniversary" className="hover:text-rose-400 transition-colors">Anniversary</Link></li>
-              <li><Link to="/shop?occasion=wedding" className="hover:text-rose-400 transition-colors">Wedding</Link></li>
-              <li><Link to="/shop?occasion=baby" className="hover:text-rose-400 transition-colors">Baby Shower</Link></li>
-              <li><Link to="/shop?occasion=christmas" className="hover:text-rose-400 transition-colors">Christmas</Link></li>
-              <li><Link to="/shop?occasion=valentines" className="hover:text-rose-400 transition-colors">Valentine's</Link></li>
-              <li><Link to="/shop?occasion=graduation" className="hover:text-rose-400 transition-colors">Graduation</Link></li>
+              <li><Link to="/shop?category=gifts" className="hover:text-rose-400 transition-colors">Gifts</Link></li>
+              <li><Link to="/shop?category=stationery" className="hover:text-rose-400 transition-colors">Stationery</Link></li>
+              <li><Link to="/shop?category=household" className="hover:text-rose-400 transition-colors">Household</Link></li>
+              <li><Link to="/shop?category=toys" className="hover:text-rose-400 transition-colors">Toys</Link></li>
+              <li><Link to="/shop?category=art-supplies" className="hover:text-rose-400 transition-colors">Art Supplies</Link></li>
+              <li><Link to="/shop?category=candles-globes" className="hover:text-rose-400 transition-colors">Candles & Globes</Link></li>
+              <li><Link to="/shop?category=stickers-craft" className="hover:text-rose-400 transition-colors">Stickers & Craft</Link></li>
             </ul>
           </div>
 
@@ -85,20 +87,20 @@ export default function Footer() {
               <h4 className="font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2"><MapPin size={16} className="text-rose-500"/> Contact Us</h4>
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li className="flex items-center gap-2">
-                  <span className="text-rose-400 flex-shrink-0">📞</span>
-                  <a href="tel:7418666806" className="hover:text-rose-400 transition-colors">7418666806</a>
-                </li>
-                <li className="flex items-center gap-2">
                   <span className="text-rose-400 flex-shrink-0">✉️</span>
-                  <a href="mailto:info@classypik.in" className="hover:text-rose-400 transition-colors">info@classypik.in</a>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-rose-400 flex-shrink-0">🌐</span>
-                  <a href="https://www.classypik.in" className="hover:text-rose-400 transition-colors">www.classypik.in</a>
+                  <a href="mailto:blessygiftshop@gmail.com" className="hover:underline transition-colors" style={{color:'#C5E619'}}>blessygiftshop@gmail.com</a>
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin size={14} className="text-rose-400 mt-0.5 flex-shrink-0" />
-                  <span>Chennai, Tamil Nadu, India</span>
+                  <span>No.51/A, Bricklin Road, 4th Street, Otteri, Chennai-12</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-rose-400 flex-shrink-0">🕐</span>
+                  <span>Mon–Sun: 9:00 AM – 6:00 PM</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-rose-400 flex-shrink-0">📘</span>
+                  <a href="#" className="hover:text-gray-300 transition-colors">Facebook: BlessyGiftShop</a>
                 </li>
               </ul>
             </div>
@@ -138,7 +140,7 @@ export default function Footer() {
             <div className="px-3 py-1 bg-black text-white rounded font-bold">Pay</div>
           </div>
           
-          <p>© {new Date().getFullYear()} ClassyPik Gifts. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Blessy Gift Shop. All rights reserved.</p>
           
           <div className="flex gap-6 font-semibold">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

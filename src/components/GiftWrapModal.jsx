@@ -65,7 +65,7 @@ export default function GiftWrapModal({ open, onClose, item }) {
                 </div>
 
                 <div className="mb-6 pb-6 border-b border-slate-100 flex items-center gap-4">
-                  <img src={item.product.images[0]} alt="" className="w-16 h-16 rounded-xl object-cover" />
+                  <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt="" className="w-16 h-16 rounded-xl object-cover" />
                   <div>
                     <h3 className="font-semibold text-slate-800 text-sm line-clamp-1">{item.product.name}</h3>
                     <p className="text-slate-500 text-xs mt-1">Qty: {item.qty}</p>
@@ -139,3 +139,4 @@ export default function GiftWrapModal({ open, onClose, item }) {
     </Transition>
   );
 }
+

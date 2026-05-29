@@ -387,7 +387,7 @@ export default function Products() {
                       />
                     </td>
                     <td className="px-6 py-4">
-                      <img src={product.images[0]} alt={product.name} className="w-12 h-12 rounded-lg object-cover" />
+                      <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={product.images[0]} alt={product.name} className="w-12 h-12 rounded-lg object-cover" />
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-sm font-medium text-gray-900 dark:text-white truncate max-w-xs">
@@ -628,7 +628,7 @@ export default function Products() {
                     className="w-full mt-1 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                   />
                   {formData.images[0] && (
-                    <img src={formData.images[0]} alt="Preview" className="w-16 h-16 rounded-lg object-cover mt-2" />
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={formData.images[0]} alt="Preview" className="w-16 h-16 rounded-lg object-cover mt-2" />
                   )}
                 </div>
 
@@ -847,3 +847,4 @@ export default function Products() {
     </div>
   );
 }
+

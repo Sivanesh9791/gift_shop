@@ -106,7 +106,7 @@ const AdminPinLock = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-100 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #f0f7c3 0%, #d4f036 100%)' }}>
       <div
         className={`bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full transition-all duration-500 ${
           shake ? 'animate-pulse' : ''
@@ -114,22 +114,24 @@ const AdminPinLock = () => {
       >
         {/* Logo & Header */}
         <div className="text-center mb-6">
-          <span className="text-5xl">🎁</span>
+          <span
+            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-black text-4xl mb-2"
+            style={{ background: '#C5E619', color: '#1C1C1C' }}
+          >
+            B
+          </span>
           <div className="mt-2">
-            <span style={{fontFamily: 'Playfair Display, serif'}}
-              className="block text-3xl font-black tracking-wide
-                         bg-gradient-to-r from-purple-600
-                         via-pink-500 to-rose-500
-                         bg-clip-text text-transparent">
-              ClassyPik Gifts
+            <span style={{fontFamily: 'Playfair Display, serif', color: '#1C1C1C'}}
+              className="block text-2xl font-black tracking-wide">
+              Blessy Gift Shop
             </span>
-            <span className="block text-xs font-bold
-                             tracking-widest text-amber-500
-                             uppercase mt-1">
-              ✨ Make Every Gift Unique ✨
+            <span className="block text-xs font-bold tracking-widest uppercase mt-1" style={{ color: '#A8CC00' }}>
+              🎁 Premium Return Gifts
             </span>
           </div>
-          <p className="text-gray-500 text-sm mt-2">Admin Panel — Enter PIN</p>
+          <p className="text-gray-500 text-sm mt-2">
+            Admin Panel — Enter PIN
+          </p>
         </div>
 
         {/* PIN Display */}

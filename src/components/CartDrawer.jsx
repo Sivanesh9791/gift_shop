@@ -150,7 +150,7 @@ export default function CartDrawer({ open, onClose }) {
                           {/* Cart Items */}
                           {items.map((item, idx) => (
                             <div key={`${item.product.id}-${idx}`} className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex gap-4">
-                              <img src={item.product.images[0]} alt={item.product.name} className="w-[72px] h-[72px] rounded-xl object-cover bg-slate-50" />
+                              <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt={item.product.name} className="w-[72px] h-[72px] rounded-xl object-cover bg-slate-50" />
                               <div className="flex-1 min-w-0">
                                 <div className="flex justify-between items-start mb-1">
                                   <Link to={`/product/${item.product.slug}`} onClick={onClose} className="font-semibold text-slate-900 hover:text-rose-600 line-clamp-2 text-sm leading-tight pr-2">
@@ -206,7 +206,7 @@ export default function CartDrawer({ open, onClose }) {
                                 {suggested.map(prod => (
                                   <div key={prod.id} className="bg-white border border-slate-100 rounded-xl p-3 w-[150px] flex-shrink-0 snap-center shadow-sm">
                                     <div className="w-full aspect-square bg-slate-50 rounded-lg mb-2 overflow-hidden">
-                                      <img src={prod.images[0]} alt="" className="w-full h-full object-cover" />
+                                      <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={prod.images[0]} alt="" className="w-full h-full object-cover" />
                                     </div>
                                     <h5 className="font-medium text-slate-800 text-xs line-clamp-1 mb-1">{prod.name}</h5>
                                     <div className="flex items-center justify-between">
@@ -306,3 +306,4 @@ export default function CartDrawer({ open, onClose }) {
     </>
   );
 }
+

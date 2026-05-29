@@ -106,8 +106,15 @@ export default function ProductDetail() {
   const product = productsData.find(p => p.slug === slug);
 
   useEffect(() => {
-    if (product) document.title = `${product.name} | ClassyPik Gifts`;
+    if (product) document.title = `${product.name} | Lights & Gifts`;
   }, [product]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, []);
 
   /* ── State ── */
   const [selectedImage, setSelectedImage]             = useState(0);
@@ -195,7 +202,7 @@ export default function ProductDetail() {
             <div className="bg-white rounded-2xl shadow-sm p-4">
               {/* Main image */}
               <div className="relative rounded-xl overflow-hidden aspect-square w-full mb-4 bg-slate-100">
-                <img
+                <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }}
                   src={product.images[selectedImage]}
                   alt={product.name}
                   className={`w-full h-full object-cover transition-opacity duration-150 ${imgVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -213,7 +220,7 @@ export default function ProductDetail() {
                   <button key={i} onClick={() => switchImage(i)}
                     className={`flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all
                       ${selectedImage === i ? 'border-rose-500 shadow-md' : 'border-transparent hover:border-slate-300'}`}>
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={img} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
@@ -457,7 +464,7 @@ export default function ProductDetail() {
               {MOCK_REVIEWS.map(review => (
                 <div key={review.id} className="bg-white rounded-2xl shadow-sm p-5">
                   <div className="flex items-start gap-3 mb-3">
-                    <img src={review.avatar} alt={review.name}
+                    <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={review.avatar} alt={review.name}
                       className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
                     <div className="flex-grow min-w-0">
                       <div className="flex items-center justify-between flex-wrap gap-1">
@@ -511,7 +518,7 @@ export default function ProductDetail() {
                     {i > 0 && <span className="text-2xl text-slate-300 font-light">+</span>}
                     <div className="flex flex-col items-center gap-2">
                       <div className="w-24 h-24 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0">
-                        <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
+                        <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
                       </div>
                       <p className="text-xs text-slate-600 font-medium text-center w-24 line-clamp-2">{p.name}</p>
                       <p className="text-xs font-bold text-slate-900">₹{p.price}</p>
@@ -539,3 +546,4 @@ export default function ProductDetail() {
     </div>
   );
 }
+

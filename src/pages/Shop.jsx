@@ -13,26 +13,24 @@ import { products as productsData } from '../data/products';
 ────────────────────────────────────────────────────────── */
 const OCCASIONS = [
   { value: 'birthday',     label: 'Birthday' },
+  { value: 'marriage',     label: 'Marriage' },
+  { value: 'babyShower',   label: 'Baby Shower' },
+  { value: 'puberty',      label: 'Puberty' },
+  { value: 'engagement',   label: 'Engagement' },
+  { value: 'baptism',      label: 'Baptism' },
   { value: 'anniversary',  label: 'Anniversary' },
-  { value: 'valentine',    label: 'Valentine' },
-  { value: 'wedding',      label: 'Wedding' },
-  { value: 'corporate',    label: 'Corporate' },
-  { value: 'return',       label: 'Return' },
-  { value: 'graduation',   label: 'Graduation' },
   { value: 'housewarming', label: 'Housewarming' },
-  { value: 'diwali',       label: 'Diwali' },
-  { value: 'newborn',      label: 'Newborn' },
+  { value: 'corporate',    label: 'Corporate' },
 ];
 
 const CATEGORIES = [
-  { value: 'ceramicMugs', label: '🖨️ Ceramic Mugs' },
-  { value: 'umbrellas', label: '☂️ Umbrellas' },
-  { value: 'laserEngraved', label: '🪵 Laser Engraved Items' },
-  { value: 'photoFrames', label: '🖼️ Photo Frames & Plaques' },
-  { value: 'returnGifts', label: '🎁 Return Gifts' },
-  { value: 'birthdayGifts', label: '🎂 Birthday Gifts' },
-  { value: 'corporateGifts', label: '💼 Corporate Gifts' },
-  { value: 'customMerchandise', label: '🪄 Custom Merchandise' },
+  { value: 'gifts', label: '🎁 Gifts' },
+  { value: 'stationery', label: '✏️ Stationery' },
+  { value: 'household', label: '🏠 Household' },
+  { value: 'toys', label: '🧸 Toys' },
+  { value: 'art-supplies', label: '🎨 Art Supplies' },
+  { value: 'candles-globes', label: '🕯️ Candles & Globes' },
+  { value: 'stickers-craft', label: '✂️ Stickers & Craft' },
 ];
 
 const RECIPIENTS = [
@@ -59,7 +57,7 @@ const SORT_OPTIONS = [
 ];
 
 const PAGE_SIZE = 12;
-const MAX_PRICE = 5000;
+const MAX_PRICE = 2000;
 
 /* ──────────────────────────────────────────────────────────
    DUAL RANGE SLIDER
@@ -202,7 +200,7 @@ export default function Shop() {
   const [isLoading,          setIsLoading]          = useState(true);
 
   useEffect(() => {
-    document.title = "Shop Personalised Gifts | ClassyPik Gifts";
+    document.title = "Shop - Blessy Gift Shop";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);

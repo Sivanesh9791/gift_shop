@@ -11,7 +11,7 @@ export default function TrackOrder() {
 
   useEffect(() => {
     if (!isTracking) {
-      document.title = "Track Order | ClassyPik Gifts";
+      document.title = "Track Order | Lights & Gifts";
       return;
     }
     const timer = setInterval(() => {

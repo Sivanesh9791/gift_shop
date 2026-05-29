@@ -7,6 +7,21 @@
 :root {
   --text: #08060d;
   --bg: #fff;
+
+  /* Blessy Gift Shop Brand Colors */
+  --brand-primary: #C5E619;
+  --brand-primary-hover: #A8CC00;
+  --brand-secondary: #1C1C1C;
+  --brand-light-bg: #F9F9F9;
+  --brand-dark-bg: #1C1C1C;
+  --brand-text-light: #FFFFFF;
+  --brand-text-dark: #333333;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +31,6 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 @keyframes confettiFall {
