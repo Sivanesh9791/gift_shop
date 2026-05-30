@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useAdmin } from '../context/AdminContext';
 import AdminSidebar from './AdminSidebar';
 import AdminNavbar from './AdminNavbar';
@@ -13,6 +13,15 @@ import Settings from '../pages/Settings';
 export default function AdminLayout() {
   const { darkMode } = useAdmin();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { pathname } = useLocation();
+  const mainRef = useRef(null);
+
+  // Scroll to top of main container on route change
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [pathname]);
 
   // Handle dark mode
   useEffect(() => {
@@ -40,7 +49,7 @@ export default function AdminLayout() {
       <div className="flex flex-col flex-1 overflow-hidden">
         <AdminNavbar onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
         
-        <main className="flex-1 overflow-y-auto p-6">
+        <main ref={mainRef} className="flex-1 overflow-y-auto p-6">
           <Routes>
             <Route index element={<Dashboard />} />
             <Route path="products" element={<Products />} />
