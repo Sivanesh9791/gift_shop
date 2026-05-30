@@ -14,7 +14,7 @@ export default function WishlistBtn({ product, className = '' }) {
       }}
       className={`p-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md transition-all duration-200
         hover:scale-110 active:scale-95
-        ${wishlisted ? 'text-rose-500' : 'text-slate-400 hover:text-rose-400'}
+        ${wishlisted ? 'text-red-600' : 'text-slate-400 hover:text-red-500'}
         ${className}`}
       aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
       title={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}

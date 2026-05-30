@@ -33,7 +33,7 @@ export default function Checkout() {
 
   // Cart redirects if empty
   useEffect(() => {
-    document.title = "Checkout | Lights & Gifts";
+    document.title = "Checkout | TRESOR GIFTS";
     if (items.length === 0 && step === 1) {
       toast('Your cart is empty', { icon: '🛒' });
       navigate('/shop');
@@ -158,15 +158,15 @@ export default function Checkout() {
     <div className="bg-slate-50 min-h-screen pb-20">
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-600">
-            Lights & Gifts 🪔
+          <Link to="/" className="font-serif text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-800">
+            TRESOR GIFTS 🪔
           </Link>
           <div className="flex items-center gap-2 text-sm font-medium">
             {steps.map((s, idx) => (
               <div key={s.num} className="flex items-center">
                 <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
                   step > s.num ? 'bg-emerald-500 text-white' : 
-                  step === s.num ? 'bg-rose-600 text-white' : 'bg-slate-200 text-slate-500'
+                  step === s.num ? 'bg-red-700 text-white' : 'bg-slate-200 text-slate-500'
                 }`}>
                   {step > s.num ? <Check size={12} /> : s.num}
                 </div>
@@ -185,7 +185,7 @@ export default function Checkout() {
           {/* STEP 1: DELIVERY */}
           {step === 1 && (
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 animate-in fade-in slide-in-from-bottom-4 duration-300">
-              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><Truck className="text-rose-500" /> Delivery Details</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><Truck className="text-red-600" /> Delivery Details</h2>
               
               <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200 mb-6">
                 <div>
@@ -195,14 +195,14 @@ export default function Checkout() {
                 <button
                   type="button"
                   onClick={() => setIsGift(!isGift)}
-                  className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${isGift ? 'bg-rose-500' : 'bg-slate-300'}`}
+                  className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${isGift ? 'bg-red-600' : 'bg-slate-300'}`}
                 >
                   <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${isGift ? 'translate-x-6' : ''}`} />
                 </button>
               </div>
 
               {deliveryError && (
-                <div className="mb-6 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-sm rounded-lg flex flex-row items-center gap-2">
+                <div className="mb-6 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg flex flex-row items-center gap-2">
                   <AlertCircle size={16} /> {deliveryError}
                 </div>
               )}
@@ -213,44 +213,44 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
-                    <input type="text" name="fullName" value={d.fullName} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                    <input type="text" name="fullName" value={d.fullName} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Email *</label>
-                    <input type="email" name="email" value={d.email} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                    <input type="email" name="email" value={d.email} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                    <input type="tel" name="phone" value={d.phone} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                    <input type="tel" name="phone" value={d.phone} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                   </div>
                   
                   {!isGift && (
                     <>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Address Line 1 *</label>
-                        <input type="text" name="address1" value={d.address1} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="address1" value={d.address1} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Address Line 2 (Optional)</label>
-                        <input type="text" name="address2" value={d.address2} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="address2" value={d.address2} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-1">City *</label>
-                        <input type="text" name="city" value={d.city} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="city" value={d.city} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-1">State/Province</label>
-                          <input type="text" name="state" value={d.state} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                          <input type="text" name="state" value={d.state} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-1">Postcode / ZIP *</label>
-                          <input type="text" name="postcode" value={d.postcode} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                          <input type="text" name="postcode" value={d.postcode} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                         </div>
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Country *</label>
-                        <select name="country" value={d.country} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow appearance-none">
+                        <select name="country" value={d.country} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow appearance-none">
                           {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                         </select>
                       </div>
@@ -266,33 +266,33 @@ export default function Checkout() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Recipient's Full Name *</label>
-                        <input type="text" name="rFullName" value={d.rFullName} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="rFullName" value={d.rFullName} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Address Line 1 *</label>
-                        <input type="text" name="rAddress1" value={d.rAddress1} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="rAddress1" value={d.rAddress1} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Address Line 2 (Optional)</label>
-                        <input type="text" name="rAddress2" value={d.rAddress2} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="rAddress2" value={d.rAddress2} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-1">City *</label>
-                        <input type="text" name="rCity" value={d.rCity} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                        <input type="text" name="rCity" value={d.rCity} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-1">State</label>
-                          <input type="text" name="rState" value={d.rState} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                          <input type="text" name="rState" value={d.rState} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-slate-700 mb-1">Postcode *</label>
-                          <input type="text" name="rPostcode" value={d.rPostcode} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" />
+                          <input type="text" name="rPostcode" value={d.rPostcode} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" />
                         </div>
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-slate-700 mb-1">Country *</label>
-                        <select name="rCountry" value={d.rCountry} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow appearance-none">
+                        <select name="rCountry" value={d.rCountry} onChange={e => handleInputChange(e, setDeliveryData)} className="w-full border border-slate-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow appearance-none">
                           {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                         </select>
                       </div>
@@ -300,7 +300,7 @@ export default function Checkout() {
 
                     <label className="flex items-center gap-3 p-4 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
                       <div className="relative flex items-center">
-                        <input type="checkbox" checked={giftReceipt} onChange={e => setGiftReceipt(e.target.checked)} className="peer w-5 h-5 rounded border-slate-300 text-rose-500 focus:ring-rose-500 cursor-pointer" />
+                        <input type="checkbox" checked={giftReceipt} onChange={e => setGiftReceipt(e.target.checked)} className="peer w-5 h-5 rounded border-slate-300 text-red-600 focus:ring-red-500 cursor-pointer" />
                       </div>
                       <div className="flex-1">
                         <span className="font-semibold text-slate-900 block">Include gift receipt</span>
@@ -314,9 +314,9 @@ export default function Checkout() {
                   <h3 className="font-semibold text-slate-800 mb-4">Delivery Method</h3>
                   
                   <div className="space-y-3">
-                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'standard' ? 'border-rose-500 bg-rose-50' : 'border-slate-200 hover:border-slate-300'}`}>
+                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'standard' ? 'border-red-600 bg-red-50' : 'border-slate-200 hover:border-slate-300'}`}>
                       <div className="flex items-center gap-3">
-                        <input type="radio" name="deliveryMethod" value="standard" checked={deliveryMethod === 'standard'} onChange={() => setDeliveryMethod('standard')} className="w-4 h-4 text-rose-600 focus:ring-rose-500 border-gray-300" />
+                        <input type="radio" name="deliveryMethod" value="standard" checked={deliveryMethod === 'standard'} onChange={() => setDeliveryMethod('standard')} className="w-4 h-4 text-red-700 focus:ring-red-500 border-gray-300" />
                         <div>
                           <p className="font-semibold text-slate-900">Standard Delivery</p>
                           <p className="text-sm text-slate-500">3-5 business days</p>
@@ -325,9 +325,9 @@ export default function Checkout() {
                       <span className="font-bold text-slate-900">{cartTotal >= SHIPPING_THRESHOLD ? 'FREE' : '$4.99'}</span>
                     </label>
 
-                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'express' ? 'border-rose-500 bg-rose-50' : 'border-slate-200 hover:border-slate-300'}`}>
+                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'express' ? 'border-red-600 bg-red-50' : 'border-slate-200 hover:border-slate-300'}`}>
                       <div className="flex items-center gap-3">
-                        <input type="radio" name="deliveryMethod" value="express" checked={deliveryMethod === 'express'} onChange={() => setDeliveryMethod('express')} className="w-4 h-4 text-rose-600 focus:ring-rose-500 border-gray-300" />
+                        <input type="radio" name="deliveryMethod" value="express" checked={deliveryMethod === 'express'} onChange={() => setDeliveryMethod('express')} className="w-4 h-4 text-red-700 focus:ring-red-500 border-gray-300" />
                         <div>
                           <p className="font-semibold text-slate-900">Express Delivery</p>
                           <p className="text-sm text-slate-500">1-2 business days</p>
@@ -336,9 +336,9 @@ export default function Checkout() {
                       <span className="font-bold text-slate-900">$9.99</span>
                     </label>
                     
-                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'sameday' ? 'border-rose-500 bg-rose-50' : 'border-slate-200 hover:border-slate-300'}`}>
+                    <label className={`flex items-center justify-between p-4 border rounded-xl cursor-pointer transition-colors ${deliveryMethod === 'sameday' ? 'border-red-600 bg-red-50' : 'border-slate-200 hover:border-slate-300'}`}>
                       <div className="flex items-center gap-3">
-                        <input type="radio" name="deliveryMethod" value="sameday" checked={deliveryMethod === 'sameday'} onChange={() => setDeliveryMethod('sameday')} className="w-4 h-4 text-rose-600 focus:ring-rose-500 border-gray-300" />
+                        <input type="radio" name="deliveryMethod" value="sameday" checked={deliveryMethod === 'sameday'} onChange={() => setDeliveryMethod('sameday')} className="w-4 h-4 text-red-700 focus:ring-red-500 border-gray-300" />
                         <div>
                           <p className="font-semibold text-slate-900 flex items-center gap-2">Same Day Delivery <span className="bg-slate-900 text-white text-[10px] uppercase font-bold px-1.5 py-0.5 rounded">Fastest</span></p>
                           <p className="text-sm text-slate-500">Delivered today (Order before 2 PM)</p>
@@ -353,7 +353,7 @@ export default function Checkout() {
                   <h3 className="font-semibold text-slate-800 mb-1">Choose Delivery Date (Optional)</h3>
                   <p className="text-sm text-slate-500 mb-4">Want it delivered on a specific day?</p>
                   <select 
-                    className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none"
+                    className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none"
                     value={deliveryDate}
                     onChange={e => setDeliveryDate(e.target.value)}
                   >
@@ -365,7 +365,7 @@ export default function Checkout() {
                 </div>
 
                 <div className="mt-8 flex justify-end">
-                  <button type="submit" className="bg-rose-600 text-white font-bold py-3.5 px-8 rounded-xl flex items-center gap-2 hover:bg-rose-700 shadow-lg shadow-rose-200 transition-colors active:scale-95 group">
+                  <button type="submit" className="bg-red-700 text-white font-bold py-3.5 px-8 rounded-xl flex items-center gap-2 hover:bg-red-800 shadow-lg shadow-red-200 transition-colors active:scale-95 group">
                     Continue to Payment <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -377,14 +377,14 @@ export default function Checkout() {
           {step === 2 && (
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 animate-in fade-in slide-in-from-right-4 duration-300">
               <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center justify-between">
-                <span className="flex items-center gap-2"><CreditCard className="text-rose-500" /> Payment Details</span>
+                <span className="flex items-center gap-2"><CreditCard className="text-red-600" /> Payment Details</span>
                 <span className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded border border-emerald-100">
                   <Lock size={12} /> Pay securely with SSL
                 </span>
               </h2>
 
               {paymentError && (
-                <div className="mb-6 p-3 bg-rose-50 border border-rose-200 text-rose-700 text-sm rounded-lg flex flex-row items-center gap-2">
+                <div className="mb-6 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg flex flex-row items-center gap-2">
                   <AlertCircle size={16} /> {paymentError}
                 </div>
               )}
@@ -404,7 +404,7 @@ export default function Checkout() {
                           const val = e.target.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
                           setPaymentData(p => ({ ...p, cardNumber: val }));
                         }}
-                        className="w-full border border-slate-300 rounded-lg pl-4 pr-12 py-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none font-mono tracking-wider transition-shadow" 
+                        className="w-full border border-slate-300 rounded-lg pl-4 pr-12 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none font-mono tracking-wider transition-shadow" 
                       />
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
                         {getCardIcon() === 'VISA' && <div className="w-8 h-5 bg-blue-600 rounded text-white text-[8px] flex items-center justify-center font-bold px-1 italic">VISA</div>}
@@ -427,7 +427,7 @@ export default function Checkout() {
                           if (val.length >= 2) val = val.substring(0, 2) + '/' + val.substring(2, 4);
                           setPaymentData(p => ({ ...p, expiry: val }));
                         }}
-                        className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none font-mono transition-shadow" 
+                        className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none font-mono transition-shadow" 
                       />
                     </div>
                     <div>
@@ -442,7 +442,7 @@ export default function Checkout() {
                           const val = e.target.value.replace(/\D/g, '');
                           setPaymentData(p => ({ ...p, cvv: val }));
                         }}
-                        className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none font-mono transition-shadow" 
+                        className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none font-mono transition-shadow" 
                       />
                     </div>
                   </div>
@@ -455,7 +455,7 @@ export default function Checkout() {
                       placeholder="Jane Doe"
                       value={paymentData.nameOnCard}
                       onChange={e => handleInputChange(e, setPaymentData)}
-                      className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-shadow" 
+                      className="w-full border border-slate-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none transition-shadow" 
                     />
                   </div>
                 </div>
@@ -464,7 +464,7 @@ export default function Checkout() {
                   <button type="button" onClick={() => setStep(1)} className="text-slate-500 font-semibold hover:text-slate-900 transition-colors">
                     ← Back
                   </button>
-                  <button type="submit" className="bg-rose-600 text-white font-bold py-3.5 px-8 rounded-xl flex items-center gap-2 hover:bg-rose-700 shadow-lg shadow-rose-200 transition-colors active:scale-95 group">
+                  <button type="submit" className="bg-red-700 text-white font-bold py-3.5 px-8 rounded-xl flex items-center gap-2 hover:bg-red-800 shadow-lg shadow-red-200 transition-colors active:scale-95 group">
                     Review Order <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -475,7 +475,7 @@ export default function Checkout() {
           {/* STEP 3: REVIEW */}
           {step === 3 && (
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 animate-in fade-in slide-in-from-right-4 duration-300">
-              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><Check className="text-rose-500" /> Review & Confirm</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><Check className="text-red-600" /> Review & Confirm</h2>
               
               <div className="space-y-6">
                 
@@ -483,7 +483,7 @@ export default function Checkout() {
                 <div>
                   <div className="flex justify-between items-end mb-3">
                     <h3 className="font-semibold text-slate-800">Order Items</h3>
-                    <Link to="/cart" className="text-xs font-semibold text-rose-500 hover:text-rose-700 underline">Edit Cart</Link>
+                    <Link to="/cart" className="text-xs font-semibold text-red-600 hover:text-red-700 underline">Edit Cart</Link>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl divide-y divide-slate-100">
                     {items.map(item => (
@@ -507,7 +507,7 @@ export default function Checkout() {
                 <div>
                   <div className="flex justify-between items-end mb-3">
                     <h3 className="font-semibold text-slate-800">Delivery Information</h3>
-                    <button onClick={() => setStep(1)} className="text-xs font-semibold text-rose-500 hover:text-rose-700 underline">Edit</button>
+                    <button onClick={() => setStep(1)} className="text-xs font-semibold text-red-600 hover:text-red-700 underline">Edit</button>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700">
                     <div className="grid grid-cols-2 gap-4">
@@ -531,7 +531,7 @@ export default function Checkout() {
                 <div>
                   <div className="flex justify-between items-end mb-3">
                     <h3 className="font-semibold text-slate-800">Payment details</h3>
-                    <button onClick={() => setStep(2)} className="text-xs font-semibold text-rose-500 hover:text-rose-700 underline">Edit</button>
+                    <button onClick={() => setStep(2)} className="text-xs font-semibold text-red-600 hover:text-red-700 underline">Edit</button>
                   </div>
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700 flex items-center gap-3">
                     <CreditCard size={20} className="text-slate-400" />
@@ -545,7 +545,7 @@ export default function Checkout() {
                 <button type="button" onClick={() => setStep(2)} className="text-slate-500 font-semibold hover:text-slate-900 transition-colors">
                   ← Back
                 </button>
-                <button onClick={handlePlaceOrder} className="bg-gradient-to-r from-rose-600 to-pink-500 text-white font-bold py-4 px-10 rounded-xl text-lg hover:from-rose-700 hover:to-pink-600 shadow-xl shadow-rose-300 transition-all active:scale-95">
+                <button onClick={handlePlaceOrder} className="bg-gradient-to-r from-red-600 to-red-800 text-white font-bold py-4 px-10 rounded-xl text-lg hover:from-red-700 hover:to-red-800 shadow-xl shadow-red-300 transition-all active:scale-95">
                   Confirm & Place Order
                 </button>
               </div>
@@ -595,9 +595,9 @@ export default function Checkout() {
                     placeholder="Enter Promo Code" 
                     value={promoCode}
                     onChange={e => setPromoCode(e.target.value)}
-                    className="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400 uppercase"
+                    className="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 uppercase"
                   />
-                  <button type="submit" disabled={!promoCode.trim()} className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 font-semibold text-xs rounded-lg disabled:opacity-50 hover:bg-rose-600 transition-colors">
+                  <button type="submit" disabled={!promoCode.trim()} className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 font-semibold text-xs rounded-lg disabled:opacity-50 hover:bg-red-700 transition-colors">
                     Apply
                   </button>
                 </form>

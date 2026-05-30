@@ -12,7 +12,7 @@ export default function Wishlist() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    document.title = "My Wishlist | Lights & Gifts";
+    document.title = "My Wishlist | TRESOR GIFTS";
   }, []);
 
   const handleShare = () => {
@@ -60,12 +60,12 @@ export default function Wishlist() {
         {wishlistCount === 0 ? (
           // Empty State
           <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-12 text-center max-w-2xl mx-auto">
-            <div className="w-20 h-20 bg-rose-50 text-rose-300 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Heart size={40} className="fill-rose-100" />
+            <div className="w-20 h-20 bg-red-50 text-red-300 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Heart size={40} className="fill-red-100" />
             </div>
             <h2 className="text-2xl font-serif font-bold text-slate-900 mb-3">Your wishlist is empty 💝</h2>
             <p className="text-slate-500 mb-8 max-w-md mx-auto">Keep track of the perfect gifts for your loved ones (or yourself) by clicking the heart icon on any product.</p>
-            <Link to="/shop" className="bg-rose-500 text-white font-bold py-3.5 px-8 rounded-xl inline-flex items-center gap-2 hover:bg-rose-600 shadow-md shadow-rose-200 transition-colors">
+            <Link to="/shop" className="bg-red-600 text-white font-bold py-3.5 px-8 rounded-xl inline-flex items-center gap-2 hover:bg-red-700 shadow-md shadow-red-200 transition-colors">
               Start adding gifts <ShoppingCart size={18} />
             </Link>
           </div>
@@ -79,7 +79,7 @@ export default function Wishlist() {
                   
                   {/* Badges */}
                   <div className="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
-                    {product.isSale && <span className="bg-rose-500 text-white text-[10px] font-bold px-2 py-1 uppercase rounded tracking-wider shadow-sm">Sale</span>}
+                    {product.isSale && <span className="bg-red-600 text-white text-[10px] font-bold px-2 py-1 uppercase rounded tracking-wider shadow-sm">Sale</span>}
                     {product.stock === 0 && <span className="bg-slate-800 text-white text-[10px] font-bold px-2 py-1 uppercase rounded tracking-wider shadow-sm">Out of Stock</span>}
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export default function Wishlist() {
                 <div className="p-5 flex-grow flex flex-col">
                   <Link to={`/product/${product.slug}`} className="flex-grow">
                     <p className="text-xs text-slate-400 font-bold tracking-wider uppercase mb-1">{product.category}</p>
-                    <h3 className="font-bold text-slate-900 leading-snug line-clamp-2 hover:text-rose-500 transition-colors">{product.name}</h3>
+                    <h3 className="font-bold text-slate-900 leading-snug line-clamp-2 hover:text-red-600 transition-colors">{product.name}</h3>
                   </Link>
                   
                   <div className="mt-3 flex items-baseline gap-2">
@@ -101,13 +101,13 @@ export default function Wishlist() {
                     <button 
                       disabled={product.stock === 0}
                       onClick={() => handleMoveToCart(product)}
-                      className="w-full bg-slate-900 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-rose-600 disabled:opacity-50 disabled:hover:bg-slate-900 transition-colors text-sm"
+                      className="w-full bg-slate-900 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-red-700 disabled:opacity-50 disabled:hover:bg-slate-900 transition-colors text-sm"
                     >
                       <ShoppingCart size={16} /> Move to Cart
                     </button>
                     <button 
                       onClick={() => toggleWishlist(product)}
-                      className="w-full bg-slate-50 text-slate-600 font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-rose-50 hover:text-rose-600 transition-colors text-sm border border-slate-200"
+                      className="w-full bg-slate-50 text-slate-600 font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-red-50 hover:text-red-700 transition-colors text-sm border border-slate-200"
                     >
                       <HeartOff size={16} /> Remove
                     </button>
@@ -122,7 +122,7 @@ export default function Wishlist() {
         <div className="pt-16 border-t border-slate-200 mt-16">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-serif font-bold text-slate-900">People also saved</h2>
-            <Link to="/shop" className="text-rose-500 font-semibold text-sm hover:text-rose-700">View more</Link>
+            <Link to="/shop" className="text-red-600 font-semibold text-sm hover:text-red-700">View more</Link>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -132,7 +132,7 @@ export default function Wishlist() {
                   <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </Link>
                 <div className="p-4">
-                  <Link to={`/product/${product.slug}`} className="block font-bold text-slate-900 text-sm line-clamp-1 hover:text-rose-500 mb-1">
+                  <Link to={`/product/${product.slug}`} className="block font-bold text-slate-900 text-sm line-clamp-1 hover:text-red-600 mb-1">
                     {product.name}
                   </Link>
                   <p className="font-bold text-slate-600 text-sm">₹{product.price.toFixed(2)}</p>

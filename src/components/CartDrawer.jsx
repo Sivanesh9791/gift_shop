@@ -104,7 +104,7 @@ export default function CartDrawer({ open, onClose }) {
                     {/* Header */}
                     <div className="bg-white px-5 py-4 border-b border-slate-100 flex items-center justify-between flex-shrink-0 sticky top-0 z-10">
                       <Dialog.Title className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                        <ShoppingBag size={22} className="text-rose-500" /> 
+                        <ShoppingBag size={22} className="text-red-600" /> 
                         Your Cart 
                         <span className="bg-slate-100 text-slate-600 text-sm py-0.5 px-2.5 rounded-full">
                           {items.reduce((s,i)=>s+i.qty, 0)}
@@ -126,7 +126,7 @@ export default function CartDrawer({ open, onClose }) {
                       </div>
                       <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
                         <div 
-                          className={`h-full transition-all duration-500 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-rose-500'}`}
+                          className={`h-full transition-all duration-500 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-red-600'}`}
                           style={{ width: `${progressPct}%` }}
                         />
                       </div>
@@ -136,12 +136,12 @@ export default function CartDrawer({ open, onClose }) {
                     <div className="flex-1 overflow-y-auto overscroll-contain">
                       {items.length === 0 ? (
                         <div className="flex flex-col items-center justify-center h-full px-5 text-center pb-20">
-                          <div className="w-24 h-24 bg-rose-50 text-rose-300 rounded-full flex items-center justify-center mb-4">
+                          <div className="w-24 h-24 bg-red-50 text-red-300 rounded-full flex items-center justify-center mb-4">
                             <ShoppingBag size={40} />
                           </div>
                           <h3 className="text-lg font-bold text-slate-900 mb-2">Your cart is empty</h3>
                           <p className="text-slate-500 text-sm mb-6 max-w-[250px]">Looks like you haven't added any gifts yet.</p>
-                          <button onClick={() => { onClose(); navigate('/shop'); }} className="bg-slate-900 text-white font-semibold px-8 py-3 rounded-full hover:bg-rose-600 transition-colors shadow-md active:scale-95">
+                          <button onClick={() => { onClose(); navigate('/shop'); }} className="bg-slate-900 text-white font-semibold px-8 py-3 rounded-full hover:bg-red-700 transition-colors shadow-md active:scale-95">
                             Start Shopping
                           </button>
                         </div>
@@ -153,10 +153,10 @@ export default function CartDrawer({ open, onClose }) {
                               <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={item.product.images[0]} alt={item.product.name} className="w-[72px] h-[72px] rounded-xl object-cover bg-slate-50" />
                               <div className="flex-1 min-w-0">
                                 <div className="flex justify-between items-start mb-1">
-                                  <Link to={`/product/${item.product.slug}`} onClick={onClose} className="font-semibold text-slate-900 hover:text-rose-600 line-clamp-2 text-sm leading-tight pr-2">
+                                  <Link to={`/product/${item.product.slug}`} onClick={onClose} className="font-semibold text-slate-900 hover:text-red-700 line-clamp-2 text-sm leading-tight pr-2">
                                     {item.product.name}
                                   </Link>
-                                  <button onClick={() => removeItem(item.product.id)} className="text-slate-300 hover:text-rose-500 transition-colors flex-shrink-0">
+                                  <button onClick={() => removeItem(item.product.id)} className="text-slate-300 hover:text-red-600 transition-colors flex-shrink-0">
                                     <Trash2 size={16} />
                                   </button>
                                 </div>
@@ -191,7 +191,7 @@ export default function CartDrawer({ open, onClose }) {
                                   <p className="font-bold text-slate-900 text-sm">₹{(item.product.price * item.qty).toFixed(2)}</p>
                                 </div>
 
-                                <button onClick={() => setEditingItem(item)} className="text-[11px] font-semibold text-rose-500 hover:text-rose-700 mt-2 underline underline-offset-2">
+                                <button onClick={() => setEditingItem(item)} className="text-[11px] font-semibold text-red-600 hover:text-red-700 mt-2 underline underline-offset-2">
                                   Edit gift options
                                 </button>
                               </div>
@@ -211,7 +211,7 @@ export default function CartDrawer({ open, onClose }) {
                                     <h5 className="font-medium text-slate-800 text-xs line-clamp-1 mb-1">{prod.name}</h5>
                                     <div className="flex items-center justify-between">
                                       <span className="font-bold text-slate-900 text-sm">₹{prod.price}</span>
-                                      <button onClick={() => handleAddSuggested(prod)} className="bg-slate-100 text-slate-700 hover:bg-rose-500 hover:text-white p-1.5 rounded-md transition-colors">
+                                      <button onClick={() => handleAddSuggested(prod)} className="bg-slate-100 text-slate-700 hover:bg-red-600 hover:text-white p-1.5 rounded-md transition-colors">
                                         <Plus size={14} />
                                       </button>
                                     </div>
@@ -229,9 +229,9 @@ export default function CartDrawer({ open, onClose }) {
                                 placeholder="Promo code (e.g. SAVE10)" 
                                 value={couponInput}
                                 onChange={e => setCouponInput(e.target.value)}
-                                className="flex-1 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400 uppercase"
+                                className="flex-1 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 uppercase"
                               />
-                              <button type="submit" disabled={!couponInput.trim()} className="bg-slate-900 text-white px-4 py-2 font-semibold text-sm rounded-xl disabled:opacity-50 hover:bg-rose-600 transition-colors">
+                              <button type="submit" disabled={!couponInput.trim()} className="bg-slate-900 text-white px-4 py-2 font-semibold text-sm rounded-xl disabled:opacity-50 hover:bg-red-700 transition-colors">
                                 Apply
                               </button>
                             </form>
@@ -284,7 +284,7 @@ export default function CartDrawer({ open, onClose }) {
                           <button onClick={() => { onClose(); navigate('/cart'); }} className="col-span-1 border border-slate-200 text-slate-700 font-bold py-3.5 rounded-xl hover:bg-slate-50 transition-colors">
                             View Cart
                           </button>
-                          <button onClick={() => { onClose(); navigate('/checkout'); }} className="col-span-1 bg-rose-600 text-white font-bold py-3.5 rounded-xl flex justify-center items-center gap-2 hover:bg-rose-700 shadow-md shadow-rose-200 transition-colors active:scale-95 group">
+                          <button onClick={() => { onClose(); navigate('/checkout'); }} className="col-span-1 bg-red-700 text-white font-bold py-3.5 rounded-xl flex justify-center items-center gap-2 hover:bg-red-800 shadow-md shadow-red-200 transition-colors active:scale-95 group">
                             Checkout <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>

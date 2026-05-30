@@ -8,8 +8,8 @@ export default function NotFound() {
         
         {/* Interactive CSS Illustration */}
         <div className="relative w-64 h-64 mx-auto mb-8 pointer-events-none">
-          <div className="absolute inset-0 bg-rose-500 rounded-full opacity-10 animate-ping"></div>
-          <div className="absolute inset-4 bg-rose-400 rounded-full opacity-20"></div>
+          <div className="absolute inset-0 bg-red-600 rounded-full opacity-10 animate-ping"></div>
+          <div className="absolute inset-4 bg-red-400 rounded-full opacity-20"></div>
           <div className="absolute inset-0 flex items-center justify-center text-[100px] hover:rotate-12 transition-transform duration-500 pointer-events-auto cursor-pointer drop-shadow-xl">
             🤷‍♂️🎁
           </div>
@@ -36,7 +36,7 @@ export default function NotFound() {
           </Link>
           <Link 
             to="/shop" 
-            className="w-full sm:w-auto bg-rose-50 text-rose-600 font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:bg-rose-100 hover:text-rose-700 transition-colors mb:my-0 active:scale-95 border border-rose-100"
+            className="w-full sm:w-auto bg-red-50 text-red-700 font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:bg-red-100 hover:text-red-700 transition-colors mb:my-0 active:scale-95 border border-red-100"
           >
             <PackageSearch size={18} /> Browse Gifts
           </Link>

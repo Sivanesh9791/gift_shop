@@ -56,7 +56,7 @@ function Toggle({ value, onChange, label, sub }) {
       <button
         type="button"
         onClick={() => onChange(!value)}
-        className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${value ? 'bg-rose-500' : 'bg-slate-200'}`}
+        className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${value ? 'bg-red-600' : 'bg-slate-200'}`}
       >
         <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${value ? 'translate-x-6' : ''}`} />
       </button>
@@ -72,7 +72,7 @@ function AccordionPanel({ title, children, defaultOpen = false }) {
     <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => (
         <div className="border-b border-slate-100">
-          <Disclosure.Button className="flex w-full items-center justify-between py-4 text-left font-semibold text-slate-800 hover:text-rose-600 transition-colors">
+          <Disclosure.Button className="flex w-full items-center justify-between py-4 text-left font-semibold text-slate-800 hover:text-red-700 transition-colors">
             {title}
             <ChevronDown size={16} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
           </Disclosure.Button>
@@ -106,7 +106,7 @@ export default function ProductDetail() {
   const product = productsData.find(p => p.slug === slug);
 
   useEffect(() => {
-    if (product) document.title = `${product.name} | Lights & Gifts`;
+    if (product) document.title = `${product.name} | TRESOR GIFTS`;
   }, [product]);
 
   useEffect(() => {
@@ -139,7 +139,7 @@ export default function ProductDetail() {
         <h1 className="text-2xl font-bold text-slate-900">Product not found</h1>
         <p className="text-slate-500">We couldn't find the gift you're looking for.</p>
         <button onClick={() => navigate('/shop')}
-          className="flex items-center gap-2 bg-rose-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-rose-700 transition-colors">
+          className="flex items-center gap-2 bg-red-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-800 transition-colors">
           <ArrowLeft size={16} /> Back to Shop
         </button>
       </div>
@@ -209,7 +209,7 @@ export default function ProductDetail() {
                 />
                 {/* Badges */}
                 <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                  {product.isSale && <span className="bg-rose-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">SALE</span>}
+                  {product.isSale && <span className="bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">SALE</span>}
                   {product.isNew && <span className="bg-emerald-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">NEW</span>}
                   {product.isPersonalisable && <span className="bg-violet-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">PERSONALISED</span>}
                 </div>
@@ -219,7 +219,7 @@ export default function ProductDetail() {
                 {product.images.map((img, i) => (
                   <button key={i} onClick={() => switchImage(i)}
                     className={`flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all
-                      ${selectedImage === i ? 'border-rose-500 shadow-md' : 'border-transparent hover:border-slate-300'}`}>
+                      ${selectedImage === i ? 'border-red-600 shadow-md' : 'border-transparent hover:border-slate-300'}`}>
                     <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={img} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
@@ -233,9 +233,9 @@ export default function ProductDetail() {
             {/* S1 — Breadcrumb + Title */}
             <div className="border-b border-slate-100 pb-6 mb-6">
               <nav className="flex items-center gap-1.5 text-sm text-slate-400 mb-3 flex-wrap">
-                <Link to="/" className="hover:text-rose-500 transition-colors">Home</Link>
+                <Link to="/" className="hover:text-red-600 transition-colors">Home</Link>
                 <ChevronRight size={13} />
-                <Link to={`/shop?category=${product.category}`} className="hover:text-rose-500 transition-colors capitalize">
+                <Link to={`/shop?category=${product.category}`} className="hover:text-red-600 transition-colors capitalize">
                   {product.category}
                 </Link>
                 <ChevronRight size={13} />
@@ -247,7 +247,7 @@ export default function ProductDetail() {
               </h1>
 
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className="text-xs bg-rose-100 text-rose-600 px-3 py-1 rounded-full font-medium capitalize">
+                <span className="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full font-medium capitalize">
                   {product.category}
                 </span>
                 {product.isBestseller && (
@@ -265,7 +265,7 @@ export default function ProductDetail() {
             {/* S2 — Price */}
             <div className="border-b border-slate-100 pb-6 mb-6">
               <div className="flex items-center flex-wrap gap-3">
-                <span className="text-3xl font-bold text-rose-600">₹{product.price}</span>
+                <span className="text-3xl font-bold text-red-700">₹{product.price}</span>
                 {product.compareAtPrice && (
                   <>
                     <span className="text-xl text-slate-400 line-through">₹{product.compareAtPrice}</span>
@@ -285,7 +285,7 @@ export default function ProductDetail() {
             {/* S3 — Personalisation */}
             {product.isPersonalisable && (
               <div className="border-b border-slate-100 pb-6 mb-6">
-                <div className="bg-rose-50 border border-rose-200 rounded-xl p-4">
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
                   <h3 className="font-semibold text-slate-800 mb-1 flex items-center gap-2">
                     ✏️ Personalise this gift
                   </h3>
@@ -296,8 +296,8 @@ export default function ProductDetail() {
                     value={personText}
                     onChange={e => setPersonText(e.target.value)}
                     placeholder="Enter your personalisation message…"
-                    className="w-full border border-rose-200 rounded-lg p-3 text-sm resize-none
-                      focus:outline-none focus:ring-2 focus:ring-rose-400 bg-white placeholder:text-slate-400"
+                    className="w-full border border-red-200 rounded-lg p-3 text-sm resize-none
+                      focus:outline-none focus:ring-2 focus:ring-red-400 bg-white placeholder:text-slate-400"
                   />
                   <p className="text-xs text-slate-400 text-right mt-1">{personText.length}/100</p>
                 </div>
@@ -323,7 +323,7 @@ export default function ProductDetail() {
                           <button key={style} onClick={() => setWrapStyle(style)}
                             className={`text-xs px-3 py-1.5 rounded-full border-2 font-medium transition-all
                               ${wrapStyle === style
-                                ? 'border-rose-500 bg-rose-50 text-rose-700'
+                                ? 'border-red-600 bg-red-50 text-red-700'
                                 : 'border-slate-200 text-slate-600 hover:border-slate-300'}`}>
                             {style}
                           </button>
@@ -359,7 +359,7 @@ export default function ProductDetail() {
                 <CheckCircle size={16} className="text-emerald-500 flex-shrink-0" />
                 {product.inStock
                   ? <span>In Stock — only <strong className="text-slate-800">{product.stockCount} left!</strong></span>
-                  : <span className="text-rose-600 font-medium">Out of Stock</span>
+                  : <span className="text-red-700 font-medium">Out of Stock</span>
                 }
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-600">
@@ -386,9 +386,9 @@ export default function ProductDetail() {
                 {/* Add to cart */}
                 <button onClick={handleAddToCart}
                   disabled={!product.inStock}
-                  className="flex-1 flex items-center justify-center gap-2 bg-rose-500 text-white
-                    rounded-xl py-3 font-bold text-base hover:bg-rose-600 transition-colors
-                    active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-rose-200">
+                  className="flex-1 flex items-center justify-center gap-2 bg-red-600 text-white
+                    rounded-xl py-3 font-bold text-base hover:bg-red-700 transition-colors
+                    active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-red-200">
                   <ShoppingCart size={18} />
                   {product.inStock ? 'Add to Cart' : 'Out of Stock'}
                 </button>
@@ -398,8 +398,8 @@ export default function ProductDetail() {
                 className={`w-full mt-3 flex items-center justify-center gap-2 border-2 rounded-xl py-2.5
                   font-semibold text-sm transition-all active:scale-[0.98]
                   ${wishlisted
-                    ? 'border-rose-500 bg-rose-50 text-rose-600'
-                    : 'border-slate-200 text-slate-600 hover:border-rose-300 hover:text-rose-500'}`}>
+                    ? 'border-red-600 bg-red-50 text-red-700'
+                    : 'border-slate-200 text-slate-600 hover:border-red-300 hover:text-red-600'}`}>
                 <Heart size={16} fill={wishlisted ? 'currentColor' : 'none'} />
                 {wishlisted ? 'Saved to Wishlist' : 'Add to Wishlist'}
               </button>
@@ -495,7 +495,7 @@ export default function ProductDetail() {
             <div className="flex items-end justify-between mb-8">
               <h2 className="text-2xl font-bold text-slate-900">You May Also Like</h2>
               <Link to={`/shop?category=${product.category}`}
-                className="text-rose-600 text-sm font-semibold hover:text-rose-700 flex items-center gap-1">
+                className="text-red-700 text-sm font-semibold hover:text-red-800 flex items-center gap-1">
                 See all <ChevronRight size={15} />
               </Link>
             </div>
@@ -532,9 +532,9 @@ export default function ProductDetail() {
                   <p className="text-2xl font-bold text-slate-900">₹{bundleTotal}</p>
                 </div>
                 <button onClick={handleAddAll}
-                  className="flex items-center justify-center gap-2 bg-rose-500 text-white
-                    px-8 py-3 rounded-xl font-bold hover:bg-rose-600 transition-colors
-                    active:scale-[0.98] shadow-md shadow-rose-200 sm:ml-auto">
+                  className="flex items-center justify-center gap-2 bg-red-600 text-white
+                    px-8 py-3 rounded-xl font-bold hover:bg-red-700 transition-colors
+                    active:scale-[0.98] shadow-md shadow-red-200 sm:ml-auto">
                   <ShoppingCart size={18} /> Add All to Cart
                 </button>
               </div>

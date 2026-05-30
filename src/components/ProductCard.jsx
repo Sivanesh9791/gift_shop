@@ -124,7 +124,7 @@ function GridCard({ product }) {
 
           {/* Name */}
           <Link to={`/product/${product.slug}`} className="flex-grow mb-2">
-            <h3 className="text-base font-bold text-slate-900 leading-snug line-clamp-2 hover:text-rose-600 transition-colors">
+            <h3 className="text-base font-bold text-slate-900 leading-snug line-clamp-2 hover:text-red-700 transition-colors">
               {product.name}
             </h3>
           </Link>
@@ -138,7 +138,7 @@ function GridCard({ product }) {
             {product.isSale && product.compareAtPrice && (
               <>
                 <span className="text-sm text-slate-400 line-through">₹{product.compareAtPrice}</span>
-                <span className="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full">
                   Save ₹{savings}
                 </span>
               </>
@@ -156,7 +156,7 @@ function GridCard({ product }) {
           {/* Add to Cart */}
           <button
             onClick={handleAddToCart}
-            className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-xl font-semibold text-sm hover:bg-rose-600 transition-colors active:scale-[0.98] mb-2"
+            className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-xl font-semibold text-sm hover:bg-red-700 transition-colors active:scale-[0.98] mb-2"
           >
             <ShoppingCart size={16} />
             Add to Cart
@@ -234,7 +234,7 @@ function ListCard({ product }) {
           <span className="text-xs text-slate-400 uppercase tracking-widest font-medium">{product.category}</span>
 
           <Link to={`/product/${product.slug}`}>
-            <h3 className="font-bold text-slate-900 text-base leading-snug group-hover:text-rose-600 transition-colors line-clamp-2">
+            <h3 className="font-bold text-slate-900 text-base leading-snug group-hover:text-red-700 transition-colors line-clamp-2">
               {product.name}
             </h3>
           </Link>
@@ -246,7 +246,7 @@ function ListCard({ product }) {
             {product.isSale && product.compareAtPrice && (
               <>
                 <span className="text-sm text-slate-400 line-through">₹{product.compareAtPrice}</span>
-                <span className="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-0.5 rounded-full">Save ₹{savings}</span>
+                <span className="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full">Save ₹{savings}</span>
               </>
             )}
             {product.freeDelivery && (
@@ -269,7 +269,7 @@ function ListCard({ product }) {
           </button>
           <button
             onClick={handleAddToCart}
-            className="p-2 rounded-full bg-slate-900 text-white hover:bg-rose-600 transition-colors active:scale-95"
+            className="p-2 rounded-full bg-slate-900 text-white hover:bg-red-700 transition-colors active:scale-95"
             title="Add to Cart"
           >
             <ShoppingCart size={16} />

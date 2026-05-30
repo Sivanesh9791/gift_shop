@@ -19,7 +19,7 @@ export default function OccasionBanner() {
     // Feb 1-14: Valentine's
     if (month === 2 && day >= 1 && day <= 14) {
       config = {
-        bg: 'from-pink-500 to-rose-500',
+        bg: 'from-red-500 to-red-700',
         text: '💝 Valentine\'s Day Gifts — Celebrate Love Indian Style',
         btnText: 'Shop Valentine\'s Gifts',
         link: '/shop?occasion=valentines'
@@ -46,7 +46,7 @@ export default function OccasionBanner() {
     // May 1-31: Mother's Day
     else if (month === 5) {
       config = {
-        bg: 'from-pink-400 to-purple-500',
+        bg: 'from-red-400 to-purple-500',
         text: '💐 Mother\'s Day — Celebrate Amma with Love'
       };
     }
@@ -62,7 +62,7 @@ export default function OccasionBanner() {
     // Default
     else {
       config = {
-        bg: 'from-purple-500 to-pink-500',
+        bg: 'from-purple-500 to-red-500',
         text: '🪔 Free gift wrapping on orders over ₹500 | Visit us at Otteri, Chennai',
         btnText: 'Shop Now',
         link: '/shop'

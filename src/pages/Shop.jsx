@@ -13,24 +13,22 @@ import { products as productsData } from '../data/products';
 ────────────────────────────────────────────────────────── */
 const OCCASIONS = [
   { value: 'birthday',     label: 'Birthday' },
-  { value: 'marriage',     label: 'Marriage' },
-  { value: 'babyShower',   label: 'Baby Shower' },
-  { value: 'puberty',      label: 'Puberty' },
-  { value: 'engagement',   label: 'Engagement' },
-  { value: 'baptism',      label: 'Baptism' },
   { value: 'anniversary',  label: 'Anniversary' },
-  { value: 'housewarming', label: 'Housewarming' },
+  { value: 'valentine',    label: "Valentine's Day" },
+  { value: 'wedding',      label: 'Wedding' },
+  { value: 'graduation',   label: 'Graduation' },
   { value: 'corporate',    label: 'Corporate' },
+  { value: 'housewarming', label: 'Housewarming' },
+  { value: 'babyShower',   label: 'Baby Shower' },
+  { value: 'return',       label: 'Return Gift' },
 ];
 
 const CATEGORIES = [
-  { value: 'gifts', label: '🎁 Gifts' },
-  { value: 'stationery', label: '✏️ Stationery' },
-  { value: 'household', label: '🏠 Household' },
-  { value: 'toys', label: '🧸 Toys' },
-  { value: 'art-supplies', label: '🎨 Art Supplies' },
-  { value: 'candles-globes', label: '🕯️ Candles & Globes' },
-  { value: 'stickers-craft', label: '✂️ Stickers & Craft' },
+  { value: 'photoGifts',       label: '📸 Photo Gifts' },
+  { value: 'personalisedItems', label: '🎨 Personalised Items' },
+  { value: 'caricatureArt',    label: '🖼️ Caricatures & Art' },
+  { value: 'woodenCrafts',     label: '🪵 Wooden Crafts' },
+  { value: 'corporateGifts',   label: '💼 Corporate Gifts' },
 ];
 
 const RECIPIENTS = [
@@ -57,7 +55,7 @@ const SORT_OPTIONS = [
 ];
 
 const PAGE_SIZE = 12;
-const MAX_PRICE = 2000;
+const MAX_PRICE = 5000;
 
 /* ──────────────────────────────────────────────────────────
    DUAL RANGE SLIDER
@@ -84,7 +82,7 @@ function DualRangeSlider({ min, max, value, onChange }) {
       <div className="relative h-5 flex items-center" ref={trackRef}>
         <div className="absolute w-full h-1.5 bg-slate-200 rounded-full" />
         <div
-          className="absolute h-1.5 bg-rose-500 rounded-full"
+          className="absolute h-1.5 bg-red-600 rounded-full"
           style={{ left: `${pct(lo)}%`, width: `${pct(hi) - pct(lo)}%` }}
         />
         <input type="range" min={min} max={max} step={5} value={lo} onChange={handleLo}
@@ -92,24 +90,24 @@ function DualRangeSlider({ min, max, value, onChange }) {
             [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none
             [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
             [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white
-            [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-rose-500
+            [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-red-600
             [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
             [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4
             [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full
             [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-2
-            [&::-moz-range-thumb]:border-rose-500 [&::-moz-range-thumb]:cursor-pointer"
+            [&::-moz-range-thumb]:border-red-600 [&::-moz-range-thumb]:cursor-pointer"
         />
         <input type="range" min={min} max={max} step={5} value={hi} onChange={handleHi}
           className="absolute w-full appearance-none bg-transparent pointer-events-none
             [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none
             [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
             [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white
-            [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-rose-500
+            [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-red-600
             [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer
             [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4
             [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full
             [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-2
-            [&::-moz-range-thumb]:border-rose-500 [&::-moz-range-thumb]:cursor-pointer"
+            [&::-moz-range-thumb]:border-red-600 [&::-moz-range-thumb]:cursor-pointer"
         />
       </div>
       <div className="flex justify-between mt-2 text-sm font-medium text-slate-600">
@@ -129,7 +127,7 @@ function Section({ title, children, defaultOpen = true }) {
     <div className="border-b border-slate-100 py-4">
       <button
         onClick={() => setOpen(o => !o)}
-        className="flex w-full items-center justify-between font-semibold text-slate-800 mb-1 hover:text-rose-600 transition-colors"
+        className="flex w-full items-center justify-between font-semibold text-slate-800 mb-1 hover:text-red-700 transition-colors"
       >
         <span>{title}</span>
         {open ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
@@ -143,7 +141,7 @@ function Checkbox({ label, checked, onChange }) {
   return (
     <label className="flex items-center gap-2.5 cursor-pointer group select-none">
       <input type="checkbox" checked={checked} onChange={onChange}
-        className="w-4 h-4 rounded accent-rose-500 cursor-pointer" />
+        className="w-4 h-4 rounded accent-red-500 cursor-pointer" />
       <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{label}</span>
     </label>
   );
@@ -153,7 +151,7 @@ function RadioItem({ label, value, current, onChange }) {
   return (
     <label className="flex items-center gap-2.5 cursor-pointer group select-none">
       <input type="radio" name="recipient" value={value} checked={current === value} onChange={() => onChange(value)}
-        className="w-4 h-4 accent-rose-500 cursor-pointer" />
+        className="w-4 h-4 accent-red-500 cursor-pointer" />
       <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{label}</span>
     </label>
   );
@@ -161,10 +159,10 @@ function RadioItem({ label, value, current, onChange }) {
 
 function FilterChip({ label, onRemove }) {
   return (
-    <span className="inline-flex items-center gap-1 bg-rose-50 text-rose-700 border border-rose-200
-      text-xs font-medium px-3 py-1.5 rounded-full hover:bg-rose-100 transition-colors">
+    <span className="inline-flex items-center gap-1 bg-red-50 text-red-700 border border-red-200
+      text-xs font-medium px-3 py-1.5 rounded-full hover:bg-red-100 transition-colors">
       {label}
-      <button onClick={onRemove} className="hover:text-rose-900 ml-0.5"><X size={11} /></button>
+      <button onClick={onRemove} className="hover:text-red-900 ml-0.5"><X size={11} /></button>
     </span>
   );
 }
@@ -200,7 +198,7 @@ export default function Shop() {
   const [isLoading,          setIsLoading]          = useState(true);
 
   useEffect(() => {
-    document.title = "Shop - Blessy Gift Shop";
+    document.title = "Shop - TRESOR GIFTS";
     const timer = setTimeout(() => setIsLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
@@ -217,6 +215,7 @@ export default function Shop() {
     setShowNewOnly(false);
     setShowBestseller(false);
     setPriceRange([0, MAX_PRICE]);
+    setSelectedOccasions([]);
   }, [urlCategory]);
 
   const toggleArr = (setter, val) =>
@@ -361,7 +360,7 @@ export default function Shop() {
           {!urlCategory && categoryFilter !== 'all' && (
              <button 
                 onClick={() => setCategoryFilter('all')}
-                className="text-left text-sm text-rose-500 font-medium hover:text-rose-700 mt-1"
+                className="text-left text-sm text-red-600 font-medium hover:text-red-700 mt-1"
              >
                Clear Category
              </button>
@@ -409,7 +408,7 @@ export default function Shop() {
 
       {chips.length > 0 && (
         <button onClick={clearAll}
-          className="mt-4 w-full py-2.5 text-sm text-rose-600 border border-rose-200 rounded-xl hover:bg-rose-50 transition-colors font-semibold">
+          className="mt-4 w-full py-2.5 text-sm text-red-700 border border-red-200 rounded-xl hover:bg-red-50 transition-colors font-semibold">
           Clear All Filters
         </button>
       )}
@@ -434,7 +433,7 @@ export default function Shop() {
               <span className="font-semibold text-slate-800">{filtered.length}</span>
               {' '}gifts
               {chips.length > 0 && (
-                <button onClick={clearAll} className="ml-2 text-rose-500 hover:underline text-xs">
+                <button onClick={clearAll} className="ml-2 text-red-600 hover:underline text-xs">
                   (clear filters)
                 </button>
               )}
@@ -447,7 +446,7 @@ export default function Shop() {
               <SlidersHorizontal size={15} />
               Filters
               {chips.length > 0 && (
-                <span className="bg-rose-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                   {chips.length}
                 </span>
               )}
@@ -462,7 +461,7 @@ export default function Shop() {
                   setCategoryFilter(e.target.value);
                   setUrlParam('category', e.target.value === 'all' ? null : e.target.value);
                 }}
-                className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-400 font-medium text-sm min-w-[175px] cursor-pointer"
+                className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-red-400 font-medium text-sm min-w-[175px] cursor-pointer"
               >
                 <option value="all">All Categories</option>
                 {CATEGORIES.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
@@ -474,7 +473,7 @@ export default function Shop() {
               <select
                 value={sort}
                 onChange={e => setSort(e.target.value)}
-                className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-rose-400 font-medium text-sm min-w-[175px] cursor-pointer"
+                className="appearance-none pl-4 pr-9 py-2.5 border border-slate-200 rounded-xl bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-red-400 font-medium text-sm min-w-[175px] cursor-pointer"
               >
                 {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>
@@ -513,7 +512,7 @@ export default function Shop() {
           <aside className="hidden lg:block w-64 flex-shrink-0 sticky top-24 self-start">
             <div className="bg-white rounded-2xl p-5 shadow-sm">
               <div className="flex items-center gap-2 font-bold text-slate-900 mb-1 pb-3 border-b border-slate-100">
-                <SlidersHorizontal size={16} className="text-rose-500" />
+                <SlidersHorizontal size={16} className="text-red-600" />
                 Filters
               </div>
               {SidebarContent}
@@ -535,7 +534,7 @@ export default function Shop() {
                 <div className="px-5 pb-5 border-t border-slate-100 pt-4">
                   <button
                     onClick={() => setSidebarOpen(false)}
-                    className="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-rose-600 transition-colors"
+                    className="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors"
                   >
                     Show {filtered.length} {filtered.length === 1 ? 'gift' : 'gifts'}
                   </button>
@@ -554,7 +553,7 @@ export default function Shop() {
                   We couldn't find any gifts matching your filters. Try broadening your search or clearing some filters.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <button onClick={clearAll} className="bg-rose-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-rose-700 transition-colors">
+                  <button onClick={clearAll} className="bg-red-700 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-red-800 transition-colors">
                     Clear All Filters
                   </button>
                   <Link to="/gift-finder" className="border border-slate-200 text-slate-700 px-6 py-2.5 rounded-full font-semibold hover:bg-slate-50 transition-colors">
@@ -566,7 +565,7 @@ export default function Shop() {
                   <div className="flex flex-wrap gap-2 justify-center">
                     {OCCASIONS.slice(0, 5).map(o => (
                       <button key={o.value} onClick={() => { clearAll(); setSelectedOccasions([o.value]); }}
-                        className="text-sm bg-slate-100 text-slate-700 px-4 py-1.5 rounded-full hover:bg-rose-100 hover:text-rose-700 transition-colors">
+                        className="text-sm bg-slate-100 text-slate-700 px-4 py-1.5 rounded-full hover:bg-red-100 hover:text-red-700 transition-colors">
                         {o.label}
                       </button>
                     ))}

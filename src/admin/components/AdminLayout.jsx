@@ -24,7 +24,7 @@ export default function AdminLayout() {
   }, [darkMode]);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-100 dark:bg-gray-900">
+    <div className="flex h-screen overflow-hidden bg-[#F4F4F5]">
       {/* Sidebar */}
       <AdminSidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 

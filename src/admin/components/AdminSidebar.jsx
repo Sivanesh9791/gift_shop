@@ -32,20 +32,15 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex w-64 h-screen flex-col bg-white dark:bg-gray-800 shadow-md">
+      <aside className="hidden lg:flex w-64 h-screen flex-col bg-white shadow-lg border-r border-red-100">
         {/* Logo Section */}
-        <div className="flex items-center gap-2 p-6 border-b border-gray-700">
-          <span
-            className="flex items-center justify-center w-9 h-9 rounded-xl font-black text-lg flex-shrink-0"
-            style={{ background: '#C5E619', color: '#1C1C1C' }}
-          >
-            B
-          </span>
+        <div className="flex items-center gap-2 p-6 border-b border-red-100">
+          <span className="text-2xl">🎁</span>
           <div className="flex flex-col leading-none">
-            <span className="text-sm font-black tracking-wide" style={{ color: '#C5E619' }}>
-              Blessy Gift Shop
+            <span className="text-lg font-black tracking-widest text-red-500 uppercase">
+              TRESOR GIFTS
             </span>
-            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
+            <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">
               Admin Panel
             </span>
           </div>
@@ -63,8 +58,8 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-rose-500 text-white shadow-sm'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'text-[#374151] hover:bg-gray-100'
                   }`
                 }
               >
@@ -76,14 +71,14 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         </nav>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 dark:border-gray-700" />
+        <div className="border-t border-red-100" />
 
         {/* Bottom Section */}
         <div className="p-4 space-y-3">
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-[#374151] hover:bg-gray-100 transition-all"
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             <span>Dark Mode</span>
@@ -92,7 +87,7 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 transition-all"
           >
             <LogOut size={20} />
             <span>Logout</span>
@@ -102,21 +97,16 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
 
       {/* Mobile Sidebar */}
       <aside
-        className={`fixed top-0 left-0 w-64 h-screen flex flex-col bg-white dark:bg-gray-800 shadow-md lg:hidden z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 w-64 h-screen flex flex-col bg-white shadow-xl border-r border-red-100 lg:hidden z-50 transform transition-transform duration-300 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Logo Section */}
-        <div className="flex items-center gap-2 p-6 border-b border-gray-700">
-          <span
-            className="flex items-center justify-center w-9 h-9 rounded-xl font-black text-lg flex-shrink-0"
-            style={{ background: '#C5E619', color: '#1C1C1C' }}
-          >
-            B
-          </span>
+        <div className="flex items-center gap-2 p-6 border-b border-red-100">
+          <span className="text-2xl">🎁</span>
           <div className="flex flex-col leading-none">
-            <span className="text-sm font-black tracking-wide" style={{ color: '#C5E619' }}>
-              Blessy Gift Shop
+            <span className="text-lg font-black tracking-widest text-red-500 uppercase">
+              TRESOR GIFTS
             </span>
             <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
               Admin Panel
@@ -137,8 +127,8 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-rose-500 text-white shadow-sm'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'text-[#374151] hover:bg-gray-100'
                   }`
                 }
               >
@@ -150,14 +140,14 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
         </nav>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 dark:border-gray-700" />
+        <div className="border-t border-red-100" />
 
         {/* Bottom Section */}
         <div className="p-4 space-y-3">
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-[#374151] hover:bg-gray-100 transition-all"
           >
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             <span>Dark Mode</span>
@@ -166,7 +156,7 @@ export default function AdminSidebar({ isSidebarOpen, setIsSidebarOpen }) {
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 transition-all"
           >
             <LogOut size={20} />
             <span>Logout</span>

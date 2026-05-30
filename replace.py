@@ -1,48 +1,46 @@
-import re
 import os
 
-base = r"c:\Users\Sivanesh\OneDrive - ELCOT\folder\Gift_Shop\gifthaven"
+root_dir = r"c:\Users\Sivanesh\OneDrive - ELCOT\folder\Gift_Shop\gifthaven"
 
-def process_file(path, is_prod=False, is_cat=False, is_home=False):
-    fullpath = os.path.join(base, path)
-    with open(fullpath, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    if is_prod or is_cat:
-        def repl(m):
-            bef = content[max(0, m.start() - 500):m.start()]
-            name_match = re.search(r"name:\s*['\"](.*?)['\"]", bef)
-            kw = name_match.group(1) if name_match else "gift"
-            kw = re.sub(r'[^a-zA-Z0-9 ]', '', kw).lower().strip()
-            return f"image: '{kw}'"
-            
-        content = re.sub(r"image:\s*['\"]https://[^'\"]*['\"]", repl, content)
+for dirpath, dirnames, filenames in os.walk(root_dir):
+    if 'node_modules' in dirnames:
+        dirnames.remove('node_modules')
+    if '.git' in dirnames:
+        dirnames.remove('.git')
         
-        def repl2(m):
-            bef = content[max(0, m.start() - 500):m.start()]
-            name_match = re.search(r"name:\s*['\"](.*?)['\"]", bef)
-            kw = name_match.group(1) if name_match else "gift"
-            kw = re.sub(r'[^a-zA-Z0-9 ]', '', kw).lower().strip()
-            return f"images: ['{kw}']"
+    for file in filenames:
+        if file.endswith(('.js', '.jsx', '.css', '.html')):
+            path = os.path.join(dirpath, file)
+            with open(path, 'r', encoding='utf-8') as f:
+                try:
+                    content = f.read()
+                except UnicodeDecodeError:
+                    continue
             
-        content = re.sub(r"images:\s*\[\s*['\"]https://[^'\]]*['\"]\s*\]", repl2, content)
-    
-    if is_home:
-        def repl3(m):
-            bef = content[max(0, m.start() - 300):m.start()]
-            name_match = re.search(r"name:\s*['\"](.*?)['\"]", bef)
-            kw = name_match.group(1).split(' ')[0].lower() if name_match else "person"
-            return f"photo: '{kw}'"
-        content = re.sub(r"photo:\s*[\"']https://[^\"']*[\"']", repl3, content)
-        content = re.sub(r"src=[\"']https://images\.unsplash[^\"']*[\"']", 'src="gifts wrapped"', content)
-        
-    with open(fullpath, 'w', encoding='utf-8') as f:
-        f.write(content)
-
-try:
-    process_file('src/data/products.js', is_prod=True)
-    process_file('src/data/categories.js', is_cat=True)
-    process_file('src/pages/Home.jsx', is_home=True)
-    print("DONE SCRIPT")
-except Exception as e:
-    print("ERROR:", e)
+            new_content = content
+            
+            # Text Replacements
+            new_content = new_content.replace('Blessy Gift Shop', 'TRESOR GIFTS')
+            new_content = new_content.replace('Lights & Gifts', 'TRESOR GIFTS')
+            new_content = new_content.replace('ClassyPik Gifts', 'TRESOR GIFTS')
+            new_content = new_content.replace('Green Roots', 'TRESOR GIFTS')
+            new_content = new_content.replace('lightsandgifts', 'tresorgifts')
+            new_content = new_content.replace('blessygiftshop@gmail.com', 'info@tresorgifts.in')
+            
+            # CSS classes Replacements
+            new_content = new_content.replace('bg-rose-500', 'bg-red-600')
+            new_content = new_content.replace('bg-rose-600', 'bg-red-700')
+            new_content = new_content.replace('text-rose-500', 'text-red-600')
+            new_content = new_content.replace('text-rose-600', 'text-red-700')
+            new_content = new_content.replace('border-rose-500', 'border-red-600')
+            new_content = new_content.replace('bg-rose-50', 'bg-red-50')
+            new_content = new_content.replace('bg-rose-100', 'bg-red-100')
+            new_content = new_content.replace('text-rose-400', 'text-red-500')
+            new_content = new_content.replace('from-rose-500', 'from-red-600')
+            new_content = new_content.replace('to-pink-600', 'to-red-800')
+            new_content = new_content.replace('hover:text-rose-400', 'hover:text-red-500')
+            
+            if new_content != content:
+                with open(path, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                print(f"Updated {path}")

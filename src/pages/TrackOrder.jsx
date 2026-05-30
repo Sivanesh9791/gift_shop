@@ -11,7 +11,7 @@ export default function TrackOrder() {
 
   useEffect(() => {
     if (!isTracking) {
-      document.title = "Track Order | Lights & Gifts";
+      document.title = "Track Order | TRESOR GIFTS";
       return;
     }
     const timer = setInterval(() => {
@@ -49,7 +49,7 @@ export default function TrackOrder() {
         
         {/* Header / Input Form */}
         <div className="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-200 text-center">
-          <div className="w-16 h-16 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <Package size={32} />
           </div>
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Track Your Gift</h1>
@@ -61,12 +61,12 @@ export default function TrackOrder() {
               placeholder="e.g. GH-123456" 
               value={orderId}
               onChange={e => setOrderId(e.target.value)}
-              className="w-full border border-slate-300 rounded-full pl-6 pr-32 py-4 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none text-lg shadow-sm"
+              className="w-full border border-slate-300 rounded-full pl-6 pr-32 py-4 focus:ring-2 focus:ring-red-500 focus:border-red-600 outline-none text-lg shadow-sm"
             />
             <button 
               type="submit" 
               disabled={isLoading || !orderId.trim()}
-              className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-6 rounded-full font-bold hover:bg-rose-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+              className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-6 rounded-full font-bold hover:bg-red-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -89,22 +89,22 @@ export default function TrackOrder() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">Arriving in {timeLeft.hours} days</h2>
                 <div className="flex gap-4 mb-6">
                   <div className="text-center">
-                    <span className="block text-3xl font-bold text-rose-500 font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
+                    <span className="block text-3xl font-bold text-red-600 font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Hours</span>
                   </div>
                   <div className="text-3xl font-bold text-slate-300">:</div>
                   <div className="text-center">
-                    <span className="block text-3xl font-bold text-rose-500 font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                    <span className="block text-3xl font-bold text-red-600 font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Mins</span>
                   </div>
                   <div className="text-3xl font-bold text-slate-300">:</div>
                   <div className="text-center">
-                    <span className="block text-3xl font-bold text-rose-500 font-mono">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                    <span className="block text-3xl font-bold text-red-600 font-mono">{String(timeLeft.seconds).padStart(2, '0')}</span>
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Secs</span>
                   </div>
                 </div>
                 <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
-                  <div className="bg-rose-500 h-full w-[65%] rounded-full relative">
+                  <div className="bg-red-600 h-full w-[65%] rounded-full relative">
                     <div className="absolute inset-0 bg-white/20" style={{ backgroundSize: '1rem 1rem', backgroundImage: 'linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)' }} />
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function TrackOrder() {
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
                 
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg flex items-center gap-3 relative z-10 animate-bounce">
-                  <div className="w-10 h-10 bg-rose-100 text-rose-500 rounded-full flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-rose-500">
+                  <div className="w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center border-2 border-white shadow-sm ring-2 ring-red-500">
                     <Truck size={20} />
                   </div>
                   <div>
@@ -132,7 +132,7 @@ export default function TrackOrder() {
               
               <div className="relative">
                 <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-slate-100"></div>
-                <div className="absolute left-[19px] top-4 h-[50%] w-0.5 bg-rose-500"></div>
+                <div className="absolute left-[19px] top-4 h-[50%] w-0.5 bg-red-600"></div>
 
                 <div className="space-y-8 relative">
                   {/* Status 1 */}
@@ -159,12 +159,12 @@ export default function TrackOrder() {
 
                   {/* Status 3 - CURRENT */}
                   <div className="flex gap-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-rose-500 outline outline-4 outline-white text-white flex items-center justify-center z-10 shrink-0 shadow-lg shadow-rose-200 ring-4 ring-rose-50 relative">
-                      <div className="absolute inset-0 rounded-full bg-rose-400 animate-ping opacity-50"></div>
+                    <div className="w-10 h-10 rounded-full bg-red-600 outline outline-4 outline-white text-white flex items-center justify-center z-10 shrink-0 shadow-lg shadow-red-200 ring-4 ring-red-50 relative">
+                      <div className="absolute inset-0 rounded-full bg-red-400 animate-ping opacity-50"></div>
                       <Truck size={20} />
                     </div>
                     <div>
-                      <p className="font-bold text-rose-600">In Transit - Sort Facility</p>
+                      <p className="font-bold text-red-700">In Transit - Sort Facility</p>
                       <p className="text-sm text-slate-500 mt-1">Your package has departed the regional sort facility.</p>
                       <p className="text-xs font-semibold text-slate-400 mt-2">Today, 08:24 AM</p>
                     </div>

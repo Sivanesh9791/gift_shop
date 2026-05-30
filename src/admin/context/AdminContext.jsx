@@ -105,11 +105,11 @@ const generateMockCoupons = () => [
 ];
 
 const defaultStoreSettings = {
-  storeName: 'Lights & Gifts',
-  storeEmail: 'lightsandgifts87@gmail.com',
-  storePhone: 'Contact Us',
-  storeAddress: 'No.51/A, Bricklin Road, 4th Street, Otteri, Chennai-12',
-  storeWebsite: 'www.lightsandgifts.in',
+  storeName: 'TRESOR GIFTS',
+  storeEmail: 'info@tresorgifts.in',
+  storePhone: '+91 90030 74000',
+  storeAddress: 'Navalur, Chennai',
+  storeWebsite: 'tresorgifts.in',
   currency: 'INR',
   freeShippingThreshold: 40,
   standardDeliveryCharge: 4.99,

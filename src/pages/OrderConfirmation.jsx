@@ -3,7 +3,7 @@ import { useLocation, Link, Navigate } from 'react-router-dom';
 import { CheckCircle2, Package, Truck, Calendar, ArrowRight, Share2, Copy, Check } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const CONFETTI_COLORS = ['bg-rose-500', 'bg-emerald-500', 'bg-blue-500', 'bg-amber-400', 'bg-purple-500'];
+const CONFETTI_COLORS = ['bg-red-600', 'bg-emerald-500', 'bg-blue-500', 'bg-amber-400', 'bg-purple-500'];
 
 const Confetti = () => {
   const [pieces, setPieces] = useState([]);
@@ -56,14 +56,14 @@ export default function OrderConfirmation() {
   const estimatedDate = dateStr.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
   useEffect(() => {
-    document.title = "Order Confirmed! | Lights & Gifts";
+    document.title = "Order Confirmed! | TRESOR GIFTS";
   }, []);
 
-  const shareText = encodeURIComponent(`Just sent a gift from Lights & Gifts 🪔 Check it out!`);
-  const shareUrl = encodeURIComponent(`https://lightsandgifts.in`);
+  const shareText = encodeURIComponent(`Just sent a gift from TRESOR GIFTS 🪔 Check it out!`);
+  const shareUrl = encodeURIComponent(`https://tresorgifts.in`);
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`https://lightsandgifts.in`);
+    navigator.clipboard.writeText(`https://tresorgifts.in`);
     setCopied(true);
     toast.success('Link copied to clipboard!');
     setTimeout(() => setCopied(false), 2000);
@@ -153,16 +153,16 @@ export default function OrderConfirmation() {
 
             {/* Gift Tag styling */}
             {isGift && items.some(i => i.giftMessage) && (
-              <div className="bg-rose-50 p-6 md:p-8 rounded-3xl border border-rose-100 relative">
+              <div className="bg-red-50 p-6 md:p-8 rounded-3xl border border-red-100 relative">
                 <div className="absolute top-0 right-8 w-12 h-6 bg-slate-50 rounded-b-full shadow-sm"></div>
-                <div className="w-4 h-4 bg-white rounded-full mx-auto -mt-2 shadow-inner border border-rose-200 mb-6 relative">
+                <div className="w-4 h-4 bg-white rounded-full mx-auto -mt-2 shadow-inner border border-red-200 mb-6 relative">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-amber-700/20 rotate-45 -z-10 w-[200px]" />
                 </div>
-                <h3 className="text-center font-serif font-bold text-rose-800 text-xl mb-4">Gift Message</h3>
+                <h3 className="text-center font-serif font-bold text-red-800 text-xl mb-4">Gift Message</h3>
                 {items.filter(i => i.giftMessage).map((item, idx) => (
                   <div key={idx} className="mb-4 last:mb-0 text-center">
                     <p className="italic font-serif text-slate-700 text-lg leading-relaxed">"{item.giftMessage}"</p>
-                    <p className="text-xs font-bold uppercase tracking-wider text-rose-400 mt-2">— for {deliveryData.rFullName}</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-red-500 mt-2">— for {deliveryData.rFullName}</p>
                   </div>
                 ))}
               </div>
@@ -199,7 +199,7 @@ export default function OrderConfirmation() {
 
             {/* Share / Actions */}
             <div className="space-y-4">
-              <Link to="/track-order" className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:bg-rose-600 shadow-md transition-colors">
+              <Link to="/track-order" className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:bg-red-700 shadow-md transition-colors">
                 Track Your Order <ArrowRight size={18} />
               </Link>
               <Link to="/shop" className="w-full bg-white border border-slate-200 text-slate-700 font-bold py-4 rounded-xl flex justify-center hover:bg-slate-50 transition-colors">

@@ -9,30 +9,33 @@ import toast from 'react-hot-toast';
    QUIZ CONFIG
 ────────────────────────────────────────────────────────── */
 const OCCASIONS = [
-  { value: 'birthday',    emoji: '🎂', label: 'Birthday Party' },
-  { value: 'baptism',     emoji: '⛪', label: 'Baptism / Naming Ceremony' },
-  { value: 'engagement',  emoji: '💍', label: 'Engagement' },
-  { value: 'marriage',    emoji: '💒', label: 'Marriage' },
-  { value: 'babyShower',  emoji: '👶', label: 'Baby Shower' },
-  { value: 'puberty',     emoji: '🌸', label: 'Puberty Ceremony' },
+  { value: 'birthday',    emoji: '🎂', label: 'Birthday' },
   { value: 'anniversary', emoji: '💕', label: 'Anniversary' },
-  { value: 'corporate',   emoji: '💼', label: 'Corporate Function' },
+  { value: 'valentine',   emoji: '💝', label: "Valentine's Day" },
+  { value: 'wedding',     emoji: '💍', label: 'Wedding' },
+  { value: 'graduation',  emoji: '🎓', label: 'Graduation' },
+  { value: 'housewarming',emoji: '🏠', label: 'Housewarming' },
+  { value: 'babyShower',  emoji: '👶', label: 'New Born / Baby Shower' },
+  { value: 'corporate',   emoji: '💼', label: 'Corporate Event' },
+  { value: 'return',      emoji: '🙏', label: 'Thank You' },
+  { value: '',            emoji: '🌟', label: 'Just Because' },
 ];
 
 const GUESTS = [
-  { value: 'under-25', emoji: '🫂', label: 'Under 25 guests' },
-  { value: '25-50',    emoji: '👥', label: '25 – 50 guests' },
-  { value: '50-100',   emoji: '🧑‍🤝‍🧑', label: '50 – 100 guests' },
-  { value: '100-250',  emoji: '🎊', label: '100 – 250 guests' },
-  { value: '250+',     emoji: '🎉', label: '250+ guests' },
+  { value: 'her',       emoji: '👩', label: 'For Her' },
+  { value: 'him',       emoji: '👨', label: 'For Him' },
+  { value: 'couple',    emoji: '👫', label: 'For a Couple' },
+  { value: 'baby',      emoji: '👶', label: 'For Baby' },
+  { value: 'colleague', emoji: '💼', label: 'For a Colleague' },
+  { value: 'family',    emoji: '👨‍👩‍👧', label: 'For the Family' },
 ];
 
 const BUDGETS = [
-  { value: 'under-100',  emoji: '🪙', label: 'Under ₹100',   min: 0,   max: 100 },
-  { value: '100-200',    emoji: '💵', label: '₹100 – ₹200', min: 100, max: 200 },
-  { value: '200-400',    emoji: '💳', label: '₹200 – ₹400', min: 200, max: 400 },
-  { value: '400-600',    emoji: '💰', label: '₹400 – ₹600', min: 400, max: 600 },
-  { value: '600+',       emoji: '💎', label: '₹600+',       min: 600, max: 99999 },
+  { value: 'under-500', emoji: '🪙', label: 'Under ₹500',       min: 0,    max: 499 },
+  { value: '500-1000',  emoji: '💵', label: '₹500 – ₹1000',   min: 500,  max: 1000 },
+  { value: '1000-2000', emoji: '💳', label: '₹1000 – ₹2000', min: 1000, max: 2000 },
+  { value: '2000-3000', emoji: '💰', label: '₹2000 – ₹3000', min: 2000, max: 3000 },
+  { value: '3000+',     emoji: '💎', label: '₹3000+',           min: 3000, max: 99999 },
 ];
 
 const TOTAL_STEPS = 3;
@@ -50,9 +53,9 @@ function ProgressBar({ step }) {
         <span>Step {step} of {TOTAL_STEPS}</span>
         <span>{Math.round(pct)}% complete</span>
       </div>
-      <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
         <div
-          className="h-full bg-white rounded-full transition-all duration-500 ease-out"
+          className="h-full bg-red-600 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -61,9 +64,9 @@ function ProgressBar({ step }) {
         {Array.from({ length: TOTAL_STEPS }, (_, i) => (
           <div key={i}
             className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300
-              ${i + 1 < step ? 'bg-white text-[#1C1C1C] scale-100'
-                : i + 1 === step ? 'bg-[#C5E619] text-[#1C1C1C] ring-4 ring-[#C5E619]/30 scale-110 shadow-xl'
-                : 'bg-white/10 text-white/40'}`}>
+              ${i + 1 < step ? 'bg-red-600 text-white scale-100'
+                : i + 1 === step ? 'bg-red-600 text-white ring-4 ring-red-600/30 scale-110 shadow-xl'
+                : 'bg-gray-200 text-gray-400'}`}>
             {i + 1 < step ? <Check size={12} /> : i + 1}
           </div>
         ))}
@@ -80,12 +83,12 @@ function QuizCard({ emoji, label, selected, onClick, multi }) {
       className={`relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border-2
         transition-all duration-200 cursor-pointer select-none group
         ${selected
-          ? 'border-[#C5E619] bg-[#C5E619] text-[#1C1C1C] shadow-[0_0_20px_rgba(197,230,25,0.4)] scale-105'
-          : 'border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/50 hover:scale-102'
+          ? 'border-red-600 bg-red-50 text-red-700 shadow-[0_0_20px_rgba(220,38,38,0.2)] scale-105'
+          : 'border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:border-gray-300 hover:scale-102'
         }`}
     >
       {selected && multi && (
-        <span className="absolute top-2 right-2 w-5 h-5 bg-[#1C1C1C] text-[#C5E619] rounded-full flex items-center justify-center shadow-lg border border-[#C5E619]/50">
+        <span className="absolute top-2 right-2 w-5 h-5 bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg border border-red-200">
           <Check size={11} strokeWidth={3} />
         </span>
       )}
@@ -136,13 +139,13 @@ function Results({ occasion, guests, budget, onRetake }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-amber-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-amber-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-10">
           <div className="text-5xl mb-4">{occasionEmoji}</div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-            We found <span className="text-rose-600">{matched.length} perfect gifts</span> for {occasionLabel.replace('For ', '')} 🎁
+            We found <span className="text-red-700">{matched.length} perfect gifts</span> for {occasionLabel.replace('For ', '')} 🎁
           </h1>
           <p className="text-slate-500 text-lg">
             Great for: <span className="font-medium text-slate-700">{guests_label}</span>
@@ -157,7 +160,7 @@ function Results({ occasion, guests, budget, onRetake }) {
               <RotateCcw size={15} /> Refine Results
             </button>
             <button onClick={handleShare}
-              className="flex items-center gap-2 text-[#1C1C1C] px-5 py-2.5 rounded-full font-bold transition-all hover:shadow-lg" style={{backgroundColor: '#C5E619'}}>
+              className="flex items-center gap-2 bg-red-600 text-white px-5 py-2.5 rounded-full font-bold transition-all hover:bg-red-700 hover:shadow-lg">
               <Share2 size={15} /> Share These Results
             </button>
           </div>
@@ -213,7 +216,7 @@ export default function GiftFinder() {
 
   /* If URL has all params, show results directly */
   useEffect(() => {
-    document.title = "Gift Finder | Lights & Gifts";
+    document.title = "Gift Finder | TRESOR GIFTS";
     if (searchParams.get('occasion') && searchParams.get('budget')) {
       setShowResults(true);
     }
@@ -267,9 +270,9 @@ export default function GiftFinder() {
 
   /* ── Quiz header labels ── */
   const stepMeta = [
-    { question: 'What\'s your occasion?',   sub: 'Pick the event you need gifts for.' },
-    { question: 'How many guests?',         sub: 'To help us suggest gifts for bulk ordering.' },
-    { question: 'Budget per return gift?',  sub: 'We\'ll find the best gifts in your price range.' },
+    { question: "What's the occasion?",      sub: 'Tell us the event you are gifting for.' },
+    { question: 'Who are you gifting?',       sub: 'Select the recipient to get personalised recommendations.' },
+    { question: "What's your budget?",        sub: "We'll find the best gifts in your price range." },
   ];
 
   const currentMeta = stepMeta[step - 1];
@@ -278,16 +281,16 @@ export default function GiftFinder() {
      RENDER QUIZ SHELL
   ────────────────────────────────────────────────────── */
   return (
-    <div className="min-h-screen bg-[#1C1C1C] selection:bg-[#C5E619] selection:text-[#1C1C1C]">
+    <div className="min-h-screen bg-gray-50 selection:bg-red-200 selection:text-red-900">
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Logo / back to home */}
         <div className="flex items-center justify-between mb-8">
-          <Link to="/" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium">
+          <Link to="/" className="flex items-center gap-2 text-gray-500 hover:text-red-600 transition-colors text-sm font-medium">
             <ArrowLeft size={16} /> Home
           </Link>
-          <div className="flex items-center gap-2 text-white font-bold">
-            <Gift size={18} /> Gift Finder Quiz
+          <div className="flex items-center gap-2 text-gray-900 font-bold">
+            <Gift size={18} className="text-red-600" /> Gift Finder Quiz
           </div>
           <div className="w-16" />{/* spacer */}
         </div>
@@ -296,12 +299,12 @@ export default function GiftFinder() {
         <ProgressBar step={step} />
 
         {/* Question card */}
-        <div className="bg-white/15 backdrop-blur-sm rounded-3xl p-6 md:p-10 shadow-2xl">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-gray-100">
           {/* Question heading */}
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-1">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-1">
             {currentMeta.question}
           </h2>
-          <p className="text-white/70 text-center text-sm mb-8">{currentMeta.sub}</p>
+          <p className="text-gray-500 text-center text-sm mb-8">{currentMeta.sub}</p>
 
           {/* ── STEP 1 ── */}
           {step === 1 && (
@@ -338,11 +341,11 @@ export default function GiftFinder() {
               {/* Next */}
               <div className="flex justify-between mt-8 gap-3">
                 <button onClick={handleBack}
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors font-semibold">
+                  className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors font-semibold">
                   <ArrowLeft size={16} /> Back
                 </button>
                 <button onClick={handleNext}
-                  className="flex items-center gap-2 text-[#1C1C1C] px-8 py-3 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(197,230,25,0.3)] hover:scale-105 active:scale-95" style={{backgroundColor: '#C5E619'}}>
+                  className="flex items-center gap-2 text-white bg-red-600 hover:bg-red-700 px-8 py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95">
                   Next <ArrowRight size={16} />
                 </button>
               </div>
@@ -366,13 +369,13 @@ export default function GiftFinder() {
               {/* Find */}
               <div className="flex justify-between mt-8 gap-3">
                 <button onClick={handleBack}
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-colors font-semibold">
+                  className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors font-semibold">
                   <ArrowLeft size={16} /> Back
                 </button>
                 <button onClick={handleNext} disabled={!budget}
-                  className="flex items-center gap-2 text-[#1C1C1C] px-8 py-3 rounded-full font-black tracking-wide
-                    transition-all shadow-[0_0_20px_rgba(197,230,25,0.4)] hover:scale-105 active:scale-95
-                    disabled:opacity-20 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-none" style={{backgroundColor: '#C5E619'}}>
+                  className="flex items-center gap-2 text-white bg-red-600 hover:bg-red-700 px-8 py-3 rounded-full font-black tracking-wide
+                    transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95
+                    disabled:opacity-50 disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:shadow-none">
                   Find My Gifts <ArrowRight size={16} />
                 </button>
               </div>
@@ -381,7 +384,7 @@ export default function GiftFinder() {
         </div>
 
         {/* Fun footer */}
-        <p className="text-center text-white/50 text-xs mt-6">
+        <p className="text-center text-gray-400 text-xs mt-6">
           🎁 Trusted by thousands of happy customers
         </p>
       </div>

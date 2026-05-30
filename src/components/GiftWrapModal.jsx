@@ -82,7 +82,7 @@ export default function GiftWrapModal({ open, onClose, item }) {
                     <button
                       type="button"
                       onClick={() => setGiftWrap(!giftWrap)}
-                      className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${giftWrap ? 'bg-rose-500' : 'bg-slate-200'}`}
+                      className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${giftWrap ? 'bg-red-600' : 'bg-slate-200'}`}
                     >
                       <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${giftWrap ? 'translate-x-6' : ''}`} />
                     </button>
@@ -97,7 +97,7 @@ export default function GiftWrapModal({ open, onClose, item }) {
                             <button key={style} onClick={() => setWrapStyle(style)}
                               className={`text-xs px-3 py-1.5 rounded-full border-2 font-medium transition-all
                                 ${wrapStyle === style
-                                  ? 'border-rose-500 bg-rose-50 text-rose-700'
+                                  ? 'border-red-600 bg-red-50 text-red-700'
                                   : 'border-slate-200 text-slate-600 hover:border-slate-300'}`}>
                               {style}
                             </button>
@@ -113,7 +113,7 @@ export default function GiftWrapModal({ open, onClose, item }) {
                           onChange={e => setGiftMessage(e.target.value)}
                           placeholder="Write a personal message for the card…"
                           className="w-full border border-slate-200 rounded-lg p-3 text-sm resize-none
-                            focus:outline-none focus:ring-2 focus:ring-rose-400 bg-white placeholder:text-slate-400"
+                            focus:outline-none focus:ring-2 focus:ring-red-400 bg-white placeholder:text-slate-400"
                         />
                         <p className="text-xs text-slate-400 text-right mt-1">{giftMessage.length}/150</p>
                       </div>
@@ -127,7 +127,7 @@ export default function GiftWrapModal({ open, onClose, item }) {
                     Cancel
                   </button>
                   <button onClick={handleSave}
-                    className="flex-1 bg-rose-600 text-white font-semibold py-3 rounded-xl hover:bg-rose-700 transition-colors shadow-md shadow-rose-200 active:scale-[0.98]">
+                    className="flex-1 bg-red-700 text-white font-semibold py-3 rounded-xl hover:bg-red-800 transition-colors shadow-md shadow-red-200 active:scale-[0.98]">
                     Save Options
                   </button>
                 </div>

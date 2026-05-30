@@ -22,7 +22,7 @@ export default function Cart() {
   const [couponInput, setCouponInput] = useState('');
 
   useEffect(() => {
-    document.title = "Your Cart | Lights & Gifts";
+    document.title = "Your Cart | TRESOR GIFTS";
   }, []);
 
   // Free shipping progress
@@ -81,10 +81,10 @@ export default function Cart() {
           Looks like you haven't added any gifts yet. Need some inspiration?
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
-          <Link to="/shop" className="bg-slate-900 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-rose-600 transition-colors shadow-md active:scale-95">
+          <Link to="/shop" className="bg-slate-900 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-red-700 transition-colors shadow-md active:scale-95">
             Continue Shopping
           </Link>
-          <Link to="/gift-finder" className="bg-white border text-rose-600 border-rose-200 font-bold px-8 py-3.5 rounded-xl hover:bg-rose-50 transition-colors active:scale-95">
+          <Link to="/gift-finder" className="bg-white border text-red-700 border-red-200 font-bold px-8 py-3.5 rounded-xl hover:bg-red-50 transition-colors active:scale-95">
             Try Gift Matchmaker
           </Link>
         </div>
@@ -96,7 +96,7 @@ export default function Cart() {
     <div className="min-h-screen bg-slate-50 py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
-          <Link to="/" className="hover:text-rose-600 transition-colors">Home</Link>
+          <Link to="/" className="hover:text-red-700 transition-colors">Home</Link>
           <ChevronRight size={14} />
           <span className="font-medium text-slate-800">Your Cart</span>
         </div>
@@ -112,7 +112,7 @@ export default function Cart() {
             {/* Free shipping banner */}
             <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
               <div className="flex items-center gap-3 mb-3">
-                <div className={`p-2 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-500'}`}>
+                <div className={`p-2 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-100 text-emerald-600' : 'bg-red-100 text-red-600'}`}>
                   <Gift size={20} />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export default function Cart() {
               </div>
               <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden mt-1">
                 <div 
-                  className={`h-full transition-all duration-500 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-rose-500'}`}
+                  className={`h-full transition-all duration-500 rounded-full ${amountToFreeShipping === 0 ? 'bg-emerald-500' : 'bg-red-600'}`}
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Cart() {
 
                   <div className="flex-1 flex flex-col min-w-0">
                     <div className="flex justify-between items-start gap-4 mb-1">
-                      <Link to={`/product/${item.product.slug}`} className="text-lg font-bold text-slate-900 hover:text-rose-600 transition-colors line-clamp-2 pr-4">
+                      <Link to={`/product/${item.product.slug}`} className="text-lg font-bold text-slate-900 hover:text-red-700 transition-colors line-clamp-2 pr-4">
                         {item.product.name}
                       </Link>
                       <p className="font-bold text-slate-900 text-lg">₹{(item.product.price * item.qty).toFixed(2)}</p>
@@ -161,7 +161,7 @@ export default function Cart() {
                             value={item.personalisationText}
                             onChange={(e) => updateGiftOptions(item.product.id, { personalisationText: e.target.value })}
                             placeholder="Add your message..." 
-                            className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+                            className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400"
                             maxLength={100}
                           />
                         </div>
@@ -174,7 +174,7 @@ export default function Cart() {
                           <button
                             type="button"
                             onClick={() => updateGiftOptions(item.product.id, { giftWrap: !item.giftWrap })}
-                            className={`relative w-9 h-5 rounded-full transition-colors flex-shrink-0 ${item.giftWrap ? 'bg-rose-500' : 'bg-slate-300'}`}
+                            className={`relative w-9 h-5 rounded-full transition-colors flex-shrink-0 ${item.giftWrap ? 'bg-red-600' : 'bg-slate-300'}`}
                           >
                             <span className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${item.giftWrap ? 'translate-x-4' : ''}`} />
                           </button>
@@ -182,7 +182,7 @@ export default function Cart() {
                         {item.giftWrap && (
                           <div className="space-y-3 animate-in fade-in slide-in-from-top-1">
                             <select 
-                              className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+                              className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400"
                               value={item.selectedWrapStyle || WRAP_STYLES[0]}
                               onChange={(e) => updateGiftOptions(item.product.id, { selectedWrapStyle: e.target.value })}
                             >
@@ -193,7 +193,7 @@ export default function Cart() {
                               value={item.giftMessage}
                               onChange={(e) => updateGiftOptions(item.product.id, { giftMessage: e.target.value })}
                               placeholder="Gift message (optional)"
-                              className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400"
+                              className="w-full text-sm py-2 px-3 border border-slate-200 rounded-lg bg-white focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400"
                               maxLength={150}
                             />
                           </div>
@@ -214,7 +214,7 @@ export default function Cart() {
                         </div>
 
                         <div className="hidden sm:flex items-center gap-1.5 border-l border-slate-200 pl-4">
-                          <button onClick={() => removeItem(item.product.id)} className="text-sm font-semibold text-slate-500 hover:text-rose-600 transition-colors flex items-center gap-1.5 p-2 rounded-lg hover:bg-rose-50">
+                          <button onClick={() => removeItem(item.product.id)} className="text-sm font-semibold text-slate-500 hover:text-red-700 transition-colors flex items-center gap-1.5 p-2 rounded-lg hover:bg-red-50">
                             <Trash2 size={16} /> Remove
                           </button>
                           <button onClick={() => handleSaveForLater(item)} className="text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-1.5 p-2 rounded-lg hover:bg-slate-100">
@@ -225,7 +225,7 @@ export default function Cart() {
 
                       {/* Mobile Actions */}
                       <div className="flex sm:hidden items-center gap-3 w-full border-t border-slate-100 pt-3 mt-1">
-                        <button onClick={() => removeItem(item.product.id)} className="flex-1 text-sm font-semibold text-rose-600 p-2 text-center rounded-lg bg-rose-50">
+                        <button onClick={() => removeItem(item.product.id)} className="flex-1 text-sm font-semibold text-red-700 p-2 text-center rounded-lg bg-red-50">
                           Remove
                         </button>
                         <button onClick={() => handleSaveForLater(item)} className="flex-1 text-sm font-semibold text-slate-700 p-2 text-center rounded-lg bg-slate-100">
@@ -240,7 +240,7 @@ export default function Cart() {
             </div>
             
             <div className="flex justify-start">
-              <button onClick={() => { clearCart(); toast.success('Cart cleared'); }} className="text-slate-400 font-medium hover:text-rose-600 underline text-sm transition-colors">
+              <button onClick={() => { clearCart(); toast.success('Cart cleared'); }} className="text-slate-400 font-medium hover:text-red-700 underline text-sm transition-colors">
                 Clear entirely
               </button>
             </div>
@@ -288,9 +288,9 @@ export default function Cart() {
                       placeholder="e.g. SAVE10" 
                       value={couponInput}
                       onChange={e => setCouponInput(e.target.value)}
-                      className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400 uppercase"
+                      className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 uppercase"
                     />
-                    <button type="submit" disabled={!couponInput.trim()} className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 font-semibold text-xs rounded-lg disabled:opacity-50 hover:bg-rose-600 transition-colors">
+                    <button type="submit" disabled={!couponInput.trim()} className="absolute right-2 top-2 bottom-2 bg-slate-900 text-white px-4 font-semibold text-xs rounded-lg disabled:opacity-50 hover:bg-red-700 transition-colors">
                       Apply
                     </button>
                   </div>
@@ -310,7 +310,7 @@ export default function Cart() {
                 </div>
 
                 <div className="space-y-3">
-                  <button onClick={() => navigate('/checkout')} className="w-full bg-rose-600 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:bg-rose-700 transition-colors shadow-md shadow-rose-200 active:scale-[0.98] group">
+                  <button onClick={() => navigate('/checkout')} className="w-full bg-red-700 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:bg-red-800 transition-colors shadow-md shadow-red-200 active:scale-[0.98] group">
                     Proceed to Checkout <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                   <button onClick={() => navigate('/shop')} className="w-full bg-white border border-slate-200 text-slate-700 font-bold py-4 rounded-xl hover:bg-slate-50 transition-colors active:scale-[0.98]">

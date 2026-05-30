@@ -74,7 +74,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                             key={i}
                             onClick={() => setActiveImg(i)}
                             className={`w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 border-2 transition-colors ${
-                              activeImg === i ? 'border-rose-500' : 'border-transparent hover:border-slate-300'
+                              activeImg === i ? 'border-red-600' : 'border-transparent hover:border-slate-300'
                             }`}
                           >
                             <img loading="lazy" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src="/images/fallback.svg"; }} src={img} alt="" className="w-full h-full object-cover" />
@@ -88,7 +88,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                   <div className="md:w-1/2 p-6 md:p-8 flex flex-col gap-4 overflow-y-auto max-h-[80vh] md:max-h-none">
                     {/* Badges */}
                     <div className="flex flex-wrap gap-2">
-                      {product.isSale && <span className="bg-rose-100 text-rose-700 text-xs font-bold px-2.5 py-1 rounded-full">SALE</span>}
+                      {product.isSale && <span className="bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full">SALE</span>}
                       {product.isNew && <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-full">NEW</span>}
                       {product.isBestseller && <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2.5 py-1 rounded-full">BESTSELLER</span>}
                     </div>
@@ -106,7 +106,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                       {product.compareAtPrice && (
                         <>
                           <span className="text-slate-400 line-through text-lg">₹{product.compareAtPrice}</span>
-                          <span className="bg-rose-100 text-rose-700 text-sm font-bold px-2 py-0.5 rounded-full">
+                          <span className="bg-red-100 text-red-700 text-sm font-bold px-2 py-0.5 rounded-full">
                             Save ₹{savings}
                           </span>
                         </>
@@ -150,12 +150,12 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                       <label className="flex items-center gap-3 cursor-pointer group">
                         <div
                           onClick={() => setGiftWrap(v => !v)}
-                          className={`relative w-11 h-6 rounded-full transition-colors ${giftWrap ? 'bg-rose-500' : 'bg-slate-200'}`}
+                          className={`relative w-11 h-6 rounded-full transition-colors ${giftWrap ? 'bg-red-600' : 'bg-slate-200'}`}
                         >
                           <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${giftWrap ? 'translate-x-5' : ''}`} />
                         </div>
                         <span className="flex items-center gap-1.5 text-sm text-slate-700 group-hover:text-slate-900">
-                          <Gift size={15} className="text-rose-500" />
+                          <Gift size={15} className="text-red-600" />
                           Add gift wrapping <span className="text-slate-400">(+$3.99)</span>
                         </span>
                       </label>
@@ -165,7 +165,7 @@ export default function QuickViewModal({ product, isOpen, onClose, onAddedToCart
                     <div className="flex flex-col sm:flex-row gap-3 mt-2">
                       <button
                         onClick={handleAdd}
-                        className="flex-grow flex items-center justify-center gap-2 bg-slate-900 text-white py-3 px-6 rounded-xl font-semibold hover:bg-rose-600 transition-colors active:scale-95"
+                        className="flex-grow flex items-center justify-center gap-2 bg-slate-900 text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-700 transition-colors active:scale-95"
                       >
                         <ShoppingCart size={18} />
                         Add to Cart

@@ -106,27 +106,22 @@ const AdminPinLock = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #f0f7c3 0%, #d4f036 100%)' }}>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-black">
       <div
-        className={`bg-white rounded-2xl shadow-xl p-8 max-w-sm w-full transition-all duration-500 ${
+        className={`bg-gray-900 border border-gray-800 rounded-2xl shadow-xl p-8 max-w-sm w-full transition-all duration-500 ${
           shake ? 'animate-pulse' : ''
         }`}
       >
         {/* Logo & Header */}
         <div className="text-center mb-6">
-          <span
-            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-black text-4xl mb-2"
-            style={{ background: '#C5E619', color: '#1C1C1C' }}
-          >
-            B
-          </span>
+          <span className="text-5xl">🎁</span>
           <div className="mt-2">
-            <span style={{fontFamily: 'Playfair Display, serif', color: '#1C1C1C'}}
-              className="block text-2xl font-black tracking-wide">
-              Blessy Gift Shop
+            <span style={{fontFamily: 'Playfair Display, serif'}}
+              className="block text-3xl font-black tracking-widest text-red-600 uppercase">
+              TRESOR GIFTS
             </span>
-            <span className="block text-xs font-bold tracking-widest uppercase mt-1" style={{ color: '#A8CC00' }}>
-              🎁 Premium Return Gifts
+            <span className="block text-xs font-bold tracking-widest text-gray-400 uppercase mt-1">
+              ✦ The Customized Gift Store ✦
             </span>
           </div>
           <p className="text-gray-500 text-sm mt-2">
@@ -141,8 +136,8 @@ const AdminPinLock = () => {
               key={index}
               className={`w-12 h-12 rounded-full border-2 transition-all ${
                 index < pin.length
-                  ? 'bg-rose-500 border-rose-500'
-                  : 'bg-gray-100 border-gray-300'
+                  ? 'bg-red-600 border-red-600'
+                  : 'bg-gray-800 border-gray-800'
               }`}
             />
           ))}
@@ -170,7 +165,7 @@ const AdminPinLock = () => {
               className={`h-16 rounded-full text-xl font-bold transition-all ${
                 isLocked
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white border border-gray-200 text-gray-700 hover:bg-rose-50 active:bg-rose-100'
+                  : 'bg-gray-800 text-white hover:bg-gray-700'
               }`}
             >
               {num}
@@ -184,7 +179,7 @@ const AdminPinLock = () => {
             className={`h-16 rounded-full text-lg font-bold transition-all ${
               isLocked
                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 active:bg-gray-300'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >
             ← Clear
@@ -197,7 +192,7 @@ const AdminPinLock = () => {
             className={`h-16 rounded-full text-xl font-bold transition-all ${
               isLocked
                 ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-white border border-gray-200 text-gray-700 hover:bg-rose-50 active:bg-rose-100'
+                : 'bg-gray-800 text-white hover:bg-gray-700'
             }`}
           >
             0
@@ -210,7 +205,7 @@ const AdminPinLock = () => {
             className={`h-16 rounded-full text-lg font-bold transition-all col-span-1 ${
               isLocked
                 ? 'bg-gray-300 text-gray-400 cursor-not-allowed'
-                : 'bg-rose-500 text-white hover:bg-rose-600 active:bg-rose-700'
+                : 'bg-red-600 text-white hover:bg-red-700 active:bg-red-700'
             }`}
           >
             ✓ Enter

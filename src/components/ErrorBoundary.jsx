@@ -19,9 +19,9 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-rose-50 flex items-center justify-center p-6">
-          <div className="bg-white max-w-lg w-full rounded-3xl shadow-xl shadow-rose-900/5 overflow-hidden text-center p-12">
-            <div className="w-20 h-20 bg-rose-100 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0 relative">
+        <div className="min-h-screen bg-red-50 flex items-center justify-center p-6">
+          <div className="bg-white max-w-lg w-full rounded-3xl shadow-xl shadow-red-900/5 overflow-hidden text-center p-12">
+            <div className="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shrink-0 relative">
               <AlertCircle size={40} className="relative z-10" />
             </div>
             <h1 className="text-3xl font-serif font-bold text-slate-900 mb-4">Oops! Something went wrong.</h1>
@@ -39,7 +39,7 @@ export default class ErrorBoundary extends React.Component {
               <Link 
                 to="/" 
                 onClick={() => this.setState({ hasError: false })}
-                className="bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold py-3.5 px-8 rounded-xl transition-colors shrink-0"
+                className="bg-red-50 hover:bg-red-100 text-red-700 font-bold py-3.5 px-8 rounded-xl transition-colors shrink-0"
               >
                 Back to Home
               </Link>
